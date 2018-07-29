@@ -1,0 +1,35 @@
+input {
+    display:block;
+}
+div {
+    float:left;
+    margin: 0 50px;
+}
+#calculate {
+    clear:both;
+    margin: 50px 240px;
+}
+#rezultate {
+    clear:both;
+    margin: 0 50px;
+    width: 700px
+}
+#diferentele {
+    clear:both;
+    width: 700px;
+    height:140px;
+}
+#rezultate h3 {
+    margin:0 150px;
+}
+#imcMare {
+    height:270px;
+}
+#imcMic {
+    height:150px;
+    width:700px;
+}
+li {
+    text-decoration: none;
+    list-style:circle;
+}

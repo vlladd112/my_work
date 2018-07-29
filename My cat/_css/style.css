@@ -1,0 +1,301 @@
+body {
+    width: 76%;
+    color: black;
+    background-color: darkorchid;
+    margin: 1.5em auto 1em auto;
+    background-image: url("catbackground.jpg");
+}
+
+header {
+    background-color:darkslateblue;
+    border-bottom: 7px solid gold;
+    border-top: 5px solid gold;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 30px;
+    border-radius: 10px;
+}
+
+article {
+    background-color:rgba(255, 192, 203, .967);
+    margin: 2em auto 2em auto;
+    border-radius: 10px;
+    overflow: auto;
+    /*  -aici am setat background-ul ( am facut sa fie transparent cu rgba
+        -i-am dat overflow:auto ca sa nu iasa imagine afara din body, adica sa se muleze el dupa imagine in caz ca iese*/
+}
+h1 {
+    margin: auto;
+}
+h1 button { /* HOME BUTTON din Heading */
+    width: 63%;
+    height: 1.6em;
+    background-color: ghostwhite;
+    text-align:center;
+    font-size: 1.3em; 
+    border-radius: 100px;
+    text-decoration: none;
+    color: darkmagenta;
+    padding-top: 0.2em;
+    padding-bottom: 0.3em;
+    text-align: center;
+    font-family: 'Mountains of Christmas', cursive;
+}
+h1 button:hover {
+    background-color: lightgoldenrodyellow;
+    color:deeppink;
+}
+h2 {
+    font-size: 2.1em;
+    font-family: Marcellus, Verdana, Geneva, sans-serif;
+    font-weight:bold;
+    margin: 1em 1em 1em 1em;
+    line-height: 0.8em;
+    clear:both;
+    border-bottom: 2px solid brown;
+    padding-bottom: 5px;
+}
+h3 {
+    width: 80%;
+    font-family: Marcellus, Helvetica, sans-serif;
+    margin: 1em 1em 1em 3.4em;
+    line-height: 0.9em;   
+}
+p {
+    font-family: "EB Garamond", serif;
+    font-size: 1.4em;
+    line-height: 1.5;
+    width: 85%;
+    margin: 0 auto;
+    text-align: justify;
+    height:auto;
+    letter-spacing: 1px
+}
+
+h1:hover {
+    color:goldenrod;
+}
+a { /*Cluj-Napoca*/
+    text-decoration: none;
+    color: crimson;
+    }
+a:hover{ /*Cluj-Napoca*/
+    color: brown;
+}
+.ne { /* "ne" de la nebuna*/
+    color:antiquewhite;
+    text-decoration: none;
+    font-weight: bold;
+}
+.ne:hover { /* "ne" de la nebuna*/
+    color: red;
+}
+/* NAVIGARE =========================================================================================================================*/
+nav {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 1.1em;
+    margin: 0;
+    padding: 0;
+    width:100%;
+    background-color: dimgrey;
+    padding-bottom: 0px;
+}
+ul { /* distanta butoane*/
+    padding:0;
+    width:auto;
+    margin: 0;
+}
+li { /* pentru NAVIGARE si OL de la PROGRAM ZILNIC*/
+   font-weight: bold;
+}
+ul button { /* navigarea*/
+    background-color: dimgray;
+    float: left;
+    height:auto;
+    width:20%;
+    display:inline-grid;
+    padding-top:0.12em;
+    padding-bottom:0em; 
+    text-decoration: none;
+    border-radius: 0px;
+    border:none;
+    border-right: 3px solid deeppink;
+    color:darkorange;
+    margin-top:0em; 
+    margin-bottom: 3em;
+    font-weight: normal;
+    font-size: 1.3em;
+    font-variant-caps: small-caps;
+}
+ul>a:first-of-type>button:first-of-type { /* primul border stanga de la primul buton din NAVIGARE*/
+    border-left: 3px solid deeppink;
+}
+ul button:hover {
+    background-color: gold;
+}
+button>li {
+    font-family: "Underdog", cursive;
+    font-size: 1em;
+}
+.active {
+    background-color: hotpink;
+    color: firebrick;
+}
+/*END__NAVIGARE ===================================================================================================================================*/
+ol {
+    font-family: "Caveat", cursive;
+    margin: 1em 1em auto 7em;
+    font-size: 1.8em;
+    font-weight: normal;
+}
+ol :nth-child(2n) {
+    
+}
+footer {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 0.8em;
+    margin: auto;
+    text-align:center;
+    background-color: burlywood;
+}
+.poza { /*BUTON DESCARCA - asezare centru*/
+    text-align: center;  
+}
+.poza button { /* BUTON DESCARCA - font...*/
+    font-family: "Dancing Script", cursive;
+    font-size: 0.75em; 
+}
+img {
+    float:right;
+    margin: auto auto 0.4em 0.5em;
+}
+img:hover {
+    opacity: 0.7;
+}
+button { /* Butonul de descarcat poza*/
+    background-color: mediumslateblue;
+    height: 50px;
+    width: 280px;
+    display: inline-block;
+    padding-top: 11.52px;
+    padding-bottom: 13px;
+    border-radius: 70%;
+    border:none;
+    color: aqua;
+    margin-top: 24px;
+    margin-bottom: 13px;
+    font-weight: bold;
+    font-size: 16px;
+}
+button:hover {
+    background-color: orangered;
+}
+article>p:last-of-type {
+    margin: 0.5em auto 1em auto;
+    line-height: 1.2em;
+    text-align: center;
+}
+section { /*PROGRAM ZILNIC*/
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+}
+article>p {
+    font-family: "Just Me Again Down Here", cursive;
+    font-weight: normal;
+    font-size: 1.8em;
+    letter-spacing: normal
+}
+/*  MODAL-ul (adica imaginea care se face mare cand dai click pe ea fara sa se deschida in alta pagina, pur si simplu apare deasupra)===========================================================================   */
+/* Prima data selectezi imaginea asupra careia doresti sa actionezi*/
+#pozaPini {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#PozaPini:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 130px; /* Location of the box */
+    left: 0; /*pozitia cutiei*/
+    top: 0;  /*pozitia cutiei*/
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin:auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    float: none;
+    opacity: 1.0;
+}
+.modal-content:hover {
+    opacity: 1.0;
+}
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 20px;
+/*    background-color: aqua;*/
+}
+
+/* Add Animation */
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+
+/* END__MODAL ============================================================================================================ */

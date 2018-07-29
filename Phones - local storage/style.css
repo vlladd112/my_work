@@ -1,0 +1,70 @@
+html {
+    display: flex;
+    justify-content: center;
+}
+#body {
+    display: flex;
+    flex-direction: column;
+    margin: 0, auto;
+    background-color: white;
+    overflow:auto;
+}
+h1 {
+    text-align: center;
+    font-variant: small-caps;
+    font-size: 50px;
+    padding:0.5em;
+    background-color:black;
+    color:white;
+}
+#globalContainer {
+    background-color: white;
+    display: flex;
+    align-items:center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    max-height: 37em;
+    overflow:auto;
+}
+.element-container {
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+    width: 80%;
+    padding: 2em 0;
+    width: 50%;
+}
+h3 {
+    text-align: center;
+    margin-bottom: 0.7em;
+    font-size: 1.5em;
+    display:flex;
+    align-self: stretch;
+}
+img {
+    width:200px;
+    height:auto;
+    display: flex;
+    align-items: center;
+}
+p:first-of-type {
+    margin: 1em;
+}
+span {
+    font-weight: 500;
+}
+button {
+    border-radius: 5px;
+    background-color: dodgerblue;
+    color:white;
+    font-weight: 500;
+}
+footer {
+    margin: 0.5em 0;
+    color:white;
+    background-color:black;
+    text-align: center;
+}

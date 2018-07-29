@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="ro">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+        <title>BMI calculator</title>
+    </head>
+    <body>
+        <header id="panda"><h1>BMI calculator</h1></header>
+        <div id="you">
+            <p>You</p>
+            <input type="text" placeholder="Full name" class="you" value="">
+            <input type="text" placeholder="Height (cm)" id="height1" class="you" value="">
+            <input type="text" placeholder="Weight (kg)" class="you" value="">
+        </div>
+        <div id="contender">
+            <p>Contender</p>
+            <input type="text" placeholder="Full name" class="contender">
+            <input type="text" placeholder="Height (cm)" class="contender">
+            <input type="text" placeholder="Weight (kg)" class="contender">
+        </div>
+        <div id="calculate">
+            <input  type="submit" value="Calculate" id="calc">
+        </div>
+        <div id="rezultate">
+            <div id="diferentele">
+                <h3>Results</h3>
+                <p class="rezultat"></p>
+                <p class="rezultat"></p>
+                <p class="rezultat"></p>
+            </div>
+            <div id="imcMare">
+                
+                <div id="imcMic">
+                    <h4>IMC</h4>
+                    <p class="imc"></p>
+                    <p class="imc"></p>
+                </div>
+                <ul><strong>Valori IMC</strong>
+                    <li>18,49 sau mai putin - Subponderal</li>
+                    <li>intre 18,50 si 24,99 - Greutate normala</li>
+                    <li>intre 25,00 si 29,99 - Supraponderal</li>
+                    <li>intre 30,00 si 34,99 - Obezitate (gradul I)</li>
+                    <li>intre 35,00 si 39,99 - Obezitate (gradul II)</li>
+                    <li>40,00 sau mai mult - Obezitate morbida</li>
+                </ul>
+            </div>
+        </div>
+        <script src="exercitiiSimple.js"></script>
+    </body>

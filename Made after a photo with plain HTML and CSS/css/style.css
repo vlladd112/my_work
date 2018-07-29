@@ -1,0 +1,258 @@
+.margin-auto {
+    width:960px;
+    margin: 0 auto;
+}
+body {
+    margin:0;
+}
+
+main {
+    overflow:auto;
+}
+nav {
+    width:940px;
+    margin:auto;
+    padding:0;
+    background-color: white;
+}
+nav ul {
+    padding:0;
+    margin:0;
+    width:940px;
+}
+nav ul a li {
+    display:inline-block;
+    width:184.8px;
+    margin:0 5px;
+    background-color:#2265a9;
+    text-align: center;
+    padding: 22px 0;
+    font-size: 1.3em;
+}
+nav ul a li:first-of-type {
+    margin-left:0;
+}
+nav ul a li:last-of-type {
+    margin-right:0
+}
+nav ul a {
+    color:white;
+}
+nav ul {
+    background-color: white;
+}
+header {
+    width:960px;
+    margin: 0 auto 10px;
+}
+.brand {
+    background-color:white;
+}
+.brand h1 {
+    font-size:2em;
+    padding:5px 15px 5px 5px;
+    font-weight: bold;
+    border-right:1px solid black;
+    margin: 10px 0;
+}
+.brand div:last-of-type {
+    font-size:1em;
+    padding:5px;
+    font-weight: normal;
+}
+.brand div {
+    font-size:1.1em;
+    padding:13px;
+    font-weight: bold;
+    margin:10px 0;
+}
+.slider {
+    position:relative;
+    height:300px;
+    width:940px;
+    background-color:#bdd9fe;
+    margin:0 auto;
+}
+.slider-box {
+    width:300px;
+    height:160px;
+    position:absolute;
+    top: 30px;
+    left:30px;
+    background-color:#2265a9;
+}
+.slider-box h2 {
+    margin:0 10px;
+    padding: 5px 0;
+    color:white;
+    border-bottom: 1px dotted white;
+    font-weight: normal;
+}
+.slider-box p {
+    margin:0;
+    color:white;
+    padding:5px 10px;
+}
+.slider-button {
+    width: 470px;
+    height: 65px;
+    position:absolute;
+    bottom:-20px;
+    right:20px;
+    background-color:#2265a9;
+    font-size:3em;
+    text-align: center;
+}
+.slider-button a {
+    color:#f4eff5;
+}
+.slider-button p {
+    margin:0;
+    padding:10px;
+    width:400px;
+    line-height: 40px;
+    position: relative;
+}
+.slider-button p span {
+    font-size:2em;
+    width:50px;
+    padding:5px;
+    position:absolute;
+    top:0px;
+}
+
+.section-position {
+    margin:10px;
+}
+section:first-of-type {
+    border-bottom: 1px dashed #363636;
+    
+}
+.art1:first-of-type {
+    margin-left:0;
+}
+.art1:last-of-type {
+    margin-right:0
+}
+nav {
+    background-color: lightgray;
+}
+.art1 h2 {
+    border-bottom: 1px dotted #9daca7;
+    margin:0 25px;
+    padding: 5px;
+}
+.art1 p {
+    margin:5px 25px 10px;
+    padding:0
+}
+.art1 a {
+    padding:0 10px 10px;
+    font-weight: bold;
+}
+.art2 h2 {
+    margin:0 0 10px 220px;
+    border-bottom: 1px dotted #343434;
+    color:dimgray;
+}
+.art2 p {
+    margin-left:220px;
+    padding:0;
+}
+.art2 a {
+    padding:0 10px 10px;
+}
+
+.pull-left {
+    float:left;
+}
+.pull-right {
+    float:right;
+}
+.clearfix::after {
+    content:"";
+    display: block;
+    clear: both;
+}
+
+.inline-block {
+    display:inline-block;
+    width:940px;
+    margin:10px;
+}
+.art1 {
+    box-sizing: border-box;
+    width:300px;
+    background-color: #e7e7e7;
+    margin:20px 10px;
+}
+.imgart1 {
+    width:240px;
+    height:90px;
+    margin:15px 25px 5px;
+    border:5px double #fff;
+    background-color: #3a3b3f;
+}
+.text-aligh-center {
+    text-align:center;
+}
+.art2 {
+    width:620px;
+    margin-right: 10px;
+    border-bottom: 1px dotted gray;
+    padding-bottom: 9px;
+}
+.art2 img {
+    border: 5px double #fff;
+    background-color: #3a3b3f;
+}
+p {
+    padding:20px;
+}
+a {
+    text-decoration: none;
+}
+.imgart2 {
+    width:200px;
+    height:160px;
+}
+aside {
+    margin:10px 0 0 10px;
+    width:300px;
+    background-color:#f6f6f6;
+    padding-bottom: 20px;
+}
+aside h2 {
+    border-bottom: 1px dashed #9d9d9d;
+    margin:0 5px 10px 5px;
+    padding:0;
+    color: #9d9d9d;
+}
+aside a {
+    display: block;
+    border-bottom: 1px solid #9d9d9d;
+    padding-top:5px;
+    margin:0 5px;
+}
+section>img {
+    width:174px;
+    height:100px;
+    border:5px double #fff;
+    margin:0.5px;
+    background-color: #3a3b3f;
+}
+section>img:first-of-type {
+    margin-left:0;
+}
+section>img:last-of-type {
+    margin-right:0;
+}
+footer {
+    background-color: #2265a9;
+    height:20px;
+    padding: 15px 10px;
+    margin-bottom:0;
+    width:920px;
+    margin: 0 auto;
+    color: #fff;
+}

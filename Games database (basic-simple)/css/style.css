@@ -1,0 +1,123 @@
+html {
+    background-image:url(https://i.pinimg.com/originals/40/70/d0/4070d083080889fe3de3580c9a58980a.jpg);
+    background-repeat: repeat;
+    background-size: 193px; /* 270px */
+}
+body {
+    width:960px;
+    margin: 0 auto;
+    background-color: rgba(200, 200, 200, 0.95);
+}
+h1 {
+    text-align: center;
+    background-color: rgba(139, 0, 0, 0.7);
+    padding: 15px;
+    color:beige;
+    font-variant:small-caps;
+    font-size: 40px;
+}
+h2 {
+    margin-left: 20px;
+    font-variant:small-caps;
+    font-size: 30px;
+}
+.plus-symbol, .upArrow-symbol {
+    font-size: 40px;
+    font-weight: bold;
+    float:left;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 50px;
+    padding: 0 0 4px 2px;
+    height:40px;
+    width: 43px;
+    text-align: center;
+    
+}
+h2::first-letter {
+    font-size: 40px;
+}
+.h2-update {
+    font-size:20px;
+}
+.forms {
+    height: 150px;
+    padding: 0 50px;
+}
+#game-title-update, #post-title, #post-image {
+    position:relative;
+    top:-113px;
+    padding: 5px
+}
+#game-description-update, #post-description {
+    height: 120px;
+    width: 400px;
+    padding:5px;
+}
+#post-submit, #game-update-submit-btn {
+    margin:10px 0px;
+    padding:5px;
+    font-weight: bold;
+    border-radius: 30px;
+    border-bottom-left-radius: 10px;
+    position:relative;
+    top:-10px;
+    background-color: gray;
+    color:whitesmoke;
+}
+#post-submit:active, #game-update-submit-btn:active {
+    color:black;
+    background-color:whitesmoke;
+}
+.game-container {
+    border-bottom: 10px solid rgba(36, 30, 32, 0.5);
+    margin: 0px 0px;
+}
+.game-title { 
+    margin:0px 0 30px 0;
+    padding:20px;
+    text-align: center;
+    font-size: 2em;
+    background-color: rgba(50, 0, 0, 0.8);
+    color:beige;
+}
+.game-image {
+    margin: 0 0 0 260px;
+}
+.game-description {
+    padding: 10px 30px 60px 30px;
+    font-size: 1.1em;
+}
+.game-description::first-letter {
+    font-size: 2em;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+.up-btn {
+    margin:10px 15px;
+    padding:5px;
+    font-weight: bold;
+    border-radius: 30px;
+    border-top-left-radius: 10px;
+    float: left;
+    position:relative;
+    top:-60px;
+    background-color: gray;
+    color:whitesmoke;
+}
+.del-btn {
+    margin:10px 15px;
+    padding:5px;
+    font-weight: bold;
+    border-radius: 30px;
+    border-top-left-radius: 10px;
+    float:right;
+    position:relative;
+    top:-60px;
+    background-color: gray;
+    color:whitesmoke;
+}
+.up-btn:active, .del-btn:active {
+    color:black;
+    background-color:whitesmoke;
+}

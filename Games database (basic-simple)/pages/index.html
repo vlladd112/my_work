@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="../models/Games.js"></script>
+    <script src="../models/GamesList.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    
+    
+    <script src="../views/gamesListView.js"></script>
+    
+    <title>OOP homework</title>
+</head>
+<body>
+    <h1>What's your favorite video game?</h1>
+    <h2>Add new game<span class="plus-symbol">&#43;</span></h2>
+    <div class='forms'>
+        <input id='post-id' type="hidden">
+        <input id="post-title" type='text' placeholder="Game title">
+        <input id="post-image" type='text' placeholder="Game imageURL">
+        <textarea id='post-description' type="textarea" placeholder="Game description"></textarea>
+        <input id='post-submit' type='submit' onclick="refreshhh()" value="Submit">
+    </div>
+    
+    <h2>Update game info <span class="h2-update">(first click "Update Game Details" below the game's description)</span><span class="upArrow-symbol">&#8679;</span></h2>
+    <div class='forms'>
+        <input id="game-id-update" type="hidden">
+        <input id="game-title-update" type="text" placeholder="Game title">
+        <textarea id="game-description-update" type="textarea" placeholder="Game description"></textarea>
+        <input id="game-update-submit-btn" type="submit", value="Submit">
+    </div>
+    <div id="all-games-container">
+        <article id='container'>
+        </article>
+    </div>
+</body>
+</html>

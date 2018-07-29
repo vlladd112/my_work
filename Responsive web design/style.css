@@ -1,0 +1,623 @@
+header {
+    background-color:black;
+    box-shadow: 10px 5px 8px lightgray;
+    border-top: 5px solid whitesmoke;
+    border-bottom: 5px solid whitesmoke;
+}
+h1 {
+    margin:5px 10px;
+    padding:0;
+    text-align:center;
+    height:1em;
+    font-family: 'mina', cursive;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+h2 {
+    margin: 5px 5px 5px 10px;
+    border-bottom: 2px solid steelblue;
+    font-size:2em;
+    font-variant-caps: small-caps;
+    font-family: 'Mina', sans-serif;
+}
+h3 {
+  margin: 5px 5px 5px 30px;
+  width:200px;
+  border-left: 3px solid steelblue;
+  padding-left: 10px;
+  font-size:1.6em;
+  font-family: 'Mina', sans-serif;
+}
+#mainContent {
+  width:100%;
+  margin:1em 0;
+  float:right;
+  background-color: whitesmoke;
+  display:inline block;
+  border-radius: 5px;
+}
+p {
+  padding: 0 15px 0 30px;
+  font-family: "EB Garamond", serif;
+  font-size: 1.3em;
+  width: 85%;
+  margin: 0 auto;
+  text-align: justify;
+  height:auto;
+  letter-spacing: 0.05em;
+}
+#navigation {
+    width:100%;
+    float:left;
+    position:fixed;
+    background-color:lightsteelblue;
+    margin:10px 0 0 0;
+    font-size: 1.2em;
+    box-shadow: 10px 5px 8px lightgray;
+    align-content: center;
+    text-align: center;
+}
+#ul {
+    padding-left:18%;
+    margin-bottom: 0.25em;
+    text-align: left;
+}
+ul {
+  list-style-type:none;
+}
+section>ul>li {
+    font-size:1.4em;
+}
+#navigation a {
+    color: aliceblue
+}
+#aboutMeNav>li>a:hover {
+    color:dodgerblue;
+}
+#aboutMeNav {
+    padding:0;
+}
+#aboutMe:hover {
+    
+}
+#navHeadAbtMe, #navHeadRelBlgs {
+    color:indianred;
+    font-weight: 500;
+    font-variant: small-caps;
+}
+#login {
+    position:fixed;
+    width:100%;
+    clear:both;
+    top:350px;
+    background-color:lightsteelblue;
+}
+#login>p {
+    width:100%;
+    padding:0;
+    text-align: center;
+}
+.fillin {
+    width:98%;
+}
+.login {
+    width:100%;
+    background-color: skyblue;
+    color: white;
+    font-weight: 500;
+    border-color: azure;
+}
+div>form>p>a {
+    font-size:0.6em;
+    text-decoration:underline;
+}
+div>form>p {
+    padding:0;
+    margin:0;
+    width:100%;
+    text-align: center;
+    height:1em;
+    line-height: 0.8em;
+}
+body {
+    background-color: whitesmoke;
+    width:80%;
+    margin:auto;
+}
+p>a {
+    text-decoration:none;
+}
+img {
+    float:left;
+    height:280px;
+    margin:0;
+    position:relative;
+    left:-30px;
+    top: 10px
+}
+footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    margin: 5px 0;
+}
+footer>a {
+    text-decoration:none;
+}
+.fa-facebook {
+    background: white;
+    color: black;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius:100px;
+    padding: 2px 1px 0px 0px;
+    margin: 4px 4px 4px 4px;
+}
+.fa-linkedin {
+    background: white;
+    color: black;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius:100px;
+    padding: 2px 0px 0px 0px;
+    margin: 4px 4px 4px 4px;
+}
+@media(max-width: 576px) {
+    #body {
+        padding: 0;
+    }
+    header {
+        border-radius: 0;
+        border-top-color: black;
+        border-bottom-color: black;
+        color:whitesmoke;
+    }
+   h1 {
+        letter-spacing: 0.1em;
+        font-variant: small-caps;
+        font-size: 2.7em;
+    }
+    #navigation {
+        float:none;
+        width:100%;
+        clear:both;
+        position:relative;
+        margin:0;
+        box-shadow: none;
+        line-height: 1.16em;
+        border-top: 2px solid whitesmoke;
+    }
+    #navigation>ul {
+        padding-left:35%;
+        margin:0;
+    }
+    #aboutMeNav>li>a {
+        border-left: 2px solid black;
+        padding-left: 0.5em;
+        text-decoration:none;
+    }
+    #aboutMeNav>li>a:hover {
+        color: lightslategray;
+    }
+    #navHeadRelBlgs, #navHeadAbtMe {
+        color:black;
+    }
+    #login {
+        width:100%;
+        float:left;
+        position:inherit;
+        clear:both;
+        height:auto;
+        border-top: 2px solid whitesmoke;
+        text-align: center;
+        top:0;
+        padding-top: 0.5em;
+    }
+    .login {
+        background-color: black;
+        color: whitesmoke;
+    }
+    .login:hover {
+        background-color:black;
+        color: dodgerblue;
+    }
+    .fillin {
+        width: 80%;
+        margin: 0.5em 0;
+    }
+    .login {
+        width: 50%;
+        margin: 0.5em 0;
+    }
+    #login p:last-child {
+        margin: 0.25em;
+    }
+    #mainContent {
+        padding:0;
+        background-color: whitesmoke;
+    }
+    p {
+        margin: 0;
+        width: 100%;
+        padding: 0 0.5em;
+        font-size: 1.1em;
+        line-height: 1.3em;
+        letter-spacing: 0.03em;
+    }
+    #mainContent>section>p:first-of-type::first-letter {
+        font-size: 1.5em;
+    }
+    h1 {
+        font-size: 2.2em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    h3 {
+        font-size: 1.4em
+    }
+    #login>p{
+        font-size: 1.4em;
+    }
+    form>p:last-child{
+        font-size: 1.5em;
+    }
+    img {
+        width:100%;
+        height:auto;
+        padding:0.5em;
+        left:0;
+    }
+    #aboutMe, #blogs {
+        text-align: center;
+    }
+    #blogsSection>ul {
+        padding-top: 0.2em;
+        padding-bottom: 0;
+        margin-bottom: 0.2em;
+    }
+    #blogsSection>ul>li {
+        font-size: 1.1em;
+    }
+    footer>a:hover {
+        text-decoration:none;
+        color: white;
+        background-color: black;
+    }
+}
+
+
+
+@media(min-width:576px) {
+    header {
+        box-shadow: none;
+        border-radius: 0;
+        border-top-color: black;
+        border-bottom-color: black;
+        color:whitesmoke;
+    }
+    h1 {
+        letter-spacing: 0.3em;
+        font-variant: small-caps;
+        font-size: 2.7em;
+    }
+    
+    #mainContent p:first-of-type {
+        padding: 0.6em;
+    }
+    #navigation {
+        float: left;
+        width: 50%;
+        clear: both;
+        position: relative;
+        box-shadow: none;
+        margin-bottom: 0.5em;
+        line-height: 1.2em;
+        height: 210px;
+        margin: 5px 0;
+    }
+    #login {
+        width: 50%;
+        float: left;
+        position: inherit;
+        clear: none;
+        height: auto;
+        padding: 1.15em 0;
+        top: 5px;
+        height: 210px;
+        border-left: 2px solid whitesmoke;
+    }
+    .login {
+        background-color: black;
+        color: whitesmoke;
+    }
+    .login:hover {
+        background-color:black;
+        color: dodgerblue;
+    }
+    #mainContent {
+        float: none;
+        clear: both;
+        width: 100%;
+        padding: 0px;
+        background-color: whitesmoke;
+    }
+    #aboutMeNav>li>a {
+        border-left: 2px solid black;
+        padding-left: 0.5em;
+        text-decoration:none;
+    }
+    #aboutMeNav>li>a:hover {
+        color: lightslategray;
+    }
+    #navHeadRelBlgs, #navHeadAbtMe {
+        color:black;
+    }
+    #navigation>ul>li {
+        width:100%;
+    }
+    .fillin {
+        margin-top: 0.5em;
+    }
+    #logform {
+        text-align: center;
+    }
+    .login {
+        margin: 1em 0 0.5em 0;
+    }
+    #body {
+        padding: 0;
+    }
+    p {
+        margin: 0;
+        width: 100%;
+        padding: 0 0.5em;
+        font-size: 1.2em;
+        line-height: 1.4em;
+        letter-spacing: 0.04em;
+    }
+    #mainContent>section>p:first-of-type::first-letter {
+        font-size: 1.6em;
+    }
+    img {
+        left:0;
+        margin: 0 0.5em;
+    }
+    #aboutMe, #blogs {
+        text-align: center;
+    }
+    #blogsSection>ul {
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+        margin-bottom: 0.5em;
+    }
+    #blogsSection>ul>li {
+        font-size: 1.2em;
+    }
+    footer {
+        border-radius: 0;
+    }
+    footer>a:hover {
+        text-decoration:none;
+        color: white;
+        background-color: black;
+    }
+}
+
+
+@media(min-width:768px) {
+    header {
+        height:6em;
+        padding:1em;
+        box-shadow: none;
+        border-top-color: darkslategrey;
+        border-bottom-color: darkslategrey;
+    }
+    h1 {
+        letter-spacing: 0.5em;
+        font-variant: small-caps;
+        font-size: 3em;
+    }
+    h2 {
+        font-size: 2.3em
+    }
+    #navigation {
+        width:100%;
+        float:left;
+        position:fixed;
+        background-color:lightsteelblue;
+        margin:0.5em 0;
+        font-size: 1.2em;
+        border-right: 1px solid white;
+        line-height: 1.56em;
+        height: 260px;
+    }
+    #aboutMeNav>li>a:hover {
+        color: lightslategray;
+    }
+    #login {
+        position:fixed;
+        width:100%;
+        clear:both;
+        top:24em;
+        background-color:lightsteelblue;
+        border-right: 1px solid white;
+        padding: 1em 0;
+        height: auto;
+    }
+    .login {
+        color:black;
+        background-color:whitesmoke;
+    }
+    .login:hover {
+        background-color: black;
+        color: palegoldenrod;
+    }
+    #mainContent {
+        width:100%;
+        margin:0.6em 0;
+        float:right;
+        display:inline block;
+        border-radius: 5px;
+    }
+    a {
+        color:#818182;
+    }
+    a:hover {
+        color:darkslategray;
+    }
+    p {
+        margin: 0;
+        width: 100%;
+        padding:0.5em 0.5em;
+        font-size: 1.3em;
+    }
+    #mainContent p:first-of-type {
+        padding-top: 0.6em;
+        padding-bottom:0.5em;
+    }
+    img {
+        left:0;
+        margin: 0.5em;
+    }
+    #blogsSection>ul {
+        padding-top: 0.3em;
+        padding-bottom: 0;
+        margin-bottom: 0.5em;
+    }
+    #blogsSection>ul>li {
+        font-size: 1.4em;
+    }
+    
+    
+}
+@media(min-width:992px) {
+    header {
+        border-radius: 11px/50px;
+        background-color:black;
+        border-top-color: darkslategrey;
+        border-bottom-color: darkslategrey;
+    }
+    h1 {
+        letter-spacing: 0.3em;
+        font-variant: small-caps;
+        font-size: 3.5em;
+        font-family: 'Atma', cursive;
+        margin-top:-7px;
+        text-shadow: 3px 3px whitesmoke;
+        color:whitesmoke;
+        
+    }
+    h2 {
+        width: 97%;
+        font-size: 2.3em;
+        font-family: 'Original Surfer', cursive;
+        border-bottom-color: steelblue;
+    }
+    h3 {
+        border-radius: 50px/180px;
+        font-family: 'mirza', cursive;
+        font-size: 2.3em;
+        padding-bottom: 10px;
+        margin: 0 0 0 30px;
+        border-left-color: steelblue;
+        color:steelblue;
+    }
+    #navigation, #login {
+        margin-left: 0.75em;
+        border: none;
+        box-shadow: 10px 5px 8px lightgray;
+        border-radius: 20px/200px;
+    }
+    #navigation {
+        background-color: lightsteelblue
+    }
+    #login {
+        background-color: lightsteelblue;
+    }
+    #aboutMeNav>li>a {
+        border-radius: 50px/170px;
+        border-left-color: black;
+    }
+    #aboutMeNav>li>a:hover {
+        color: lightslategray;
+    }
+    #aboutMeNav {
+        font-family: 'mirza', cursive;
+        font-size: 1.15em;
+    }
+    #navHeadRelBlgs, #navHeadAbtMe {
+        margin-left: -15px;
+        font-family: 'original surfer', cursive;
+        font-weight: bold;
+        font-size: 1em;
+        color:black;
+    }
+    #login p:first-of-type {
+        font-family: 'original surfer', cursive;
+        font-size: 1.15em;
+    }
+    #logform {
+        font-family: 'original surfer', cursive;
+    }
+    #logform p:first-of-type {
+        font-size: 1.5em;
+        font-family: 'mirza', cursive;
+    }
+    .fillin {
+        border-radius: 14px/50px;
+    }
+    .login {
+        border-radius: 16px/50px;
+        padding-left: 7%;
+        background-color:whitesmoke;
+        color:black;
+        border-color:lightgray;
+    }
+    .login:hover {
+        background-color: black;
+        color: palegoldenrod;
+    }
+    #mainContent {
+        margin-right: 0.75em;
+        border-radius: 20px/200px;
+        border-left: 1px solid lightgray;
+        background-color: whitesmoke;
+    }
+    a {
+        color:#818182;
+    }
+    a:hover {
+        color: darkslategray;
+    }
+    
+    header, #mainContent {
+        box-shadow: 10px 5px 8px lightgray;
+    }
+    #mainContent p:first-of-type {
+        padding: 1em 1em 0.5em 1em;
+    }
+    p {
+        font-family: 'mirza', cursive;
+        font-size: 1.45em;
+        padding: 0.5em 1em;
+    }
+    #mainContent>section>p:first-of-type::first-letter {
+        font-size: 1.8em;
+        font-family: 'Original Surfer', cursive;
+    }
+    img {
+        margin: 1em;
+        border-radius: 20px/200px;
+    }
+    #blogsSection>ul>li {
+        font-size: 1.6em;
+        font-family: 'mirza', cursive;
+    }
+    footer {
+        border-radius: 70px/200px;
+    }
+}
