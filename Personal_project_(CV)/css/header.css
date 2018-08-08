@@ -17,16 +17,17 @@ header {
 }
 nav a {
 /*    color:steelblue;*/
-    text-shadow: 0px 8px 8px;
+    text-shadow: 0px 8px 8px white;
 }
 nav a:hover {
-    color:black;
+    color:white;
     text-decoration: none;
 /*    box-shadow: 0px 0px 20px;*/
-    text-shadow: 0px 8px 12px;
+    text-shadow: 0px 6px 19px black;
 }
 .active {
-    color:goldenrod;
+    color:gold;
+    text-shadow: 0px 1px 7px black;
 }
 @media(max-width:576px) {
     #nav {
