@@ -1,0 +1,65 @@
+.LS {
+    display:none;
+}
+
+html {
+    height:100%;
+}
+#body {
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url('http://myhdwallpapers.org/wp-content/uploads/2018/02/Gorgeous-Nature-Road-Rocks-Mountains.jpg');
+    background-attachment: fixed;
+}
+#article {
+    width:56%;
+    display:flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding:10px;
+    color:white;
+    margin:10px;
+    text-align: center;
+}
+#article h1{
+    color:gold;
+}
+#article h2{
+    color:dodgerblue;
+}
+#article a {
+    color: lightskyblue;
+}
+#form {
+    display:flex;
+    color:royalblue;
+}
+.spanName {
+    color:gold;
+}
+@media(max-width:576px) {
+    html article#article {
+        width: 100%;
+    }
+    h4 {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+@media(max-width:768px) {
+    article#article {
+        width: 95%;
+    }
+}
+@media(max-width: 992px) {
+    #article {
+        width: 80%;
+    }
+}
+@media(min-width:992px) {
+    
+}

@@ -1,0 +1,89 @@
+html {
+    height:100%;
+}
+body {
+    height:100%;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('http://myhdwallpapers.org/wp-content/uploads/2018/02/Gorgeous-Nature-Road-Rocks-Mountains.jpg');
+    background-attachment: fixed;
+}
+article {
+    width:56%;
+    display:flex;
+    align-self: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.65);
+    padding:10px;
+    color:white;
+    margin:4em 0 2em 0;
+}
+ul {
+    padding:0;
+}
+li {
+    list-style: none;
+    line-height: 1.9em;
+}
+article a {
+    color:lightskyblue;
+}
+#article h1{
+    color:gold;
+    font-variant-caps: small-caps;
+}
+img {
+    height: 250px;
+    margin: 10px 0;
+}
+#article h2{
+    color:dodgerblue;
+    font-variant-caps: small-caps;
+}
+#article h3 {
+    color: cadetblue;
+}
+h5 {
+    text-decoration: underline;
+}
+.closureParag {
+    margin:5em 0;
+}
+#spanName {
+    color:gold;
+}
+b {
+    color:goldenrod;
+}
+@media(max-width:576px) {
+    html body article {
+        width:100%;
+        margin-top: 8em;
+        margin-bottom:0;
+    }
+    article img {
+        width: 70%;
+        height:auto;
+    }
+}
+@media(max-width:768px) {
+    body article {
+        width:95%;
+    }
+    img {
+        height:300px;
+    }
+    h4 {
+        text-align: center;
+    }
+}
+@media(max-width: 992px) {
+    article {
+        width: 80%;
+    }
+}
+@media(min-width:992px) {
+    
+}
