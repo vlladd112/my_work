@@ -1,17 +1,18 @@
 #add-modal-container {
     width:100%;
     background-color: rgba(0, 0, 0, 0.5);
-    position:absolute;
+    position:fixed;
     top: 0;
     display: none;
     height:100%;
+    overflow:scroll;
 }
 .modal-content {
     display:flex;
     flex-direction: column;
     color:white;
     width:310px;
-    margin: 30px auto 0 auto;
+    margin: 30px auto 30px auto;
     background-color: rgba(50, 55, 0, 0.9);
     border-radius: 4px;
 }

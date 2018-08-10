@@ -11,7 +11,8 @@ class Movie {
     this.imdbRating = "";
     this.imdbVotes = "";
     this.imdbID = "";
-    this.Type = ""
+    this.Type = "";
+    this.lastEdited = ""
   }
 
   MovieFetchData(id){
@@ -30,6 +31,7 @@ class Movie {
       this.imdbVotes = data.imdbVotes;
       this.imdbID = data.imdbID;
       this.Type = data.Type;
+      this.lastEdited = data.lastEdited;
     },
     error :()=>{
      console.log('Error on showing the detail movie');

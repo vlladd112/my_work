@@ -32,6 +32,7 @@ class MovieList {
                     movieModel.imdbVotes = movieItem.imdbVotes;
                     movieModel.imdbID = movieItem.imdbID;
                     movieModel.Type = movieItem.Type;
+                    movieModel.lastEdited = movieItem.lastEdited;
 
                     this.items.push(movieModel);
                    // console.log(movieModel);
