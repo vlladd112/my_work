@@ -80,11 +80,14 @@ window.onload = function(){
         const type = document.getElementById('type-span');
         type.innerHTML = current_movie.Type;
         const editDate = document.getElementById('editDate');
-        editDate.innerHTML = current_movie.lastEdited;
+        if(current_movie.lastEdited === undefined) {
+            editDate.innerHTML = "";
+        }else{
+            editDate.innerHTML = "Last edited: " + current_movie.lastEdited;
+        }
+        
         console.log("XXXXXXXXXXXXXX", current_movie);
     }).then(function(){
-        
-        
         editBtn.addEventListener('click', function(e) {
             current_movie.MovieFetchData(current_id).then(()=>{
                 modalContainer.style.display = "block";
@@ -150,44 +153,46 @@ window.onload = function(){
             console.log("Update data", updateData);
             modalContainer.style.display = "none";
 
-            current_movie.MovieUpdate(updateId, updateData, authToken);
+            current_movie.MovieUpdate(updateId, updateData, authToken).then(()=>{
+                
+                const edited_movie = new Movie();
+            
+                edited_movie.MovieFetchData(current_id).then(()=>{
+                    const poster = document.getElementById('movie-poster-container');
+                    poster.style.backgroundImage = `url("${edited_movie.Poster}")`;
+                    poster.style.backgroundSize = "100% 100%";
+                    const title = document.getElementById('movie-title-detPage');
+                    title.innerHTML = edited_movie.Title;
+                    const year = document.getElementById('year-span');
+                    year.innerHTML = edited_movie.Year;
+                    const runtime = document.getElementById('runtime-span');
+                    runtime.innerHTML = edited_movie.Runtime;
+                    const genre = document.getElementById('genre-span');
+                    genre.innerHTML = edited_movie.Genre;
+                    const language = document.getElementById('language-span');
+                    language.innerHTML = edited_movie.Language;
+                    const country = document.getElementById('country-span');
+                    country.innerHTML = edited_movie.Country;
+                    const imdb_rating = document.getElementById('imdbRating-span');
+                    imdb_rating.innerHTML = edited_movie.imdbRating;
+                    const imdb_votes = document.getElementById('imdbVotes-span');
+                    imdb_votes.innerHTML = edited_movie.imdbVotes;
+                    const imdb_id = document.getElementById('imdbId-span');
+                    imdb_id.innerHTML = edited_movie.imdbID;
+                    const type = document.getElementById('type-span');
+                    type.innerHTML = edited_movie.Type;
+                    const editDate = document.getElementById('editDate');
+                    if(edited_movie.lastEdited === undefined) {
+                        editDate.innerHTML = "";
+                    }else{
+                        editDate.innerHTML = "Last edited: " + edited_movie.lastEdited;
+                    }
 
-            console.log(updateData.Year);
-            const updatedPoster = document.getElementById('movie-poster-container');
-            updatedPoster.style.backgroundImage = `url("${updateData.Poster}")`;
-            const updatedTitle = document.getElementById('movie-title-detPage');
-            updatedTitle.innerHTML = updateData.Title;
-            const updatedYear = document.getElementById('year-span');
-            updatedYear.innerHTML = updateData.Year;
-            const updatedRuntime = document.getElementById('runtime-span');
-            updatedRuntime.innerHTML = updateData.Runtime;
-            const updatedGenre = document.getElementById('genre-span');
-            updatedGenre.innerHTML = updateData.Genre;
-            const updatedLanguage = document.getElementById('language-span');
-            updatedLanguage.innerHTML = updateData.Language;
-            const updatedCountry = document.getElementById('country-span');
-            updatedCountry.innerHTML = updateData.Country;
-            const updatedImdb_rating = document.getElementById('imdbRating-span');
-            updatedImdb_rating.innerHTML = updateData.imdbRating;
-            const updatedImdb_votes = document.getElementById('imdbVotes-span');
-            updatedImdb_votes.innerHTML = updateData.imdbVotes;
-            const updatedImdb_id = document.getElementById('imdbId-span');
-            updatedImdb_id.innerHTML = updateData.imdbID;
-            const updatedType = document.getElementById('type-span');
-            updatedType.innerHTML = updateData.Type;
-            const updatedLastEdited = document.getElementById('editDate');
-            updatedLastEdited.innerHTML = updateData.lastEdited;
-            
-            console.log(updateData);
-
-            
-            
-        
-            console.log('Edit date:', editDate);
-            console.log('Edit date vlaue:', editDate.innerHTML);
-            
-            
-            console.log("XXXXXXXXXXXXXX", current_movie);
+                    console.log("XXXXXXXXXXXXXX", edited_movie);
+                    const updatedLastEdited = document.getElementById('editDate');
+                    updatedLastEdited.innerHTML = "Edited: " + updateData.lastEdited;
+                });
+            });
         });
     });
 
