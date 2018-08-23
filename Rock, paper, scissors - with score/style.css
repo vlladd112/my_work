@@ -1,5 +1,5 @@
 html {
-    background-color: rgba(25, 20, 0, 1);
+    background-color: #322613;
     height:100%;
 }
 body {
@@ -15,27 +15,57 @@ body {
 }
 #globalContainer {
     margin:0 auto;
-    width:70%;
+    width:50%;
     height:100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 h1 {
     display:flex;
     justify-content: center;
     margin-top:0;
+    padding: 20px;
+    font-variant-caps: all-small-caps;
+    font-size: 2.5em;
+    letter-spacing: 0.1em;
+    color:navajowhite;
+    text-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
 }
-.playersContainer, .scoreContainer {
+.playerName {
+    color:mediumseagreen;
+    text-shadow: 0px 0px 10px limegreen;
+}
+.rps {
+    color:indianred;
+    height: 1em;
+    font-size: 0.9em;
+    text-shadow: 0 0 15px black;
+}
+.playersContainer {
     display: flex;
     justify-content: space-around;
+    font-size: 1.9em;
+    letter-spacing: 0.06em;
+}
+.scoreContainer {
+    display: flex;
+    justify-content: space-around;
+    font-size: 2em;
+    color:mediumseagreen;
+    text-shadow: 0 0 10px limegreen;
+}
+p {
+    margin:0.5em;
+}
+.playerNameInput {
+    display:flex;
+    text-align: center;
+    border-radius: 5px;
 }
 .playerNameInputContainer {
     display:flex;
     margin:0 auto;
     flex-direction: column;
     align-items: center;
-}
-.rps {
-    height: 1em;
 }
 .playerRPSContainer {
     display:flex;
@@ -45,29 +75,105 @@ h1 {
 .results {
     display: flex;
     justify-content: center;
+    font-size:1.5em;
+    color:gold;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 10px goldenrod
 }
 #play {
     display: flex;
     margin: 0 auto;
+    height:3em;
+    width:5em;
+    justify-content: center;
+    border-radius: 100px;
+    border-width: 4px;
+    border-color: orangered;
+    background-color: lightseagreen;
+    color:navajowhite;
+    font-size: 1em;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+    font-variant-caps: small-caps;
+    
+}
+#play:active {
+    padding:13px 36px 12px 37px;
+    text-shadow: -1px -1px 2px black;
+}
+#play:focus {
+    
 }
 #saveNames {
     display:flex;
     margin:0 auto;
+    margin-top: 50px;
+    height:2em;
+    width:8em;
+    justify-content: center;
+    border-radius: 10px;
+    border-width: 3px;
+    border-color: seagreen;
+    background-color:lightseagreen;
+    color:navajowhite;
+    font-size: 1em;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+    font-variant-caps: small-caps;
+}
+#saveNames:active {
+    padding:5px 35px 14px 37px;
+    text-shadow: -1px -1px 2px black;
 }
 #theScore {
     display:flex;
     justify-content: center;
     margin-top: 50px;
+    font-size: 2em;
+    letter-spacing: 0.2em;
+    text-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
 }
 #resetScore {
     display:flex;
     margin:0 auto;
     position:relative;
-    margin-top: 150px;
+    margin-top: 80px;
+    height:2em;
+    width:8em;
+    justify-content: center;
+    border-radius: 100px;
+    border-width: 3px;
+    border-color: red;
+    background-color: orangered;
+    color:navajowhite;
+    font-size: 1em;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+    font-variant-caps: small-caps;
+}
+#resetScore:active {
+    padding:5px 35px 14px 37px;
+    text-shadow: -1px -1px 2px black;
 }
 #changePlayers {
     display:flex;
     margin:0 auto;
     position:relative;
-    margin-top:50px;
+    margin-top:20px;
+    height:2em;
+    width:10em;
+    justify-content: center;
+    border-radius: 100px;
+    border-width: 3px;
+    border-color: red;
+    background-color: orangered;
+    color:navajowhite;
+    font-size: 1em;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+    font-variant-caps: small-caps;
+}
+#changePlayers:active {
+    padding:5px 35px 14px 37px;
+    text-shadow: -1px -1px 2px black;
 }

@@ -42,6 +42,7 @@ window.onload = function onload() {
         score[1].innerHTML = "0";
         rps[0].innerHTML = "";
         rps[1].innerHTML = "";
+        results[0].innerHTML = "Let's see who's better!";
         
     })
     saveNames.addEventListener('click', (event)=> {
@@ -90,7 +91,7 @@ window.onload = function onload() {
 
                 playerName[0].innerHTML = player1Name;
                 playerName[1].innerHTML = player2Name;
-                results[0].innerHTML = "Let's see who's the best!";
+                results[0].innerHTML = "Let's see who's better!";
                 score[0].innerHTML = player1Score;
                 score[1].innerHTML = player2Score;
                 
@@ -149,7 +150,7 @@ window.onload = function onload() {
     
     playerName[0].innerHTML = player1Name;
     playerName[1].innerHTML = player2Name;
-    results[0].innerHTML = "Let's see who's the best!";
+    results[0].innerHTML = "Let's see who's better";
     score[0].innerHTML = player1Score;
     score[1].innerHTML = player2Score;
     
