@@ -1,11 +1,44 @@
+html {
+    background-color: rgba(25, 20, 0, 1);
+    height:100%;
+}
+body {
+    width:100%;
+    background-image: url('http://ryanmarkel.files.wordpress.com/2010/07/rock_paper_scissor_holdm7mdetail.png');
+    background-size: 70%;
+    background-position:center;
+    background-repeat:no-repeat;
+    height:100%;
+    margin:0;
+    padding:0;
+    color:antiquewhite;
+}
+#globalContainer {
+    margin:0 auto;
+    width:70%;
+    height:100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+h1 {
+    display:flex;
+    justify-content: center;
+    margin-top:0;
+}
 .playersContainer, .scoreContainer {
     display: flex;
     justify-content: space-around;
-    color:red;
 }
 .playerNameInputContainer {
     display:flex;
     margin:0 auto;
+    flex-direction: column;
+    align-items: center;
+}
+.rps {
+    height: 1em;
+}
+.playerRPSContainer {
+    display:flex;
     flex-direction: column;
     align-items: center;
 }
@@ -24,4 +57,17 @@
 #theScore {
     display:flex;
     justify-content: center;
+    margin-top: 50px;
+}
+#resetScore {
+    display:flex;
+    margin:0 auto;
+    position:relative;
+    margin-top: 150px;
+}
+#changePlayers {
+    display:flex;
+    margin:0 auto;
+    position:relative;
+    margin-top:50px;
 }

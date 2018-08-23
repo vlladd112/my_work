@@ -6,34 +6,39 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div class="playersContainer">
-        <div class="playerNameInputContainer">
-            <p>Player 1</p>
-            <input type="text" name="player1" placeholder="Write your name" class="playerNameInput">
+    <div id="globalContainer">
+        <h1>Rock, Paper, Scissors</h1>
+        <div class="playersContainer">
+            <div class="playerNameInputContainer">
+                <p>Player 1</p>
+                <input type="text" name="player1" placeholder="Write your name" class="playerNameInput">
+            </div>
+            <div class="playerRPSContainer">
+                <p class="playerName"></p>
+                <p class="rps"><img class="rpsImage"></p>
+            </div>
+            <div class="playerNameInputContainer">
+                <p>Player 2</p>
+                <input type="text" name="player2" placeholder="Write your name" class="playerNameInput">
+            </div>
+            <div class="playerRPSContainer">
+                <p class="playerName"></p>
+                <p class="rps"><img class="rpsImage"></p>
+            </div>
         </div>
-        <div class="playerRPSContainer">
-            <p class="playerName"></p>
-            <p class="rps"></p>
+        <input type="submit" value="Save names" name="save names" id="saveNames">
+        <p class="results"></p>
+        <div class="scoreGlobalContainer">
+            <p id="theScore">SCORE</p>
+            <div class="scoreContainer">
+                <p class="score"></p>
+                <p class="score"></p>
+            </div>
         </div>
-        <div class="playerNameInputContainer">
-            <p>Player 2</p>
-            <input type="text" name="player2" placeholder="Write your name" class="playerNameInput">
-        </div>
-        <div class="playerRPSContainer">
-            <p class="playerName"></p>
-            <p class="rps"></p>
-        </div>
+        <input type="button" value="Play!" name="play" id="play">
+        <input type="button" value="Reset score" name="reset_score" id="resetScore">
+        <input type="button" value="Change players" name="change_players" id="changePlayers">
     </div>
-    <input type="submit" value="Save names" name="save names" id="saveNames">
-    <p class="results"></p>
-    <div class="scoreGlobalContainer">
-        <p id="theScore">SCORE</p>
-        <div class="scoreContainer">
-            <p class="score"></p>
-            <p class="score"></p>
-        </div>
-    </div>
-    <input type="button" value="Play!" name="play" id="play">
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
