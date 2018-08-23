@@ -2,15 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+    <div class="playersContainer">
+        <div class="playerNameInputContainer">
+            <p>Player 1</p>
+            <input type="text" name="player1" placeholder="Write your name" class="playerNameInput">
+        </div>
+        <div class="playerRPSContainer">
+            <p class="playerName"></p>
+            <p class="rps"></p>
+        </div>
+        <div class="playerNameInputContainer">
+            <p>Player 2</p>
+            <input type="text" name="player2" placeholder="Write your name" class="playerNameInput">
+        </div>
+        <div class="playerRPSContainer">
+            <p class="playerName"></p>
+            <p class="rps"></p>
+        </div>
+    </div>
+    <input type="submit" value="Save names" name="save names" id="saveNames">
+    <p class="results"></p>
+    <div class="scoreGlobalContainer">
+        <p id="theScore">SCORE</p>
+        <div class="scoreContainer">
+            <p class="score"></p>
+            <p class="score"></p>
+        </div>
+    </div>
     <input type="button" value="Play!" name="play" id="play">
-    <p class="results"></p>
-    <p class="results"></p>
-    <p class="results"></p>
-    <p class="score"></p>
-    <p class="score"></p>
   <script src="script.js"></script>
 </body>
 </html>

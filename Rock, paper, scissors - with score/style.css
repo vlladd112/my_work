@@ -1,0 +1,27 @@
+.playersContainer, .scoreContainer {
+    display: flex;
+    justify-content: space-around;
+    color:red;
+}
+.playerNameInputContainer {
+    display:flex;
+    margin:0 auto;
+    flex-direction: column;
+    align-items: center;
+}
+.results {
+    display: flex;
+    justify-content: center;
+}
+#play {
+    display: flex;
+    margin: 0 auto;
+}
+#saveNames {
+    display:flex;
+    margin:0 auto;
+}
+#theScore {
+    display:flex;
+    justify-content: center;
+}
