@@ -20,6 +20,8 @@ window.onload = function onload() {
     console.log(player2Name);
     
     if((player1Name || player2Name) === null) {
+        playerRPSContainer[0].style.display = "none";
+        playerRPSContainer[1].style.display = "none";
         playButton.style.display = "none";
         results[0].style.display = "none";
         theScore.style.display = "none";
@@ -117,6 +119,8 @@ window.onload = function onload() {
                     score[1].innerHTML = "0";
                     rps[0].innerHTML = "";
                     rps[1].innerHTML = "";
+                    playerNameInput[0].style.border = "1px solid gray";
+                    playerNameInput[1].style.border = "1px solid grey";
                 });
                 
                 playButton.onclick = function play() {
