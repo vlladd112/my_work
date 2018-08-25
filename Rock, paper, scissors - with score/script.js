@@ -1,8 +1,8 @@
 window.onload = function onload() {
     const playerNameInputContainer = document.getElementsByClassName('playerNameInputContainer')
     const playerNameInput = document.getElementsByClassName('playerNameInput');
-    const saveNames = document.getElementById('saveNames');
-    const playButton = document.getElementById("play");
+    const play = document.getElementById('play');
+    const rollButton = document.getElementById("roll");
     const playerName = document.getElementsByClassName('playerName');
     const rps = document.getElementsByClassName('rps');
     const rpsImage = document.getElementsByClassName('rpsImage');
@@ -22,7 +22,7 @@ window.onload = function onload() {
     if((player1Name || player2Name) === null) {
         playerRPSContainer[0].style.display = "none";
         playerRPSContainer[1].style.display = "none";
-        playButton.style.display = "none";
+        rollButton.style.display = "none";
         results[0].style.display = "none";
         theScore.style.display = "none";
         score[0].style.display = "none";
@@ -33,7 +33,7 @@ window.onload = function onload() {
     else if((player1Name || player2Name) !== null) {
         playerNameInputContainer[0].style.display = "none";
         playerNameInputContainer[1].style.display = "none";
-        saveNames.style.display = "none";
+        play.style.display = "none";
     }
 
     resetScore.addEventListener('click', ()=> {
@@ -45,12 +45,9 @@ window.onload = function onload() {
         rps[0].innerHTML = "";
         rps[1].innerHTML = "";
         results[0].innerHTML = "Let's see who's better!";
-        
     })
-    saveNames.addEventListener('click', (event)=> {
+    play.addEventListener('click', (event)=> {
         for(let i=0; i<playerNameInput.length; i++) {
-//            player1Score = 0;
-//            player2Score = 0;
             console.log(playerNameInput[i].value);
             if(playerNameInput[0].value === "" && playerNameInput[1].value === "") {
                 
@@ -73,10 +70,10 @@ window.onload = function onload() {
             }else if((playerNameInput[0].value && playerNameInput[1].value) !== ""){
                 console.log('freeee');
                 
-                saveNames.style.display = "none";
+                play.style.display = "none";
                 playerRPSContainer[0].style.display = "flex";
                 playerRPSContainer[1].style.display = "flex";
-                playButton.style.display = "flex";
+                rollButton.style.display = "flex";
                 results[0].style.display = "flex";
                 theScore.style.display = "flex";
                 score[0].style.display = "flex";
@@ -103,7 +100,7 @@ window.onload = function onload() {
                     localStorage.removeItem('player2');
                     playerRPSContainer[0].style.display = "none";
                     playerRPSContainer[1].style.display = "none";
-                    playButton.style.display = "none";
+                    rollButton.style.display = "none";
                     results[0].style.display = "none";
                     theScore.style.display = "none";
                     score[0].style.display = "none";
@@ -112,7 +109,7 @@ window.onload = function onload() {
                     changePlayers.style.display = "none";
                     playerNameInputContainer[0].style.display = "flex";
                     playerNameInputContainer[1].style.display = "flex";
-                    saveNames.style.display = "flex";
+                    play.style.display = "flex";
                     player1Score = 0;
                     player2Score = 0;
                     score[0].innerHTML = "0";
@@ -123,7 +120,7 @@ window.onload = function onload() {
                     playerNameInput[1].style.border = "1px solid grey";
                 });
                 
-                playButton.onclick = function play() {
+                rollButton.onclick = function play() {
                     const posibilities = ["Rock", "Paper", "Scissors"];
                     let a = Math.floor(Math.random() * 3);
                     let b = Math.floor(Math.random() * 3);
@@ -158,7 +155,7 @@ window.onload = function onload() {
     score[0].innerHTML = player1Score;
     score[1].innerHTML = player2Score;
     
-    playButton.onclick = function play() {
+    rollButton.onclick = function play() {
         const posibilities = ["Rock", "Paper", "Scissors"];
         let a = Math.floor(Math.random() * 3);
         let b = Math.floor(Math.random() * 3);
@@ -189,7 +186,7 @@ window.onload = function onload() {
         localStorage.removeItem('player2');
         playerRPSContainer[0].style.display = "none";
         playerRPSContainer[1].style.display = "none";
-        playButton.style.display = "none";
+        rollButton.style.display = "none";
         results[0].style.display = "none";
         theScore.style.display = "none";
         score[0].style.display = "none";
@@ -198,7 +195,7 @@ window.onload = function onload() {
         changePlayers.style.display = "none";
         playerNameInputContainer[0].style.display = "flex";
         playerNameInputContainer[1].style.display = "flex";
-        saveNames.style.display = "flex";
+        play.style.display = "flex";
         player1Score = 0;
         player2Score = 0;
         score[0].innerHTML = "0";
