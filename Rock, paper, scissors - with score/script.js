@@ -40,10 +40,10 @@ window.onload = function onload() {
         console.log('click reset score');
         player1Score = 0;
         player2Score = 0;
+        rpsImage[0].style.display = "none";
+        rpsImage[1].style.display = "none";
         score[0].innerHTML = "0";
         score[1].innerHTML = "0";
-        rps[0].innerHTML = "";
-        rps[1].innerHTML = "";
         results[0].innerHTML = "Let's see who's better!";
     })
     play.addEventListener('click', (event)=> {
@@ -114,21 +114,24 @@ window.onload = function onload() {
                     player2Score = 0;
                     score[0].innerHTML = "0";
                     score[1].innerHTML = "0";
-                    rps[0].innerHTML = "";
-                    rps[1].innerHTML = "";
+                    rpsImage[0].style.display = "none";
+                    rpsImage[1].style.display = "none";
                     playerNameInput[0].style.border = "1px solid gray";
                     playerNameInput[1].style.border = "1px solid grey";
                 });
                 
                 rollButton.onclick = function play() {
-                    const posibilities = ["Rock", "Paper", "Scissors"];
+                    const posibilities = ["img/rock.png", "img/paper.png", "img/scissors.png"];
                     let a = Math.floor(Math.random() * 3);
                     let b = Math.floor(Math.random() * 3);
+                    
+                    rpsImage[0].style.display = "flex";
+                    rpsImage[1].style.display = "flex";
 
                     playerName[0].innerHTML = player1Name;
-                    rps[0].innerHTML = posibilities[a];
+                    rpsImage[0].src = posibilities[a];
                     playerName[1].innerHTML = player2Name;
-                    rps[1].innerHTML = posibilities[b];
+                    rpsImage[1].src = posibilities[b];
 
                     if ((a===0 && b===1) || (a===1 && b===2) || (a===2 && b===0)) {
                         results[0].innerHTML = player2Name + " WINS!";
@@ -156,14 +159,17 @@ window.onload = function onload() {
     score[1].innerHTML = player2Score;
     
     rollButton.onclick = function play() {
-        const posibilities = ["Rock", "Paper", "Scissors"];
+        const posibilities = ["img/rock.png", "img/paper.png", "img/scissors.png"];
         let a = Math.floor(Math.random() * 3);
         let b = Math.floor(Math.random() * 3);
+        
+        rpsImage[0].style.display = "flex";
+        rpsImage[1].style.display = "flex";
 
         playerName[0].innerHTML = player1Name;
-        rps[0].innerHTML = posibilities[a];
+        rpsImage[0].src = posibilities[a];
         playerName[1].innerHTML = player2Name;
-        rps[1].innerHTML = posibilities[b];
+        rpsImage[1].src = posibilities[b];
 
         if ((a===0 && b===1) || (a===1 && b===2) || (a===2 && b===0)) {
             results[0].innerHTML = player2Name + " WINS!";
@@ -200,7 +206,7 @@ window.onload = function onload() {
         player2Score = 0;
         score[0].innerHTML = "0";
         score[1].innerHTML = "0";
-        rps[0].innerHTML = "";
-        rps[1].innerHTML = "";
+        rpsImage[0].style.display = "none";
+        rpsImage[1].style.display = "none";
     });
 };
