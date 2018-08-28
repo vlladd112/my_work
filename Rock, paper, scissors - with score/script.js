@@ -34,6 +34,8 @@ window.onload = function onload() {
         playerNameInputContainer[0].style.display = "none";
         playerNameInputContainer[1].style.display = "none";
         play.style.display = "none";
+        rpsImage[0].style.display = "none";
+        rpsImage[1].style.display = "none";
     }
 
     resetScore.addEventListener('click', ()=> {
@@ -80,6 +82,8 @@ window.onload = function onload() {
                 score[1].style.display = "flex";
                 resetScore.style.display = "flex";
                 changePlayers.style.display = "flex";
+                rpsImage[0].style.display = "none";
+                rpsImage[1].style.display = "none";
                 
                 playerNameInputContainer[i].style.display = "none";
                 localStorage.setItem("player1", playerNameInput[0].value);
