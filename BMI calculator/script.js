@@ -112,7 +112,7 @@ function diferenta(x, y) {
 }
 
 function checkTypeL(you, contender) {
-        var letters = /^[A-Za-z]+$/;
+        var letters = /^[A-Za-z ]+$/;
         if (you.value.match(letters)) {
             you.style.border = ""
         } else {
@@ -124,7 +124,7 @@ function checkTypeL(you, contender) {
         }
     }
 function checkValues (Yna, Yhe, Ywe, Cna, Che, Cwe) {
-    var letters = /^[A-Za-z]+$/;
+    var letters = /^[A-Za-z ]+$/;
     if (you[0].value == "") {
         you[0].style.border = "1px solid red";
     }
@@ -188,8 +188,46 @@ function checkValues (Yna, Yhe, Ywe, Cna, Che, Cwe) {
     } if (you[2].value === contender[2].value) {
         results[2].innerHTML = "Weight: " + you[0].value + " and " + contender[0].value + " are the same weight";
     }
-    imc[0].innerHTML = you[0].value + ": " + fimc(you[1].value, you[2].value);
-    imc[1].innerHTML = contender[0].value + ": " + fimc(contender[1].value, contender[2].value);
+        const imcResultP1 = fimc(you[1].value, you[2].value);
+        const imcResultP2 = fimc(contender[1].value, contender[2].value);
+        console.log(imcResultP1, imcResultP2);
+    imcName[0].innerHTML = you[0].value + ":&nbsp;";
+    imc[0].innerHTML = imcResultP1;
+    imcName[1].innerHTML = contender[0].value + ":&nbsp;";
+    imc[1].innerHTML = imcResultP2;
+        
+        
+        if(imcResultP1 < 18.5) {
+            imc[0].style.color = "blue";
+        } else if(imcResultP1 < 25) {
+            imc[0].style.color = "green";
+        } else if(imcResultP1 < 30) {
+            imc[0].style.color = "yellow";
+        } else if(imcResultP1 < 35) {
+            imc[0].style.color = "orange";
+        } else if(imcResultP1 < 40) {
+            imc[0].style.color = "red";
+        } else if(imcResultP1 > 40) {
+            imc[0].style.color = "darkred";
+        };
+        if(imcResultP2 < 18.5) {
+            console.log('SLAB');
+            imc[1].style.color = "blue";
+        } else if(imcResultP2 < 25) {
+            console.log('NORMAL');
+            imc[1].style.color = "green";
+        } else if(imcResultP2 < 30) {
+            console.log('GRAS');
+            imc[1].style.color = "yellow";
+        } else if(imcResultP2 < 35) {
+            console.log('GRASS');
+            imc[1].style.color = "orange";
+        } else if(imcResultP2 < 40) {
+            console.log('GRASSS');
+            imc[1].style.color = "red";
+        } else if(imcResultP2 > 40) {
+            imc[1].style.color = "darkred";
+        }
     }
 }
 
@@ -198,6 +236,7 @@ window.onload = function onload() {
     contender = document.getElementsByClassName("contender");
     results = document.getElementsByClassName("rezultat");
     imc = document.getElementsByClassName("imc");
+    imcName = document.getElementsByClassName('imcName');
     
     
     
@@ -221,13 +260,13 @@ calc.onclick = function () {
 }
 
 
-function allLetter(inputtxt) { 
-    var letters = /^[A-Za-z]+$/;
-    if (inputtxt.value.match(letters)) {
-            alert('Your name have accepted : you can try another');
-            return true;
-        } else {
-            alert('Please input alphabet characters only');
-            return false;
-        }
-}
+//function allLetter(inputtxt) { 
+//    var letters = /^[A-Za-z]+$/;
+//    if (inputtxt.value.match(letters)) {
+//            alert('Your name have accepted : you can try another');
+//            return true;
+//        } else {
+//            alert('Please input alphabet characters only');
+//            return false;
+//        }
+//}

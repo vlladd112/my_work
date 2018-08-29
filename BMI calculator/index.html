@@ -11,14 +11,17 @@
         <div id="you">
             <p>Person 1</p>
             <input type="text" placeholder="Full name" class="you" value="">
-            <input type="text" placeholder="Height (cm)" id="height1" class="you" value="">
-            <input type="text" placeholder="Weight (kg)" class="you" value="">
+            <input type="number" placeholder="Height (cm)" id="height1" class="you" value="">
+            <input type="number" placeholder="Weight (kg)" class="you" value="">
         </div>
         <div id="contender">
-            <p>Person 2</p>
+            <div id="person2CheckboxContainer">
+                <p>Person 2</p>
+                <input type="checkbox">
+            </div>
             <input type="text" placeholder="Full name" class="contender">
-            <input type="text" placeholder="Height (cm)" class="contender">
-            <input type="text" placeholder="Weight (kg)" class="contender">
+            <input type="number" placeholder="Height (cm)" class="contender">
+            <input type="number" placeholder="Weight (kg)" class="contender">
         </div>
         <div id="calculate">
             <input  type="submit" value="Calculate" id="calc">
@@ -34,16 +37,24 @@
                 
                 <div id="imcMic">
                     <h4>IMC</h4>
-                    <p class="imc"></p>
-                    <p class="imc"></p>
+                    <div id="imcGlobalContainer">
+                        <div class="imcContainer">
+                            <p class="imcName"></p>
+                            <p class="imc"></p>
+                        </div>
+                        <div class="imcContainer">
+                            <p class="imcName"></p>
+                            <p class="imc"></p>
+                        </div>
+                    </div>
                 </div>
                 <ul><strong>Valori IMC</strong>
-                    <li>18,49 sau mai putin - Subponderal</li>
-                    <li>intre 18,50 si 24,99 - Greutate normala</li>
-                    <li>intre 25,00 si 29,99 - Supraponderal</li>
-                    <li>intre 30,00 si 34,99 - Obezitate (gradul I)</li>
-                    <li>intre 35,00 si 39,99 - Obezitate (gradul II)</li>
-                    <li>40,00 sau mai mult - Obezitate morbida</li>
+                    <li class="values">18,49 sau mai putin - Subponderal</li>
+                    <li class="values">intre 18,50 si 24,99 - Greutate normala</li>
+                    <li class="values">intre 25,00 si 29,99 - Supraponderal</li>
+                    <li class="values">intre 30,00 si 34,99 - Obezitate (gradul I)</li>
+                    <li class="values">intre 35,00 si 39,99 - Obezitate (gradul II)</li>
+                    <li class="values">40,00 sau mai mult - Obezitate morbida</li>
                 </ul>
             </div>
         </div>

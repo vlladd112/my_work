@@ -53,22 +53,22 @@ window.onload = function onload() {
             console.log(playerNameInput[i].value);
             if(playerNameInput[0].value === "" && playerNameInput[1].value === "") {
                 
-                playerNameInput[0].style.border = "1px solid red";
-                playerNameInput[1].style.border = "1px solid red";
-                playerNameInput[0].style.padding = "2px 1px";
-                playerNameInput[1].style.padding = "2px 1px";
+                playerNameInput[0].style.border = "2px solid red";
+                playerNameInput[1].style.border = "2px solid red";
+//                playerNameInput[0].style.padding = "2px 1px";
+//                playerNameInput[1].style.padding = "2px 1px";
             }else if(playerNameInput[0].value !== "" && playerNameInput[1].value === "") {
                 
-                playerNameInput[0].style.border = "1px solid gray";
-                playerNameInput[1].style.border = "1px solid red";
-                playerNameInput[0].style.padding = "2px 1px";
-                playerNameInput[1].style.padding = "2px 1px";
+                playerNameInput[0].style.border = "2px solid gray";
+                playerNameInput[1].style.border = "2px solid red";
+//                playerNameInput[0].style.padding = "2px 1px";
+//                playerNameInput[1].style.padding = "2px 1px";
             }else if(playerNameInput[0].value === "" && playerNameInput[1].value !== "") {
                 console.log("oare merge?");
-                playerNameInput[0].style.border = "1px solid red";
-                playerNameInput[1].style.border = "1px solid grey";
-                playerNameInput[0].style.padding = "2px 1px";
-                playerNameInput[1].style.padding = "2px 1px";
+                playerNameInput[0].style.border = "2px solid red";
+                playerNameInput[1].style.border = "2px solid grey";
+//                playerNameInput[0].style.padding = "2px 1px";
+//                playerNameInput[1].style.padding = "2px 1px";
             }else if((playerNameInput[0].value && playerNameInput[1].value) !== ""){
                 console.log('freeee');
                 
