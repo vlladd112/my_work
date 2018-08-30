@@ -1,208 +1,115 @@
-/*var a=2;
-var b=1;
-var c=2;
-var d=1;
-if (a==b && a==c && a==d && b==c && b==d && c==d) {
-console.error("EGALITATE SUPREMA")
-} else {
-    if (a>b && c>d) {
-        console.log("Grupa 1")
-    } if (a<b && c<d) {
-        console.log("Grupa 2")
-    } if ( (a>b && c<d) || (a<b && c>d) ) {
-        console.log("Mixt")
-    } if ( (a==b && c==d) || (a==c && b==d) || (a==d && b==c) ) {
-        console.log("Egalitate in drepturi")
-    }
-};*/ //exercitiul 1 - cu console log si abcd <>=
-
-// =================================================================================================================================
-
-/*var bula = 111;
-var strula = 11;
-
-var boss;
-
-if (bula>strula) {
-    boss = "bula";
-}  else { if (bula<strula) {
-    boss="strula";
-    } if (bula == strula) {
-        boss="piele"
-    }
-};
-
-// var boss = ( bula > strula ) ? "bula" : "strula"; // shorthand notation*/
-// exercitiu 2 - asemanator cu 1
-//=================================================================================================================================
-    
-/*var ion=1;
-while (ion<=6) {
-    alert("Mer'e" + " " + ion);
-    console.log(ion);
-    ion++;
-    if (ion==4) {
-        break;
-    };  
-};
-console.log("gata lupu");
-*/ // exercitiul cu loop-ul + break
-//=============================================================================================================================
-
-
-/*function primitiva (ion) { while (ion<=206) {
-    alert("Mer'e" + " " + ion);
-    ion = ion + 5;
-    //ion++;
-    if (ion > 20) {
-        break;
-    };  
-};
-                         };
-primitiva (5);
-alert("gata lupu");*/
-// functie simpla
-//==================================================================================================================================
-
-/*function rezonabila (x,y) {
-    var adunare = ((x * y) -  x + y);
-    alert(adunare);
-}
-
-rezonabila (5, 2);*/
-// functie rezonabila - de calcul simplu
-//================================================================================================================================
-/*var panda = document.getElemetById("panda");
-function ppanda () {
-    alert(panda);
-}
-ppanda();*/
-/*var date = new Date(1990,4,5);
-var vlad = "Vlad s-a nascut la";
-console.log(vlad, date.getDate());
-console.log("Vlad s-a nascut in anul", date.getFullYear(), "luna a", date.getMonth() + "a", "ziua a", date.getDate() + "a.");
-var Vlad = {name: "Vlad", height: 180, weight: 76};
-var Alexandra = {name: "Alexandra", height: 169, weight: 54};
-if (Vlad.height > Alexandra.height) {
-console.log(Vlad.name, "e mai inalt:", Vlad.height + "cm");
-}
-if (Vlad.name > Alexandra.name) {
-    console.log("aaa");
-}
-function diferenta(x, y) {
-    var dif = x - y;
-    return dif;
-}
-console.log(Vlad.name, "este cu", diferenta(Vlad.height, Alexandra.height) + "cm", "mai mare decat", Alexandra.name);
-/*console.log(Vlad.name, "este cu", diferenta(Vlad.weight,Alexandra.weight) + "kg", "mai greu decat", Alexandra.name);*/
-/*if (Vlad.weight === Alexandra.weight) {
-    console.log(Vlad.name, "si", Alexandra.name, "au aceeasi greutate");
-} if (Vlad.weight > Alexandra.weight) {
-    console.log(Vlad.name, "este cu", diferenta(Vlad.weight, Alexandra.weight) + "kg mai greu decat", Alexandra.name);
-} if (Vlad.weight < Alexandra.weight){
-    console.log(Alexandra.name, "este cu", diferenta(Alexandra.weight, Vlad.weight) + "kg mai grea decat", Vlad.name);
-}*/
-var you = document.getElementsByClassName("you");
-var contender = document.getElementsByClassName("contender");
+var person1 = document.getElementsByClassName("person1");
+var person2 = document.getElementsByClassName("person2");
 var claculate = document.getElementById("calc");
 
 function diferenta(x, y) {
     var dif = x - y;
     return dif;
 }
-
-function checkTypeL(you, contender) {
-        var letters = /^[A-Za-z ]+$/;
-        if (you.value.match(letters)) {
-            you.style.border = ""
-        } else {
-            you.style.border = "1px solid red";
-        } if (contender.value.match(letters)) {
-            contender.style.border = ""
-        } else {
-            contender.style.border = "1px solid red";
-        }
+function fimc(h, kg) {
+    var imece = Math.ceil((kg / (h * h)) * 1000000);
+    var imece = imece / 100;
+    return imece;
+}
+function diferenta(x,y) {
+    var dif = x - y;
+    dif = Math.round(dif * 10) / 10;
+    return dif;
+}
+function imcNormal(h, kg) {
+    var normalImc = Math.ceil((kg / (h * h)) * 1000000);
+    normalImc = normalImc / 100;
+    return normalImc;
+}
+function weightOfPerson(imc, h) {
+    var weight = ((imc * (h * h)) / 10000);
+    weight = Math.round(weight * 10) / 10;
+    return weight;
+}
+function checkTypeL(person1, person2) {
+    var letters = /^[A-Za-z ]+$/;
+    if (person1.value.match(letters)) {
+        person1.style.border = ""
+    } else {
+        person1.style.border = "1px solid red";
+    } if (person2.value.match(letters)) {
+        person2.style.border = ""
+    } else {
+        person2.style.border = "1px solid red";
     }
+}
+
 function checkValues (Yna, Yhe, Ywe, Cna, Che, Cwe) {
     var letters = /^[A-Za-z ]+$/;
-    if (you[0].value == "") {
-        you[0].style.border = "1px solid red";
+    if (person1[0].value == "") {
+        person1[0].style.border = "1px solid red";
     }
-    if (you[1].value == "") {
-        you[1].style.border = "1px solid red";
-    } else if (you[1].value != "") {
-        you[1].style.border = "";
-    } if (you[2].value == "") {
-        you[2].style.border = "1px solid red";
-    } else if (you[2].value != "") {
-        you[2].style.border = "";
+    if (person1[1].value == "") {
+        person1[1].style.border = "1px solid red";
+    } else if (person1[1].value != "") {
+        person1[1].style.border = "";
+    } if (person1[2].value == "") {
+        person1[2].style.border = "1px solid red";
+    } else if (person1[2].value != "") {
+        person1[2].style.border = "";
     }
-    if (contender[0].value == "") {
-        contender[0].style.border = "1px solid red";
-    } if (contender[1].value == "") {
-        contender[1].style.border = "1px solid red";
-    } else if (contender[1].value != "") {
-        contender[1].style.border = "";
+    if (person2[0].value == "") {
+        person2[0].style.border = "1px solid red";
+    } if (person2[1].value == "") {
+        person2[1].style.border = "1px solid red";
+    } else if (person2[1].value != "") {
+        person2[1].style.border = "";
     }
-    if (contender[2].value == "") {
-        contender[2].style.border = "1px solid red";
-    } else if (contender[2].value != "") {
-        contender[2].style.border = "";
+    if (person2[2].value == "") {
+        person2[2].style.border = "1px solid red";
+    } else if (person2[2].value != "") {
+        person2[2].style.border = "";
     }
-    if (((you[0].value && you[1].value && you[2].value && contender[0].value && contender[1].value && contender[2].value) !== "") && ((you[0].value.match(letters)) && (contender[0].value.match(letters))) ) {
-        console.log("CHECK NUMERE OKKK!!!!: ", you[0].value, you[1].value, you[2].value, contender[0].value, contender[1].value, contender[2].value);
-        you[0].style.border = "";
-        you[1].style.border = "";
-        you[2].style.border = "";
-        contender[0].style.border = "";
-        contender[1].style.border = "";
-        contender[2].style.border = "";
+    if (((person1[0].value && person1[1].value && person1[2].value && person2[0].value && person2[1].value && person2[2].value) !== "") && ((person1[0].value.match(letters)) && (person2[0].value.match(letters))) ) {
+        console.log("CHECK NUMERE OKKK!!!!: ", person1[0].value, person1[1].value, person1[2].value, person2[0].value, person2[1].value, person2[2].value);
+        person1[0].style.border = "";
+        person1[1].style.border = "";
+        person1[2].style.border = "";
+        person2[0].style.border = "";
+        person2[1].style.border = "";
+        person2[2].style.border = "";
         //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        function fimc(x, y) {
-        var imece = Math.ceil((y / (x * x)) * 1000000);
-        var imece = imece / 100;
-        return imece;
-    }
-        function diferenta(x,y) {
-        var dif = x - y;
-        return dif;
-    }
+
         /*function fimc(x, y) {
         var imece = x / (y * y);
         console.log(Math.ceil(imece)); // <<== calculeaza IMC direct cu zecimala
         return Math.ceil(imece); // <<== baga zecimala doar la rezultat, calculul fiind facut normal
     }*/
-        results[0].innerHTML = "Names: " + you[0].value + " and " + contender[0].value;
-        results[1].innerHTML = "Height: " + you[1].value + "cm";
-        results[2].innerHTML = "Weight: " + you[2].value + "kg";
-        if (you[1].value > contender[1].value) {
-        results[1].innerHTML = "Height: " + you[0].value + " is " + diferenta(you[1].value, contender[1].value) + "cm taller than " + contender[0].value;
-    } if (you[1].value < contender[1].value) {
-        results[1].innerHTML = "Height: " + contender[0].value + " is " + diferenta(contender[1].value, you[1].value) + "cm taller than " + you[0].value;
-    } if (you[1].value === contender[1].value) {
-        results[1].innerHTML = "Height: " + you[0].value + " and " + contender[0].value + " are the same height";
-    }  if (you[2].value > contender[2].value) {
-        results[2].innerHTML = "Weight: " + you[0].value + " is " + diferenta(you[2].value, contender[2].value) + "kg heavier  than " + contender[0].value;
-    } if (you[2].value < contender[2].value) {
-        results[2].innerHTML = "Weight: " + contender[0].value + " is " + diferenta(contender[2].value, you[2].value) + "kg heavier than " + you[0].value;
-    } if (you[2].value === contender[2].value) {
-        results[2].innerHTML = "Weight: " + you[0].value + " and " + contender[0].value + " are the same weight";
-    }
-        const imcResultP1 = fimc(you[1].value, you[2].value);
-        const imcResultP2 = fimc(contender[1].value, contender[2].value);
+        results[0].innerHTML = "Names: " + person1[0].value + " and " + person2[0].value;
+        results[1].innerHTML = "Height: " + person1[1].value + "cm";
+        results[2].innerHTML = "Weight: " + person1[2].value + "kg";
+        if (person1[1].value > person2[1].value) {
+            results[1].innerHTML = "Height: " + person1[0].value + " is " + diferenta(person1[1].value, person2[1].value) + "cm taller than " + person2[0].value;
+        } if (person1[1].value < person2[1].value) {
+            results[1].innerHTML = "Height: " + person2[0].value + " is " + diferenta(person2[1].value, person1[1].value) + "cm taller than " + person1[0].value;
+        } if (person1[1].value === person2[1].value) {
+            results[1].innerHTML = "Height: " + person1[0].value + " and " + person2[0].value + " are the same height";
+        }  if (person1[2].value > person2[2].value) {
+            results[2].innerHTML = "Weight: " + person1[0].value + " is " + diferenta(person1[2].value, person2[2].value) + "kg heavier  than " + person2[0].value;
+        } if (person1[2].value < person2[2].value) {
+            results[2].innerHTML = "Weight: " + person2[0].value + " is " + diferenta(person2[2].value, person1[2].value) + "kg heavier than " + person1[0].value;
+        } if (person1[2].value === person2[2].value) {
+            results[2].innerHTML = "Weight: " + person1[0].value + " and " + person2[0].value + " are the same weight";
+        }
+        const imcResultP1 = fimc(person1[1].value, person1[2].value);
+        const imcResultP2 = fimc(person2[1].value, person2[2].value);
         console.log(imcResultP1, imcResultP2);
-    imcName[0].innerHTML = you[0].value + ":&nbsp;";
-    imc[0].innerHTML = imcResultP1;
-    imcName[1].innerHTML = contender[0].value + ":&nbsp;";
-    imc[1].innerHTML = imcResultP2;
-        
-        
+        imcName[0].innerHTML = person1[0].value + ":&nbsp;";
+        imc[0].innerHTML = imcResultP1;
+        imcName[1].innerHTML = person2[0].value + ":&nbsp;";
+        imc[1].innerHTML = imcResultP2;
+
         if(imcResultP1 < 18.5) {
             imc[0].style.color = "blue";
         } else if(imcResultP1 < 25) {
             imc[0].style.color = "green";
         } else if(imcResultP1 < 30) {
-            imc[0].style.color = "yellow";
+            imc[0].style.color = "gold";
         } else if(imcResultP1 < 35) {
             imc[0].style.color = "orange";
         } else if(imcResultP1 < 40) {
@@ -231,42 +138,122 @@ function checkValues (Yna, Yhe, Ywe, Cna, Che, Cwe) {
     }
 }
 
+const xxx = new Promise(function(){
+    person2Checkbox.addEventListener('click', ()=>{
+        if(person2Checkbox.checked == true) {
+//            calc.onclick = function () {
+//                if(person2Checkbox.checked == true) {
+//                    alert('XCX');
+//                    checkTypeL (person1[0], person2[0]);
+//                    checkValues (person1[0], person1[1], person1[2], person2[0], person2[1], person2[2]);
+//                }
+//            }
+            person2Parag.style.color = "black";
+            person2[0].disabled = false;
+            person2[1].disabled = false;
+            person2[2].disabled = false;
+        } else if(person2Checkbox.checked == false) {
+//            calc.onclick = function () {
+//                if(person2Checkbox.checked == false) {
+//                    alert('OOO');
+//                    
+//                }
+//            }
+            person2[0].disabled = true;
+            person2[1].disabled = true;
+            person2[2].disabled = true;
+            person2Parag.style.color = "gray";
+            imcName[1].style.display = "none";
+            imc[1].style.display = "none";
+        }
+    });
+});
+
+//function checkTypeL(person1, person2) {
+//    var letters = /^[A-Za-z ]+$/;
+//    if (person1.value.match(letters)) {
+//        person1.style.border = ""
+//    } else {
+//        person1.style.border = "1px solid red";
+//    } if (person2.value.match(letters)) {
+//        person2.style.border = ""
+//    } else {
+//        person2.style.border = "1px solid red";
+//    }
+//}
+
+
 window.onload = function onload() {
-    you = document.getElementsByClassName("you");
-    contender = document.getElementsByClassName("contender");
+    person1 = document.getElementsByClassName("person1");
+    person2 = document.getElementsByClassName("person2");
     results = document.getElementsByClassName("rezultat");
     imc = document.getElementsByClassName("imc");
     imcName = document.getElementsByClassName('imcName');
+    person2Checkbox = document.getElementById('person2Checkbox');
+    person2Parag = document.getElementById('person2Parag');
     
-    
-    
+    person2[0].disabled = true;
+    person2[1].disabled = true;
+    person2[2].disabled = true;
+    person2Parag.style.color = "gray";
 }
 calc.onclick = function () {
-    checkTypeL (you[0], contender[0]);
-    checkValues (you[0], you[1], you[2], contender[0], contender[1], contender[2])
-    
-    /*console.log(you[0].placeholder + ":", you[0].value);
-    console.log("Height:", you[1].value + "cm");
-    console.log("Weight:", you[2].value + "kg");
-    console.log(contender[0].placeholder + ":", contender[0].value);
-    console.log("Height:", contender[1].value + "cm");
-    console.log("Weight:", contender[2].value + "kg");*/
-    
-    
-    /*if (you[0].value === "" || you[1].value === "" || you[2].value === "") {
-    alert("Please fill in all \"You\" fields!");
-}*/ //if (contender[0].value != "a") {
-    //alert("XXXX");
+    if(person2Checkbox.checked == true) {
+        imcName[1].style.display = "flex";
+        imc[1].style.display = "flex";
+        checkTypeL (person1[0], person2[0]);
+        checkValues (person1[0], person1[1], person1[2], person2[0], person2[1], person2[2]);
+    } else if(person2Checkbox.checked == false) {
+        results[0].innerHTML = "Name: " + person1[0].value;
+        results[1].innerHTML = "Height: " + person1[1].value + "cm";
+        results[2].innerHTML = "Weight: " + person1[2].value + "kg";
+        const imcResultP1 = fimc(person1[1].value, person1[2].value);
+        const imcResultP2 = fimc(person2[1].value, person2[2].value);
+        console.log(imcResultP1, imcResultP2);
+        imcName[0].innerHTML = person1[0].value + ":&nbsp;";
+        imc[0].innerHTML = imcResultP1;
+        if(imcResultP1 < 18.5) {
+            imc[0].style.color = "blue";
+        } else if(imcResultP1 < 25) {
+            imc[0].style.color = "green";
+        } else if(imcResultP1 < 30) {
+            imc[0].style.color = "gold";
+        } else if(imcResultP1 < 35) {
+            imc[0].style.color = "orange";
+        } else if(imcResultP1 < 40) {
+            imc[0].style.color = "red";
+        } else if(imcResultP1 > 40) {
+            imc[0].style.color = "darkred";
+        };
+        imcName[1].style.display = "none";
+        imc[1].style.display = "none";
+        const imcP1 = imcNormal(person1[1].value, person1[2].value)
+        console.log("IMC P1:", imcP1);
+        if(imcP1 > 24.99) {
+            const weightP1 = weightOfPerson(imcP1, person1[1].value);
+            console.log("Weight P1:", weightP1);
+            const weightNormal = weightOfPerson(24.99, person1[1].value)
+            console.log("weight for normal IMC:", weightNormal);
+            const weightDifferencePlus = diferenta(weightP1, weightNormal);
+            console.log("Diferenta KG plus:", weightDifferencePlus);
+        }
+        if(18.49 < imcP1 < 24.99) {
+            console.log('NORMAL WEIGHT');
+        }
+        if(imcP1 < 18.49) {
+            const weightP1 = weightOfPerson(imcP1, person1[1].value);
+            console.log("Weight P1:", weightP1);
+            const weightNormal = weightOfPerson(18.49, person1[1].value)
+            console.log("weight for normal IMC:", weightNormal);
+            const weightDifferenceMinus = diferenta(weightNormal, weightP1);
+            console.log("Diferenta KG minus:", weightDifferenceMinus);
+        }
+//        const weightP1 = weightOfPerson(imcP1, person1[1].value);
+//        console.log("Weight P1:", weightP1);
+//        const weightNormal = weightOfPerson(24.99, person1[1].value)
+//        console.log("weight for normal IMC:", weightNormal);
+//        const weightDifferencePlus = diferenta(weightP1, weightNormal);
+//        console.log("Diferenta KG:", weightDifferencePlus);
+        
+    }
 }
-
-
-//function allLetter(inputtxt) { 
-//    var letters = /^[A-Za-z]+$/;
-//    if (inputtxt.value.match(letters)) {
-//            alert('Your name have accepted : you can try another');
-//            return true;
-//        } else {
-//            alert('Please input alphabet characters only');
-//            return false;
-//        }
-//}

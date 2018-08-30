@@ -8,20 +8,22 @@
     </head>
     <body>
         <header id="panda"><h1>BMI calculator</h1></header>
-        <div id="you">
-            <p>Person 1</p>
-            <input type="text" placeholder="Full name" class="you" value="">
-            <input type="number" placeholder="Height (cm)" id="height1" class="you" value="">
-            <input type="number" placeholder="Weight (kg)" class="you" value="">
-        </div>
-        <div id="contender">
-            <div id="person2CheckboxContainer">
-                <p>Person 2</p>
-                <input type="checkbox">
+        <div id="inputsContainer">
+            <div id="person1">
+                <p  id="person1Parag">Person 1</p>
+                <input type="text" placeholder="Full name" class="person1" value="">
+                <input type="number" placeholder="Height (cm)" id="height1" class="person1" value="">
+                <input type="number" placeholder="Weight (kg)" class="person1" value="">
             </div>
-            <input type="text" placeholder="Full name" class="contender">
-            <input type="number" placeholder="Height (cm)" class="contender">
-            <input type="number" placeholder="Weight (kg)" class="contender">
+            <div id="person2">
+                <div id="person2CheckboxContainer">
+                    <input type="checkbox" id="person2Checkbox">
+                    <p id="person2Parag">Person&nbsp;2</p>
+                </div>
+                <input type="text" placeholder="Full name" class="person2">
+                <input type="number" placeholder="Height (cm)" class="person2">
+                <input type="number" placeholder="Weight (kg)" class="person2">
+            </div>
         </div>
         <div id="calculate">
             <input  type="submit" value="Calculate" id="calc">
