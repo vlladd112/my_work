@@ -3,6 +3,7 @@ var person2 = document.getElementsByClassName("person2");
 var claculate = document.getElementById("calc");
 const normalBodyWeight = document.getElementById('normalBodyWeight');
 const weightPlusMinus = document.getElementById('weightPlusMinus');
+const rezultatContainer = document.getElementsByClassName('rezultatContainer');
 
 function diferenta(x, y) {
     var dif = x - y;
@@ -75,13 +76,8 @@ function checkValues (Yna, Yhe, Ywe, Cna, Che, Cwe) {
         person2[0].style.border = "";
         person2[1].style.border = "";
         person2[2].style.border = "";
-        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-        /*function fimc(x, y) {
-        var imece = x / (y * y);
-        console.log(Math.ceil(imece)); // <<== calculeaza IMC direct cu zecimala
-        return Math.ceil(imece); // <<== baga zecimala doar la rezultat, calculul fiind facut normal
-    }*/
+        
+        
         results[0].innerHTML = "Names: " + person1[0].value + " and " + person2[0].value;
         results[1].innerHTML = "Height: " + person1[1].value + "cm";
         results[2].innerHTML = "Weight: " + person1[2].value + "kg";
@@ -201,6 +197,7 @@ window.onload = function onload() {
 }
 calc.onclick = function () {
     if(person2Checkbox.checked == true) {
+        rezultatContainer[1].style.display = "none";
         imcName[1].style.display = "flex";
         imc[1].style.display = "flex";
         checkTypeL (person1[0], person2[0]);
