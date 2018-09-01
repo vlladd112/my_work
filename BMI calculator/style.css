@@ -1,5 +1,34 @@
+div {
+    margin-left:0;
+    margin-right:0;
+}
+#header {
+    display: flex;
+    justify-content: center;
+}
 #inputsContainer {
-    display:flex;  
+    display:flex;
+    width: 100%;
+    justify-content: space-around;
+}
+#calculate {
+    width:100%;
+    margin:0 auto;
+    display: flex;
+    justify-content: center;
+}
+#calc {
+    
+}
+#rezultate {
+    width:100%;
+    margin-left: 0;
+}
+#diferentele {
+    width:100%;
+}
+#diferentele h3 {
+    text-align: center;
 }
 #person1 {
     display: flex;
@@ -21,11 +50,43 @@
 }
 #imcGlobalContainer {
     display:flex;
-    flex-direction:column;
+    flex-direction: row;
+    width:100%;
+    justify-content: space-around;
 }
 .imcContainer {
     display: flex;
     justify-content: flex-start;
+    flex-direction: column;
+}
+.imcNameContainer {
+    display:flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+#imcMare {
+    display:flex;
+    flex-direction: column;
+    width:100%;
+}
+#imcMic {
+    overflow:visible;
+    height: auto;
+    width:100%;
+}
+#imcMic h4 {
+    text-align: center;
+}
+#imcTitleForRefferenceValues {
+    text-align: center;
+}
+.refferenceValues {
+    display:flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin: 0 auto;
 }
 .values:nth-of-type(1) {
     color:blue;

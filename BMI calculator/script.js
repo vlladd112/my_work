@@ -1,6 +1,8 @@
 var person1 = document.getElementsByClassName("person1");
 var person2 = document.getElementsByClassName("person2");
 var claculate = document.getElementById("calc");
+const normalBodyWeight = document.getElementById('normalBodyWeight');
+const weightPlusMinus = document.getElementById('weightPlusMinus');
 
 function diferenta(x, y) {
     var dif = x - y;
@@ -227,26 +229,44 @@ calc.onclick = function () {
         };
         imcName[1].style.display = "none";
         imc[1].style.display = "none";
-        const imcP1 = imcNormal(person1[1].value, person1[2].value)
+        const imcP1 = imcNormal(person1[1].value, person1[2].value);
         console.log("IMC P1:", imcP1);
         if(imcP1 > 24.99) {
             const weightP1 = weightOfPerson(imcP1, person1[1].value);
             console.log("Weight P1:", weightP1);
-            const weightNormal = weightOfPerson(24.99, person1[1].value)
-            console.log("weight for normal IMC:", weightNormal);
-            const weightDifferencePlus = diferenta(weightP1, weightNormal);
-            console.log("Diferenta KG plus:", weightDifferencePlus);
+            const weightNormalHigh = weightOfPerson(24.99, person1[1].value);
+//            console.log("weight for normal IMC:", weightNormalHigh);
+            const weightNormalLow = weightOfPerson(18.5, person1[1].value);
+            console.log("Your normal body weight should be between", weightNormalHigh, "kg -", weightNormalLow, "kg");
+            const weightDifferencePlusHigh = diferenta(weightP1, weightNormalHigh);
+//            console.log("loose between:", weightDifferencePlusHigh, "-", weightDifferencePlusLow);
+            const weightDifferencePlusLow = diferenta(weightP1, weightNormalLow);
+            console.log("You have to loose between:", weightDifferencePlusHigh, "kg -", weightDifferencePlusLow, "kg");
+            results[0].innerHTML = "Name: " + person1[0].value;
+            results[1].innerHTML = "Height: " + person1[1].value + " cm";
+            results[2].innerHTML = "Weight: " + person1[2].value + " kg";
+//            const plusMinusWeight = document.createElement('p');
+//            plusMinusWeight.innerHTML = "You have to loose between:" + " " + weightDifferencePlusHigh + " kg - " + weightDifferencePlusLow + " kg";
+//            const imcNameContainer = document.getElementsByClassName('imcNameContainer');
+//            imcNameContainer[0].appendChild(plusMinusWeight);
+            
+            normalBodyWeight.innerHTML = "Your normal body weight should be between " + weightNormalHigh + " kg - " + weightNormalLow + " kg";
+            weightPlusMinus.innerHTML = "You have to loose between:" + " " + weightDifferencePlusHigh + " kg - " + weightDifferencePlusLow + " kg";
         }
-        if(18.49 < imcP1 < 24.99) {
+        if(18.5 <= imcP1 && imcP1 <= 25) {
             console.log('NORMAL WEIGHT');
         }
-        if(imcP1 < 18.49) {
+        if(imcP1 < 18.5) {
             const weightP1 = weightOfPerson(imcP1, person1[1].value);
             console.log("Weight P1:", weightP1);
-            const weightNormal = weightOfPerson(18.49, person1[1].value)
-            console.log("weight for normal IMC:", weightNormal);
-            const weightDifferenceMinus = diferenta(weightNormal, weightP1);
-            console.log("Diferenta KG minus:", weightDifferenceMinus);
+            const weightNormalHigh = weightOfPerson(18.51, person1[1].value)
+            console.log("weight for normal IMC - high:", weightNormalHigh);
+            const weightDifferenceMinusHigh = diferenta(weightNormalHigh, weightP1);
+            const weightNormalLow = weightOfPerson(24.99, person1[1].value)
+            console.log("Your normal body weight should be between", weightNormalHigh, "kg -", weightNormalLow, "kg");
+            const weightDifferenceMinusLow = diferenta(weightNormalLow, weightP1);
+            
+            console.log("You have to gain between :", weightDifferenceMinusHigh, " kg -", weightDifferenceMinusLow, 'kg');
         }
 //        const weightP1 = weightOfPerson(imcP1, person1[1].value);
 //        console.log("Weight P1:", weightP1);
