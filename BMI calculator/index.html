@@ -7,64 +7,44 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <header id="header"><h1>BMI calculator</h1></header>
+        <header id="header"><h1>BMI Calculator</h1></header>
         <div id="inputsContainer">
             <div id="person1">
                 <p  id="person1Parag">Person 1</p>
-                <input type="text" placeholder="Full name" class="person1" value="">
+                <input type="text" placeholder="Name" class="person1" value="">
                 <input type="number" placeholder="Height (cm)" id="height1" class="person1" value="">
                 <input type="number" placeholder="Weight (kg)" class="person1" value="">
-            </div>
-            <div id="person2">
-                <div id="person2CheckboxContainer">
-                    <input type="checkbox" id="person2Checkbox">
-                    <p id="person2Parag">Person&nbsp;2</p>
-                </div>
-                <input type="text" placeholder="Full name" class="person2">
-                <input type="number" placeholder="Height (cm)" class="person2">
-                <input type="number" placeholder="Weight (kg)" class="person2">
             </div>
         </div>
         <div id="calculate">
             <input  type="submit" value="Calculate" id="calc">
         </div>
         <div id="rezultate">
-            <h3>Results</h3>
-            <div id="diferentele">
-                <div class="rezultatContainer">
-                    <p class="rezultat"></p>
-                    <p class="rezultat"></p>
-                    <p class="rezultat"></p>
-                </div>
+            <h3>Personal info</h3>
+            
+            <div id="personalInfo">
                 <div class="rezultatContainer">
                     <p class="rezultat"></p>
                     <p class="rezultat"></p>
                     <p class="rezultat"></p>
                 </div>
             </div>
-            <div id="imcMare">
-                
-                <div id="imcMic">
-                    <h4>IMC</h4>
-                    <div id="imcGlobalContainer">
-                        
-                            <div class="imcNameContainer">
-                                <p class="imcName"></p>
-                                <p class="imc"></p>
-                                <p id="normalBodyWeight"></p>
-                                <p id="weightPlusMinus"></p>
-                                
-                            </div>
-                        
-                        
-                            <div class="imcNameContainer">
-                                <p class="imcName"></p>
-                                <p class="imc"></p>
-                            </div>
-                    
+            <div id="bmiMare">
+                <h3>Results</h3>
+                <div id="bmiMic">
+                    <h4></h4>
+                    <div id="bmiGlobalContainer">
+                        <div class="bmiNameContainer">
+                            
+                            <p class="bmi"></p>
+                            <p id="normalBodyWeight"></p>
+                            <p id="optimumWeight"></p>
+                            <p id="weightPlusMinus"></p>
+                            <p id="optimumWeightPlusMinus"></p>
+                        </div>
                     </div>
                 </div>
-                <p id="imcTitleForRefferenceValues">IMC</p>
+                <p id="bmiTitleForRefferenceValues">BMI refference values</p>
                 <ul class="refferenceValues">
                     <li class="values">18,49 sau mai putin - Subponderal</li>
                     <li class="values">intre 18,50 si 24,99 - Greutate normala</li>

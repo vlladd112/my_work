@@ -27,7 +27,7 @@ div {
 #rezultate h3 {
     text-align: center;
 }
-#diferentele {
+#personalInfo {
     width:100%;
     display: flex;
     flex-direction: row;
@@ -58,38 +58,38 @@ div {
 #person2Parag {
     margin: 0 auto;
 }
-#imcGlobalContainer {
+#bmiGlobalContainer {
     display:flex;
     flex-direction: row;
     width:100%;
     justify-content: space-around;
 }
-.imcContainer {
+.bmiContainer {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
 }
-.imcNameContainer {
+.bmiNameContainer {
     display:flex;
     flex-direction: column;
     width: 50%;
     justify-content: center;
     align-items: center;
 }
-#imcMare {
+#bmiMare {
     display:flex;
     flex-direction: column;
     width:100%;
 }
-#imcMic {
+#bmiMic {
     overflow:visible;
     height: auto;
     width:100%;
 }
-#imcMic h4 {
+#bmiMic h4 {
     text-align: center;
 }
-#imcTitleForRefferenceValues {
+#bmiTitleForRefferenceValues {
     text-align: center;
 }
 .refferenceValues {
