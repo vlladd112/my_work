@@ -10,7 +10,7 @@
         <header id="header"><h1>BMI Calculator</h1></header>
         <div id="inputsContainer">
             <div id="person1">
-                <p  id="person1Parag">Person 1</p>
+                <p  id="person1Parag">Enter personal information below</p>
                 <input type="text" placeholder="Name" class="person1" value="">
                 <input type="number" placeholder="Height (cm)" id="height1" class="person1" value="">
                 <input type="number" placeholder="Weight (kg)" class="person1" value="">
@@ -32,10 +32,9 @@
             <div id="bmiMare">
                 <h3>Results</h3>
                 <div id="bmiMic">
-                    <h4></h4>
                     <div id="bmiGlobalContainer">
                         <div class="bmiNameContainer">
-                            
+                            <p id="weightStatus"></p>
                             <p class="bmi"></p>
                             <p id="normalBodyWeight"></p>
                             <p id="optimumWeight"></p>
@@ -44,16 +43,18 @@
                         </div>
                     </div>
                 </div>
-                <p id="bmiTitleForRefferenceValues">BMI refference values</p>
-                <ul class="refferenceValues">
-                    <li class="values">18,49 sau mai putin - Subponderal</li>
-                    <li class="values">intre 18,50 si 24,99 - Greutate normala</li>
-                    <li class="values">intre 25,00 si 29,99 - Supraponderal</li>
-                    <li class="values">intre 30,00 si 34,99 - Obezitate (gradul I)</li>
-                    <li class="values">intre 35,00 si 39,99 - Obezitate (gradul II)</li>
-                    <li class="values">40,00 sau mai mult - Obezitate morbida</li>
-                </ul>
             </div>
+        </div>
+        <div id="refferenceValues">
+            <h4 id="bmiTitleForRefferenceValues">BMI refference values</h4>
+            <ul class="refferenceValues">
+                <li class="values">18,49 sau mai putin - Subponderal</li>
+                <li class="values">intre 18,50 si 24,99 - Greutate normala</li>
+                <li class="values">intre 25,00 si 29,99 - Supraponderal</li>
+                <li class="values">intre 30,00 si 34,99 - Obezitate (gradul I)</li>
+                <li class="values">intre 35,00 si 39,99 - Obezitate (gradul II)</li>
+                <li class="values">40,00 sau mai mult - Obezitate morbida</li>
+            </ul>
         </div>
         <script src="script.js"></script>
     </body>

@@ -1,11 +1,13 @@
 var person1 = document.getElementsByClassName("person1");
 var person2 = document.getElementsByClassName("person2");
 var claculate = document.getElementById("calc");
+const weightStatus = document.getElementById('weightStatus');
 const normalBodyWeight = document.getElementById('normalBodyWeight');
 const weightPlusMinus = document.getElementById('weightPlusMinus');
 const optimumBodyWeight = document.getElementById('optimumWeight');
 const optimumBodyWeightPlusMinus = document.getElementById('optimumWeightPlusMinus');
 const rezultatContainer = document.getElementsByClassName('rezultatContainer');
+const rezultate = document.getElementById('rezultate');
 
 function diferenta(x, y) {
     var dif = x - y;
@@ -84,6 +86,7 @@ calc.onclick = ()=> {
         console.log('fields have value insde');
         if((checkTypeL(person1[0])) === true) {
         console.log('name value is correct');
+            rezultate.style.display = "block";
             results[0].innerHTML = "Name: " + person1[0].value;
             results[1].innerHTML = "Height: " + person1[1].value + "cm";
             results[2].innerHTML = "Weight: " + person1[2].value + "kg";
@@ -110,9 +113,6 @@ calc.onclick = ()=> {
                 const weightNormalHigh = weightOfPerson(24.99, person1[1].value);
                 const weightNormalLow = weightOfPerson(18.5, person1[1].value);
                 const optimumWeightPerson = optimumWeight(weightNormalHigh, weightNormalLow);
-                console.log(weightNormalHigh);
-                console.log(weightNormalLow);
-                console.log(optimumWeightPerson);
                 const weightDifferencePlusHigh = diferenta(weightP1, weightNormalHigh);
                 const weightDifferencePlusLow = diferenta(weightP1, weightNormalLow);
                 const weightDifferenceOptimumPlus = diferenta(weightP1, optimumWeightPerson);
@@ -120,13 +120,41 @@ calc.onclick = ()=> {
                 results[0].innerHTML = "Name: " + person1[0].value;
                 results[1].innerHTML = "Height: " + person1[1].value + " cm";
                 results[2].innerHTML = "Weight: " + person1[2].value + " kg";
+                weightStatus.innerHTML = "Overweight";
                 normalBodyWeight.innerHTML = "Your normal body weight should be between " + weightNormalLow + " kg - " + weightNormalHigh + " kg";
                 optimumBodyWeight.innerHTML = "Optimum weight: " + optimumWeightPerson + " kg";
                 weightPlusMinus.innerHTML = "For normal weight, loose between " + weightDifferencePlusHigh + " kg - " + weightDifferencePlusLow + " kg";
                 optimumBodyWeightPlusMinus.innerHTML = "For optimum weight, loose " + weightDifferenceOptimumPlus + " kg";
             }
             if(18.5 <= bmiP1 && bmiP1 <= 25) {
+                const weightP1 = weightOfPerson(bmiP1, person1[1].value);
+                const weightNormalHigh = weightOfPerson(24.99, person1[1].value);
+                const weightNormalLow = weightOfPerson(18.5, person1[1].value);
+                const optimumWeightPerson = optimumWeight(weightNormalHigh, weightNormalLow);
+                
+                const weightDifferencePlusHigh = diferenta(weightP1, weightNormalHigh);
+                const weightDifferencePlusLow = diferenta(weightP1, weightNormalLow);
+                const weightDifferenceOptimumPlus = diferenta(weightP1, optimumWeightPerson);
+                const weightDifferenceOptimumMinus = diferenta(optimumWeightPerson, weightP1);
+                
+                results[0].innerHTML = "Name: " + person1[0].value;
+                results[1].innerHTML = "Height: " + person1[1].value + " cm";
+                results[2].innerHTML = "Weight: " + person1[2].value + " kg";
+                weightStatus.innerHTML = "Normal weight";
+                normalBodyWeight.innerHTML = "Your normal body weight should be between " + weightNormalLow + " kg - " + weightNormalHigh + " kg";
+                optimumBodyWeight.innerHTML = "Optimum weight: " + optimumWeightPerson + " kg";
                 console.log('NORMAL WEIGHT');
+                
+                weightPlusMinus.innerHTML = "Your weight is in normal standarns";
+                
+                if(person1[2].value > optimumWeightPerson) {
+                    optimumBodyWeightPlusMinus.innerHTML = "For optimum weight, loose " + weightDifferenceOptimumPlus + " kg";
+                } else if(person1[2].value < optimumWeightPerson) {
+                    optimumBodyWeightPlusMinus.innerHTML = "For optimum weight, gain " + weightDifferenceOptimumMinus + " kg";
+                } else if (person1[2].value == optimumWeightPerson) {
+                    optimumBodyWeightPlusMinus.innerHTML = "Congratulations, you have optimum weight!";
+                }
+                
 //                const optimumWeightPerson = optimumWeight(weightNormalHigh, weightNormalLow);
             }
             if(bmiP1 < 18.5) {
@@ -142,6 +170,7 @@ calc.onclick = ()=> {
                 results[0].innerHTML = "Name: " + person1[0].value;
                 results[1].innerHTML = "Height: " + person1[1].value + " cm";
                 results[2].innerHTML = "Weight: " + person1[2].value + " kg";
+                weightStatus.innerHTML = "Underweight";
                 normalBodyWeight.innerHTML = "Your normal body weight should be between " + weightNormalHigh + " kg - " + weightNormalLow + " kg";
                 optimumBodyWeight.innerHTML = "Optimum weight: " + optimumWeightPerson + "kg";
                 weightPlusMinus.innerHTML = "For normal weight, gain between " + weightDifferenceMinusHigh + " kg - " + weightDifferenceMinusLow + " kg";

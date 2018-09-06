@@ -23,6 +23,7 @@ div {
 #rezultate {
     width:100%;
     margin-left: 0;
+    display:none;
 }
 #rezultate h3 {
     text-align: center;
@@ -86,8 +87,11 @@ div {
     height: auto;
     width:100%;
 }
-#bmiMic h4 {
-    text-align: center;
+#refferenceValues {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:100%;
 }
 #bmiTitleForRefferenceValues {
     text-align: center;
