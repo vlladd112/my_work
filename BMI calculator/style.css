@@ -1,24 +1,131 @@
+html {
+    background-image: url('https://cdn1.medicalnewstoday.com/content/images/articles/255/255712/bmi-is-it-the-best-way-to-assess-for-a-healthy-weight.jpg');
+/*    background-image: url('https://images.agoramedia.com/everydayhealth/gcms/BMI-Is-Yours-Normal-How-Body-Weight-Can-Affect-Your-Health-722x406.jpg');*/
+    background-size: 100%;
+    height:100%;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+}
+body {
+    margin: 0;
+/*    background-color: rgba(0, 0, 0, 0.75);*/
+    width: 100%;
+    height:auto;
+/*    color: ghostwhite;*/
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    font-family: 'Cabin', sans-serif;
+    letter-spacing: 0.5px;
+}
 div {
     margin-left:0;
     margin-right:0;
+}
+header {
+    background-color: rgba(10, 50, 20, 1);
+    padding: 10px;
+    font-variant-caps:petite-caps;
+    color:rgba(200, 255, 100, 1);
+    margin-bottom: 20px;
+    position: fixed;
+    top:0;
+    width:100%;
+    clear:both;
+}
+h1 {
+    margin:0 auto;
+}
+h3 {
+    background-color: rgba(0, 0, 0, 0.8);
+    letter-spacing: 2px;
+}
+h4 {
+    letter-spacing: 2px;
+    background-color: black;
+    margin:  0px auto 5px auto;
+    padding:5px 0;
+    width:100%;
+}
+p {
+    margin:0.5em auto;
 }
 #header {
     display: flex;
     justify-content: center;
 }
+#article {
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.93);
+    width: 50%;
+    height:auto;
+    color: ghostwhite;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    font-family: 'Cabin', sans-serif;
+    letter-spacing: 0.5px;
+    padding-top:10px;
+    margin-top: 59px;
+    margin-bottom: 30px;
+}
 #inputsContainer {
     display:flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    justify-content: space-around;
+    text-align: center;
+}
+#inputsContainer input:first-of-type {
+    width:50%;
+    margin:10px 5px 5px;
+    text-align: center;
+    background-color: rgba(200, 255, 200, 1)
+    font-family: "Cabin", sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    border-color: limegreen;
+    border-radius: 50px/90px;
+}
+#inputsContainer input {
+    margin:5px;
+    text-align: center;
+    background-color: rgba(200, 255, 200, 1);
+    font-family: "Cabin", sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    border-color: limegreen;
+    border-radius: 50px/90px;
+}
+#inputsContainer input:focus {
+    outline: none;
+    box-shadow: 0 0 10px gold;
 }
 #calculate {
     width:100%;
-    margin:0 auto;
+    margin:10px auto 5px;
     display: flex;
     justify-content: center;
 }
 #calc {
-    
+   background-color:cornflowerblue;
+    color:black;
+    font-weight: bold;
+    border-color: royalblue;
+    letter-spacing: 0.4px;
+    border-radius: 50px/90px;
+}
+#calc:focus {
+    outline: none;
+}
+#calc:active {
+    color: aliceblue;
 }
 #rezultate {
     width:100%;
@@ -27,6 +134,9 @@ div {
 }
 #rezultate h3 {
     text-align: center;
+    width:100%;
+    margin: 10px auto 5px auto;
+    padding:5px 0;
 }
 #personalInfo {
     width:100%;
@@ -41,22 +151,19 @@ div {
     align-self: center;
     align-items: center;
 }
+#weightStatus, .bmi, #optimumBodyWeightPlusMinusSpan {
+    font-weight: bold;
+    text-shadow: 0px 0px 10px black;
+}
+.normalBodyWeightSpan, #optimumBodyWeightSpan {
+    font-weight: bold;
+    text-shadow: 0px 0px 1px black;
+}
 #person1 {
     display: flex;
     flex-direction: column;
 }
-#person2 {
-    display:flex;
-    flex-direction: column;
-}
-#person2CheckboxContainer {
-    display:flex;
-    flex-direction: row;
-}
 #person1Parag {
-    margin: 0 auto;
-}
-#person2Parag {
     margin: 0 auto;
 }
 #bmiGlobalContainer {
@@ -73,7 +180,7 @@ div {
 .bmiNameContainer {
     display:flex;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
     justify-content: center;
     align-items: center;
 }
@@ -92,6 +199,9 @@ div {
     flex-direction: column;
     justify-content: center;
     width:100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-top: 10px;
+    padding-bottom: 5px
 }
 #bmiTitleForRefferenceValues {
     text-align: center;
@@ -101,9 +211,13 @@ div {
     flex-direction: column;
     align-items: baseline;
     margin: 0 auto;
+    
+}
+.values {
+    list-style: disc;
 }
 .values:nth-of-type(1) {
-    color:blue;
+    color:dodgerblue;
 }
 .values:nth-of-type(2) {
     color:green;
@@ -119,4 +233,17 @@ div {
 }
 .values:nth-of-type(6) {
     color:darkred;
+}
+footer {
+    position:fixed;
+    bottom:0;
+    text-align: center;
+    background-color: black;
+    width:100%;
+    color:white;
+}
+footer p {
+    margin:5px auto;
+    font-variant-caps: small-caps;
+    font-size: 1.1em;
 }

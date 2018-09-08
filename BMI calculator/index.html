@@ -1,60 +1,66 @@
 <!DOCTYPE HTML>
-<html lang="ro">
+<html id="html" lang="ro">
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/style.css">
         <title>BMI calculator</title>
+        <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <header id="header"><h1>BMI Calculator</h1></header>
-        <div id="inputsContainer">
-            <div id="person1">
+        <header id="header">
+            <h1>BMI Calculator</h1>
+        </header>
+        <article id="article">
+            <div id="inputsContainer">
                 <p  id="person1Parag">Enter personal information below</p>
                 <input type="text" placeholder="Name" class="person1" value="">
-                <input type="number" placeholder="Height (cm)" id="height1" class="person1" value="">
+                <input type="number" placeholder="Height (m)" id="height1" class="person1" value="">
                 <input type="number" placeholder="Weight (kg)" class="person1" value="">
             </div>
-        </div>
-        <div id="calculate">
-            <input  type="submit" value="Calculate" id="calc">
-        </div>
-        <div id="rezultate">
-            <h3>Personal info</h3>
-            
-            <div id="personalInfo">
-                <div class="rezultatContainer">
-                    <p class="rezultat"></p>
-                    <p class="rezultat"></p>
-                    <p class="rezultat"></p>
-                </div>
+            <div id="calculate">
+                <input  type="submit" value="Calculate" id="calc">
             </div>
-            <div id="bmiMare">
-                <h3>Results</h3>
-                <div id="bmiMic">
-                    <div id="bmiGlobalContainer">
-                        <div class="bmiNameContainer">
-                            <p id="weightStatus"></p>
-                            <p class="bmi"></p>
-                            <p id="normalBodyWeight"></p>
-                            <p id="optimumWeight"></p>
-                            <p id="weightPlusMinus"></p>
-                            <p id="optimumWeightPlusMinus"></p>
+            <div id="rezultate">
+                <h3>Personal info</h3>
+
+                <div id="personalInfo">
+                    <div class="rezultatContainer">
+                        <p class="rezultat"></p>
+                        <p class="rezultat"></p>
+                        <p class="rezultat"></p>
+                    </div>
+                </div>
+                <div id="bmiMare">
+                    <h3>Results</h3>
+                    <div id="bmiMic">
+                        <div id="bmiGlobalContainer">
+                            <div class="bmiNameContainer">
+                                <p id="weightStatus"></p>
+                                <p id="bmi">BMI: <span class="bmi"></span></p>
+                                <p id="normalBodyWeight"></p>
+                                <p id="optimumWeight"></p>
+                                <p id="weightPlusMinus"></p>
+                                <p id="optimumWeightPlusMinus"></p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="refferenceValues">
-            <h4 id="bmiTitleForRefferenceValues">BMI refference values</h4>
-            <ul class="refferenceValues">
-                <li class="values">18,49 sau mai putin - Subponderal</li>
-                <li class="values">intre 18,50 si 24,99 - Greutate normala</li>
-                <li class="values">intre 25,00 si 29,99 - Supraponderal</li>
-                <li class="values">intre 30,00 si 34,99 - Obezitate (gradul I)</li>
-                <li class="values">intre 35,00 si 39,99 - Obezitate (gradul II)</li>
-                <li class="values">40,00 sau mai mult - Obezitate morbida</li>
-            </ul>
-        </div>
+            <div id="refferenceValues">
+                <h4 id="bmiTitleForRefferenceValues">BMI reference values</h4>
+                <ul class="refferenceValues">
+                    <li class="values">under 18,49 =  Underweight</li>
+                    <li class="values">18,50 - 24,99 =  Normal weight</li>
+                    <li class="values">25,00 - 29,99 =  Overweight</li>
+                    <li class="values">30,00 - 34,99 =  Obese (1st degree)</li>
+                    <li class="values">35,00 - 39,99 =  Obese (2nd degree)</li>
+                    <li class="values">over 40,00 =  Morbid obesity</li>
+                </ul>
+            </div>
+        </article>
+        <footer>
+            <p>&copy; Vlad Andriev</p>
+        </footer>
         <script src="script.js"></script>
     </body>
