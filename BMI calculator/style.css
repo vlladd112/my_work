@@ -44,6 +44,7 @@ h1 {
 h3 {
     background-color: rgba(0, 0, 0, 0.8);
     letter-spacing: 2px;
+    color: goldenrod;
 }
 h4 {
     letter-spacing: 2px;
@@ -57,7 +58,6 @@ p {
 }
 #header {
     display: flex;
-    justify-content: center;
 }
 #article {
     margin: 0 auto;
@@ -67,8 +67,6 @@ p {
     color: ghostwhite;
     display:flex;
     flex-direction: column;
-    justify-content: center;
-    align-self: center;
     font-family: 'Cabin', sans-serif;
     letter-spacing: 0.5px;
     padding-top:10px;
@@ -105,7 +103,7 @@ p {
 }
 #inputsContainer input:focus {
     outline: none;
-    box-shadow: 0 0 10px gold;
+    box-shadow: 0 0 7px gold;
 }
 #calculate {
     width:100%;
@@ -114,7 +112,7 @@ p {
     justify-content: center;
 }
 #calc {
-   background-color:cornflowerblue;
+    background-color:cornflowerblue;
     color:black;
     font-weight: bold;
     border-color: royalblue;
@@ -126,6 +124,7 @@ p {
 }
 #calc:active {
     color: aliceblue;
+    box-shadow: 0 0 10px royalblue;
 }
 #rezultate {
     width:100%;
@@ -148,8 +147,6 @@ p {
     width:50%;
     display: flex;
     flex-direction: column;
-    align-self: center;
-    align-items: center;
 }
 #weightStatus, .bmi, #optimumBodyWeightPlusMinusSpan {
     font-weight: bold;
@@ -159,30 +156,16 @@ p {
     font-weight: bold;
     text-shadow: 0px 0px 1px black;
 }
-#person1 {
-    display: flex;
-    flex-direction: column;
-}
 #person1Parag {
     margin: 0 auto;
 }
 #bmiGlobalContainer {
-    display:flex;
-    flex-direction: row;
     width:100%;
-    justify-content: space-around;
-}
-.bmiContainer {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
 }
 .bmiNameContainer {
     display:flex;
     flex-direction: column;
     width: 100%;
-    justify-content: center;
-    align-items: center;
 }
 #bmiMare {
     display:flex;
@@ -197,7 +180,6 @@ p {
 #refferenceValues {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     width:100%;
     background-color: rgba(0, 0, 0, 0.7);
     margin-top: 10px;
