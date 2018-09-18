@@ -2,6 +2,7 @@ header {
     width: 100%;
     display:flex;
     justify-content: center;
+    font-size: 1.04em;
 }
 #nav {
     display: flex;
@@ -13,16 +14,14 @@ header {
     font-size: 1.2em;
     font-variant-caps: all-petite-caps;
     background-color: skyblue;
-    background-image:url('http://myhdwallpapers.org/wp-content/uploads/2018/02/Gorgeous-Nature-Road-Rocks-Mountains.jpg')
+    background-image:url('http://myhdwallpapers.org/wp-content/uploads/2018/02/Gorgeous-Nature-Road-Rocks-Mountains.jpg');
 }
 nav a {
-/*    color:steelblue;*/
     text-shadow: 0px 8px 8px white;
 }
 nav a:hover {
     color:white;
     text-decoration: none;
-/*    box-shadow: 0px 0px 20px;*/
     text-shadow: 0px 6px 19px black;
 }
 .active {

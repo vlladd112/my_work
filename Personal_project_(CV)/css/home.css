@@ -41,6 +41,17 @@ html {
 .spanName {
     color:gold;
 }
+#nameInput {
+    text-align: center;
+    font-weight: bold;
+}
+#nameInput:placeholder-shown {
+    text-align: center;
+/*    font-weight: bold;*/
+}
+#submit {
+    font-weight: 600;
+}
 @media(max-width:576px) {
     html article#article {
         width: 100%;
