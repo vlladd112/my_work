@@ -16,8 +16,6 @@ window.onload = function onload() {
     let player1Score = 0;
     const player1Name = localStorage.getItem('player1');
     const player2Name = localStorage.getItem('player2');
-    console.log(player1Name);
-    console.log(player2Name);
     
     if((player1Name || player2Name) === null) {
         playerRPSContainer[0].style.display = "none";
@@ -39,7 +37,6 @@ window.onload = function onload() {
     }
 
     resetScore.addEventListener('click', ()=> {
-        console.log('click reset score');
         player1Score = 0;
         player2Score = 0;
         rpsImage[0].style.display = "none";
@@ -50,28 +47,17 @@ window.onload = function onload() {
     })
     play.addEventListener('click', (event)=> {
         for(let i=0; i<playerNameInput.length; i++) {
-            console.log(playerNameInput[i].value);
             if(playerNameInput[0].value === "" && playerNameInput[1].value === "") {
                 
                 playerNameInput[0].style.border = "2px solid red";
                 playerNameInput[1].style.border = "2px solid red";
-//                playerNameInput[0].style.padding = "2px 1px";
-//                playerNameInput[1].style.padding = "2px 1px";
             }else if(playerNameInput[0].value !== "" && playerNameInput[1].value === "") {
-                
                 playerNameInput[0].style.border = "2px solid gray";
                 playerNameInput[1].style.border = "2px solid red";
-//                playerNameInput[0].style.padding = "2px 1px";
-//                playerNameInput[1].style.padding = "2px 1px";
             }else if(playerNameInput[0].value === "" && playerNameInput[1].value !== "") {
-                console.log("oare merge?");
                 playerNameInput[0].style.border = "2px solid red";
                 playerNameInput[1].style.border = "2px solid grey";
-//                playerNameInput[0].style.padding = "2px 1px";
-//                playerNameInput[1].style.padding = "2px 1px";
             }else if((playerNameInput[0].value && playerNameInput[1].value) !== ""){
-                console.log('freeee');
-                
                 play.style.display = "none";
                 playerRPSContainer[0].style.display = "flex";
                 playerRPSContainer[1].style.display = "flex";
@@ -99,7 +85,6 @@ window.onload = function onload() {
                 score[1].innerHTML = player2Score;
                 
                 changePlayers.addEventListener('click', ()=> {
-                    console.log('CLICK');
                     localStorage.removeItem('player1');
                     localStorage.removeItem('player2');
                     playerRPSContainer[0].style.display = "none";
@@ -155,7 +140,6 @@ window.onload = function onload() {
         };      
     });
     
-    
     playerName[0].innerHTML = player1Name;
     playerName[1].innerHTML = player2Name;
     results[0].innerHTML = "Let's see who's better";
@@ -191,7 +175,6 @@ window.onload = function onload() {
         
     };
     changePlayers.addEventListener('click', ()=> {
-        console.log('CLICK');
         localStorage.removeItem('player1');
         localStorage.removeItem('player2');
         playerRPSContainer[0].style.display = "none";
