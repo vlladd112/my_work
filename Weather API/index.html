@@ -17,12 +17,16 @@
         </select>
         <input type="submit" id="submit">
         <div id="Units">
-            <input type="radio" name="SI">
-            <input type="radio" name="Imperial">
+            <form>
+                <p><input id="siUnitsRadioBtn" type="radio" name="units" value="si" checked>SI</p>
+                <p><input id="usUnitsRadioBtn" type="radio" name="units" value="us">Imperial</p>
+            </form>
         </div>
         <div id="language">
-            <input type="radio" name="English">
-            <input type="radio" name="Romana">
+            <form>
+                <p><input id="roLangRadioBtn" type="radio" name="language" value="ro" checked>Română</p>
+                <p><input id="enLangRadioBtn" type="radio" name="language" value="en">English</p>
+            </form>
         </div>
         <p>Time: <span id="timeSpan"></span></p>
         <p>Temperature: <span id="temperatureSpan"></span></p>
