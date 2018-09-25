@@ -8,36 +8,49 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <h1 id="h1Title" >Weather in Romania</h1>
-        <select id="selectCity">
-            <option>București</option>
-            <option>Cluj-Napoca</option>
-            <option>Constanța</option>
-            <option>Iași</option>
-            <option>Timișoara</option>
-        </select>
-        <input type="submit" id="submit">
-        <div >
-            <form id="units"><span id="unitsSpan">Unit</span>
-                <p><input id="caUnitsRadioBtn" type="radio" name="units" value="ca" checked>European</p>
-                <p><input id="usUnitsRadioBtn" type="radio" name="units" value="us">Imperial</p>
-            </form>
-        </div>
-        <div>
-            <form id="language"><span id="languageSpan">Language</span>
-                <p><input id="roLangRadioBtn" type="radio" name="language" value="ro" checked>Română</p>
-                <p><input id="enLangRadioBtn" type="radio" name="language" value="en">English</p>
-            </form>
-        </div>
-        <div id="resultsContainer">
-            <p><span id="timeParag">Time:</span> <span id="timeSpan"></span></p>
-            <p><span id="temperatureParag">Temperature:</span> <span id="temperatureSpan"></span> <span id="tempUnit"></span></p>
-            <p><span id="summaryParag">Summary:</span> <span id="summarySpan"></span></p>
-            <p><span id="windSpeedParag">Wind speed:</span> <span id="windSpeedSpan"></span> <span id="windUnit"></span></p>
-            <p><span id="precipitationParag">Precipitation probability:</span> <span id="precipProbabilitySpan"></span> <span>%</span></p>
-            <p><span id="humidityParag">Humidity:</span> <span id="humiditySpan"></span> <span>%</span></p>
-            <p><span id="pressureParag">Pressure:</span> <span id="pressureSpan"></span> <span>mmHg</span></p>
-            <p><span id="weeklySummaryParag">Weekly summary:</span> <span id="weeklySummarySpan"></span></p>
-        </div>
+        <header>
+            <h1 id="h1Title" >Weather in Romania</h1>
+        </header>
+        <article>
+            <div id="selectSubmitContainer">
+                <div id="selectContainer">
+                    <div>
+                        <p id="citySelectionTitle">City</p>
+                        <select id="selectCity">
+                            <option>București</option>
+                            <option>Cluj-Napoca</option>
+                            <option>Constanța</option>
+                            <option>Iași</option>
+                            <option>Timișoara</option>
+                        </select>
+                    </div>
+                    <div >
+                        <form id="units"><span id="unitsSpan">Unit</span>
+                            <p><input id="caUnitsRadioBtn" type="radio" name="units" value="ca" checked>European</p>
+                            <p><input id="usUnitsRadioBtn" type="radio" name="units" value="us">Imperial</p>
+                        </form>
+                    </div>
+                    <div>
+                        <form id="language"><span id="languageSpan">Language</span>
+                            <p><input id="roLangRadioBtn" type="radio" name="language" value="ro" checked>Română</p>
+                            <p><input id="enLangRadioBtn" type="radio" name="language" value="en">English</p>
+                        </form>
+                    </div>
+                </div>
+                <input type="submit" id="submit">
+            </div>
+            <div id="resultsContainer">
+                <h2 id="cityName">City</h2>
+                <p><span id="timeParag">Time:</span> <span id="timeSpan"></span></p>
+                <p><span id="temperatureParag">Temperature:</span> <span id="temperatureSpan"></span><span id="tempUnit"></span></p>
+                <p><span id="summaryParag">Summary:</span> <span id="summarySpan"></span></p>
+                <p><span id="windSpeedParag">Wind speed:</span> <span id="windSpeedSpan"></span> <span id="windUnit"></span></p>
+                <p><span id="precipitationParag">Precipitation probability:</span> <span id="precipProbabilitySpan"></span> <span>%</span></p>
+                <p><span id="humidityParag">Humidity:</span> <span id="humiditySpan"></span> <span>%</span></p>
+                <p><span id="pressureParag">Pressure:</span> <span id="pressureSpan"></span> <span>mmHg</span></p>
+                <p id="weeklySummaryParagContainer"><span id="weeklySummaryParag">Weekly&nbsp;summary:&nbsp;</span> <span id="weeklySummarySpan"></span></p>
+            </div>
+        </article>
+        <footer>&copy;Vlad Andriev</footer>
     </body>
 </html>

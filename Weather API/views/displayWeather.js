@@ -21,7 +21,8 @@ window.onload = ()=> {
     const selectCity = document.getElementById('selectCity');
     
     const resultsContainer = document.getElementById('resultsContainer');
-    
+    const citySelectionTitle = document.getElementById('citySelectionTitle');
+    const cityName = document.getElementById('cityName');
     const time = document.getElementById('timeSpan');
     const temperature = document.getElementById('temperatureSpan');
     const summary = document.getElementById('summarySpan');
@@ -42,6 +43,7 @@ window.onload = ()=> {
     const transformTime = Unix_timestamp(currentWeather.time);
     
     selectCity.value = cityLS;
+    cityName.innerHTML = cityLS;
     
     const langFormSpan = document.getElementById('languageSpan');
     const unitsFormSpan = document.getElementById('unitsSpan');
@@ -59,7 +61,8 @@ window.onload = ()=> {
     if(langLS === 'ro') {
         roLangValue.checked = true;
         h1Title.innerHTML = "Vremea în România";
-        langFormSpan.innerHTML = "Limba";
+        citySelectionTitle.innerHTML = "Oraș";
+        langFormSpan.innerHTML = "Limbă";
         unitsFormSpan.innerHTML = "Unitate";
         timeParag.innerHTML = "Ora:";
         temperatureParag.innerHTML = "Temperatura:";
@@ -68,12 +71,13 @@ window.onload = ()=> {
         humidityParag.innerHTML = "Umiditate:";
         precipitationParag.innerHTML = "Șanse de precipitații:";
         pressureParag.innerHTML = "Presiune:";
-        weeklySummaryParag.innerHTML = "Sumar săptămânal:";
+        weeklySummaryParag.innerHTML = "Sumar&nbsp;săptămânal:&nbsp;";
     } else if(langLS === 'en') {
         enLangValue.checked = true;
         h1Title.innerHTML = "Weather in Romania";
-        langFormSpan.innerHTML = "Language:";
-        unitsFormSpan.innerHTML = "Unit:";
+        citySelectionTitle.innerHTML = "City";
+        langFormSpan.innerHTML = "Language";
+        unitsFormSpan.innerHTML = "Unit";
         timeParag.innerHTML = "Time:";
         temperatureParag.innerHTML = "Temperature:";
         summaryParag.innerHTML = "Summary:";
@@ -81,7 +85,7 @@ window.onload = ()=> {
         humidityParag.innerHTML = "Humidity:";
         precipitationParag.innerHTML = "Precipitation probability:";
         pressureParag.innerHTML = "Pressure:";
-        weeklySummaryParag.innerHTML = "Weekly summary:";
+        weeklySummaryParag.innerHTML = "Weekly&nbsp;summary:&nbsp;";
     };
     
     const tempUnit = document.getElementById('tempUnit');
@@ -118,12 +122,14 @@ window.onload = ()=> {
         const submit = document.getElementById('submit');
         submit.addEventListener('click', ()=> {
             resultsContainer.style.display = "block";
-            
+            cityName.innerHTML = selectCity.value;
+//            cityName.innerHTML = cityLS;
             const langCheck = ()=>{
                 if(roLangValue.checked === true) {
                     let lang = roLangValue.value;
                     h1Title.innerHTML = "Vremea în România";
-                    langFormSpan.innerHTML = "Limba";
+                    citySelectionTitle.innerHTML = "Oraș";
+                    langFormSpan.innerHTML = "Limbă";
                     unitsFormSpan.innerHTML = "Unitate";
                     timeParag.innerHTML = "Ora:";
                     temperatureParag.innerHTML = "Temperatura:";
@@ -132,14 +138,15 @@ window.onload = ()=> {
                     humidityParag.innerHTML = "Umiditate:";
                     precipitationParag.innerHTML = "Șanse de precipitații:";
                     pressureParag.innerHTML = "Presiune:";
-                    weeklySummaryParag.innerHTML = "Sumar săptămânal:";
+                    weeklySummaryParag.innerHTML = "Sumar&nbsp;săptămânal:&nbsp;";
                     return lang;
                 }
                 else if(enLangValue.checked === true) {
                     let lang = enLangValue.value;
                     h1Title.innerHTML = "Weather in Romania";
-                    langFormSpan.innerHTML = "Language:";
-                    unitsFormSpan.innerHTML = "Unit:";
+                    citySelectionTitle.innerHTML = "City";
+                    langFormSpan.innerHTML = "Language";
+                    unitsFormSpan.innerHTML = "Unit";
                     timeParag.innerHTML = "Time:";
                     temperatureParag.innerHTML = "Temperature:";
                     summaryParag.innerHTML = "Summary:";
@@ -147,8 +154,8 @@ window.onload = ()=> {
                     humidityParag.innerHTML = "Humidity:";
                     precipitationParag.innerHTML = "Precipitation probability:";
                     pressureParag.innerHTML = "Pressure:";
-                    weeklySummaryParag.innerHTML = "Weekly summary:";
-//                    console.log("limba engleza");
+                    weeklySummaryParag.innerHTML = "Weekly&nbsp;summary:&nbsp;";
+//                    console.log("Limbă engleza");
                     return lang;
                 };
                 
@@ -267,8 +274,8 @@ window.onload = ()=> {
         })
     }
     else if((unitLS && langLS && lonLS && latLS && cityLS) !== null) {
-        console.log("AAAAAAAAAAAAAAAAAAA")
         resultsContainer.style.display = "block";
+        cityName.innerHTML = cityLS;
         currentWeather.WeatherFetchData(lon, lat, lang, unit).then(()=>{
 
             time.innerHTML = transformTime;
@@ -294,13 +301,14 @@ window.onload = ()=> {
 
             const submit = document.getElementById('submit');
             submit.addEventListener('click', ()=> {
-
+                cityName.innerHTML = selectCity.value;
                 const langCheck = ()=>{
                     if(roLangValue.checked === true) {
                         let lang = roLangValue.value;
-    //                    console.log("limba romana");
+    //                    console.log("Limbă romana");
                         h1Title.innerHTML = "Vremea în România";
-                        langFormSpan.innerHTML = "Limba";
+                        citySelectionTitle.innerHTML = "Oraș";
+                        langFormSpan.innerHTML = "Limbă";
                         unitsFormSpan.innerHTML = "Unitate";
                         timeParag.innerHTML = "Ora:";
                         temperatureParag.innerHTML = "Temperatura:";
@@ -309,15 +317,16 @@ window.onload = ()=> {
                         humidityParag.innerHTML = "Umiditate:";
                         precipitationParag.innerHTML = "Șanse de precipitații:";
                         pressureParag.innerHTML = "Presiune:";
-                        weeklySummaryParag.innerHTML = "Sumar săptămânal:";
+                        weeklySummaryParag.innerHTML = "Sumar&nbsp;săptămânal:&nbsp;";
                         return lang;
                     }
                     else if(enLangValue.checked === true) {
                         let lang = enLangValue.value;
-    //                    console.log("limba engleza");
+    //                    console.log("Limbă engleza");
                         h1Title.innerHTML = "Weather in Romania";
-                        langFormSpan.innerHTML = "Language:";
-                        unitsFormSpan.innerHTML = "Unit:";
+                        citySelectionTitle.innerHTML = "City";
+                        langFormSpan.innerHTML = "Language";
+                        unitsFormSpan.innerHTML = "Unit";
                         timeParag.innerHTML = "Time:";
                         temperatureParag.innerHTML = "Temperature:";
                         summaryParag.innerHTML = "Summary:";
@@ -325,7 +334,7 @@ window.onload = ()=> {
                         humidityParag.innerHTML = "Humidity:";
                         precipitationParag.innerHTML = "Precipitation probability:";
                         pressureParag.innerHTML = "Pressure:";
-                        weeklySummaryParag.innerHTML = "Weekly summary:";
+                        weeklySummaryParag.innerHTML = "Weekly&nbsp;summary:&nbsp;";
                         return lang;
                     };
 

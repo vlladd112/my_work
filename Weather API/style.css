@@ -1,0 +1,46 @@
+html {
+    height:100%;
+}
+body {
+    width:100%;
+    margin:0;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+h1 {
+    text-align: center;
+}
+#selectContainer {
+    width:50%;
+    display:flex;
+    justify-content: space-around;
+}
+#selectSubmitContainer {
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+#submit {
+    width:100px;
+}
+#resultsContainer {
+    width:50%;
+    margin: 0 auto;
+    margin: 0 auto;
+}
+#weeklySummaryParagContainer {
+    display:flex;
+}
+#weeklySummaryParag {
+    display:inline-block;
+    width:150px;
+}
+footer {
+    text-align: center;
+    background-color:black;
+    color:white;
+}
