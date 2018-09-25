@@ -5,8 +5,9 @@ class Weather{
         this.sumarry = "";
         this.humidity = "";
         this.precipProbability = "";
+        this.windSpeed = ""
         this.pressure = "";
-        this.icon = "";
+        this.dailisummary = "";
     }
 
     WeatherFetchData(lon, lat, lang, unit) { 
@@ -17,11 +18,12 @@ class Weather{
                 console.log(weather);
                 this.time = weatherData.currently.time;
                 this.temperature = weatherData.currently.temperature;
-                this.sumarry = weatherData.currently.summary;
+                this.summary = weatherData.currently.summary;
                 this.humidity = weatherData.currently.humidity;
                 this.precipProbability = weatherData.currently.precipProbability;
+                this.windSpeed = weatherData.currently.windSpeed;
                 this.pressure = weatherData.currently.pressure;
-                this.icon = weatherData.currently.icon;
+                this.weeklySummary = weatherData.daily.summary;
             },
             error: ()=> {
                 console.log('nu merge!');
