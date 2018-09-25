@@ -1,5 +1,10 @@
 html {
     height:100%;
+    background-image: url('https://wallpaper-gallery.net/images/weather-wallpapers/weather-wallpapers-1.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+/*    background-blend-mode:difference;*/
 }
 body {
     width:100%;
@@ -8,13 +13,23 @@ body {
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-    
+    color:white;
+}
+header {
+    background-color: black;
 }
 h1 {
+    color:white;
     text-align: center;
 }
-#selectContainer {
+#mainContent {
     width:50%;
+    margin:0 auto;
+    padding: 10px;
+    background-color:rgba(0, 0, 0, 0.9);
+}
+#selectContainer {
+    width:100%;
     display:flex;
     justify-content: space-around;
 }
@@ -28,7 +43,7 @@ h1 {
     width:100px;
 }
 #resultsContainer {
-    width:50%;
+    width:100%;
     margin: 0 auto;
     margin: 0 auto;
 }

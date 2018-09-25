@@ -199,11 +199,11 @@ window.onload = ()=> {
                 const lat = '44.432251';
                 currentWeather.WeatherFetchData(lon, lat, lang, unit).then(()=>{
                     time.innerHTML = transformTime;
-                    temperature.innerHTML = currentWeather.temperature;
+                    temperature.innerHTML = Math.round(currentWeather.temperature*10)/10;
                     summary.innerHTML = currentWeather.summary;
                     windSpeed.innerHTML = currentWeather.windSpeed;
-                    humidity.innerHTML = currentWeather.humidity * 100;
-                    precipProbability.innerHTML = currentWeather.precipProbability * 100;
+                    humidity.innerHTML = (Math.round(currentWeather.humidity*1000)/10);
+                    precipProbability.innerHTML = (Math.round(currentWeather.precipProbability*1000)/10);
                     pressure.innerHTML = currentWeather.pressure;
                     weeklySummary.innerHTML = currentWeather.weeklySummary;
                     localStorage.setItem("lon", lon);
@@ -215,11 +215,11 @@ window.onload = ()=> {
                 const lat = '46.76667';
                 currentWeather.WeatherFetchData(lon, lat, lang, unit).then(()=>{
                     time.innerHTML = transformTime;
-                    temperature.innerHTML = currentWeather.temperature;
+                    temperature.innerHTML = Math.round(currentWeather.temperature*10)/10;
                     summary.innerHTML = currentWeather.summary;
                     windSpeed.innerHTML = currentWeather.windSpeed;
-                    humidity.innerHTML = currentWeather.humidity * 100;
-                    precipProbability.innerHTML = currentWeather.precipProbability * 100;
+                    humidity.innerHTML = (Math.round(currentWeather.humidity*1000)/10);
+                    precipProbability.innerHTML = (Math.round(currentWeather.precipProbability*1000)/10);
                     pressure.innerHTML = currentWeather.pressure;
                     weeklySummary.innerHTML = currentWeather.weeklySummary;  
                     localStorage.setItem("lon", lon);
@@ -230,11 +230,11 @@ window.onload = ()=> {
                 const lat = '44.183331';
                 currentWeather.WeatherFetchData(lon, lat, lang, unit).then(()=>{
                     time.innerHTML = transformTime;
-                    temperature.innerHTML = currentWeather.temperature;
+                    temperature.innerHTML = Math.round(currentWeather.temperature*10)/10;
                     summary.innerHTML = currentWeather.summary;
                     windSpeed.innerHTML = currentWeather.windSpeed;
-                    humidity.innerHTML = currentWeather.humidity * 100;
-                    precipProbability.innerHTML = currentWeather.precipProbability * 100;
+                    humidity.innerHTML = (Math.round(currentWeather.humidity*1000)/10);
+                    precipProbability.innerHTML = (Math.round(currentWeather.precipProbability*1000)/10);
                     pressure.innerHTML = currentWeather.pressure;
                     weeklySummary.innerHTML = currentWeather.weeklySummary;  
                     localStorage.setItem("lon", lon);
@@ -245,11 +245,11 @@ window.onload = ()=> {
                 const lat = '47.166672';
                 currentWeather.WeatherFetchData(lon, lat, lang, unit).then(()=>{
                     time.innerHTML = transformTime;
-                    temperature.innerHTML = currentWeather.temperature;
+                    temperature.innerHTML = Math.round(currentWeather.temperature*10)/10;
                     summary.innerHTML = currentWeather.summary;
                     windSpeed.innerHTML = currentWeather.windSpeed;
-                    humidity.innerHTML = currentWeather.humidity * 100;
-                    precipProbability.innerHTML = currentWeather.precipProbability * 100;
+                    humidity.innerHTML = (Math.round(currentWeather.humidity*1000)/10);
+                    precipProbability.innerHTML = (Math.round(currentWeather.precipProbability*1000)/10);
                     pressure.innerHTML = currentWeather.pressure;
                     weeklySummary.innerHTML = currentWeather.weeklySummary;
                     localStorage.setItem("lon", lon);
@@ -260,11 +260,11 @@ window.onload = ()=> {
                 const lat = '45.749439';
                 currentWeather.WeatherFetchData(lon, lat, lang, unit).then(()=>{
                     time.innerHTML = transformTime;
-                    temperature.innerHTML = currentWeather.temperature;
+                    temperature.innerHTML = Math.round(currentWeather.temperature*10)/10;
                     summary.innerHTML = currentWeather.summary;
                     windSpeed.innerHTML = currentWeather.windSpeed;
-                    humidity.innerHTML = currentWeather.humidity * 100;
-                    precipProbability.innerHTML = currentWeather.precipProbability * 100;
+                    humidity.innerHTML = (Math.round(currentWeather.humidity*1000)/10);
+                    precipProbability.innerHTML = (Math.round(currentWeather.precipProbability*1000)/10);
                     pressure.innerHTML = currentWeather.pressure;
                     weeklySummary.innerHTML = currentWeather.weeklySummary;
                     localStorage.setItem("lon", lon);
@@ -279,11 +279,11 @@ window.onload = ()=> {
         currentWeather.WeatherFetchData(lon, lat, lang, unit).then(()=>{
 
             time.innerHTML = transformTime;
-            temperature.innerHTML = currentWeather.temperature;
+            temperature.innerHTML = Math.round(currentWeather.temperature*10)/10;
             summary.innerHTML = currentWeather.summary;
             windSpeed.innerHTML = currentWeather.windSpeed;
-            humidity.innerHTML = currentWeather.humidity * 100;
-            precipProbability.innerHTML = currentWeather.precipProbability * 100;
+            humidity.innerHTML = (Math.round(currentWeather.humidity*1000)/10);
+            precipProbability.innerHTML = (Math.round(currentWeather.precipProbability*1000)/10);
             pressure.innerHTML = currentWeather.pressure;
             weeklySummary.innerHTML = currentWeather.weeklySummary;
 
@@ -379,11 +379,11 @@ window.onload = ()=> {
                     const lat = '44.432251';
                     currentWeather.WeatherFetchData(lon, lat, lang, unit).then(()=>{
                         time.innerHTML = transformTime;
-                        temperature.innerHTML = currentWeather.temperature;
+                        temperature.innerHTML = Math.round(currentWeather.temperature*10)/10;
                         summary.innerHTML = currentWeather.summary;
                         windSpeed.innerHTML = currentWeather.windSpeed;
-                        humidity.innerHTML = currentWeather.humidity * 100;
-                        precipProbability.innerHTML = currentWeather.precipProbability * 100;
+                        humidity.innerHTML = (Math.round(currentWeather.humidity*1000)/10);
+                        precipProbability.innerHTML = (Math.round(currentWeather.precipProbability*1000)/10);
                         pressure.innerHTML = currentWeather.pressure;
                         weeklySummary.innerHTML = currentWeather.weeklySummary;
                         console.log(currentWeather.summary);
@@ -397,11 +397,11 @@ window.onload = ()=> {
                     const lat = '46.76667';
                     currentWeather.WeatherFetchData(lon, lat, lang, unit).then(()=>{
                         time.innerHTML = transformTime;
-                        temperature.innerHTML = currentWeather.temperature;
+                        temperature.innerHTML = Math.round(currentWeather.temperature*10)/10;
                         summary.innerHTML = currentWeather.summary;
                         windSpeed.innerHTML = currentWeather.windSpeed;
-                        humidity.innerHTML = currentWeather.humidity * 100;
-                        precipProbability.innerHTML = currentWeather.precipProbability * 100;
+                        humidity.innerHTML = (Math.round(currentWeather.humidity*1000)/10);
+                        precipProbability.innerHTML = (Math.round(currentWeather.precipProbability*1000)/10);
                         pressure.innerHTML = currentWeather.pressure;
                         weeklySummary.innerHTML = currentWeather.weeklySummary;  
                         localStorage.setItem("lon", lon);
@@ -412,11 +412,11 @@ window.onload = ()=> {
                     const lat = '44.183331';
                     currentWeather.WeatherFetchData(lon, lat, lang, unit).then(()=>{
                         time.innerHTML = transformTime;
-                        temperature.innerHTML = currentWeather.temperature;
+                        temperature.innerHTML = Math.round(currentWeather.temperature*10)/10;
                         summary.innerHTML = currentWeather.summary;
                         windSpeed.innerHTML = currentWeather.windSpeed;
-                        humidity.innerHTML = currentWeather.humidity * 100;
-                        precipProbability.innerHTML = currentWeather.precipProbability * 100;
+                        humidity.innerHTML = (Math.round(currentWeather.humidity*1000)/10);
+                        precipProbability.innerHTML = (Math.round(currentWeather.precipProbability*1000)/10);
                         pressure.innerHTML = currentWeather.pressure;
                         weeklySummary.innerHTML = currentWeather.weeklySummary;
                         localStorage.setItem("lon", lon);
@@ -427,11 +427,11 @@ window.onload = ()=> {
                     const lat = '47.166672';
                     currentWeather.WeatherFetchData(lon, lat, lang, unit).then(()=>{
                         time.innerHTML = transformTime;
-                        temperature.innerHTML = currentWeather.temperature;
+                        temperature.innerHTML = Math.round(currentWeather.temperature*10)/10;
                         summary.innerHTML = currentWeather.summary;
                         windSpeed.innerHTML = currentWeather.windSpeed;
-                        humidity.innerHTML = currentWeather.humidity * 100;
-                        precipProbability.innerHTML = currentWeather.precipProbability * 100;
+                        humidity.innerHTML = (Math.round(currentWeather.humidity*1000)/10);
+                        precipProbability.innerHTML = (Math.round(currentWeather.precipProbability*1000)/10);
                         pressure.innerHTML = currentWeather.pressure;
                         weeklySummary.innerHTML = currentWeather.weeklySummary;
                         localStorage.setItem("lon", lon);
@@ -442,11 +442,11 @@ window.onload = ()=> {
                     const lat = '45.749439';
                     currentWeather.WeatherFetchData(lon, lat, lang, unit).then(()=>{
                         time.innerHTML = transformTime;
-                        temperature.innerHTML = currentWeather.temperature;
+                        temperature.innerHTML = Math.round(currentWeather.temperature*10)/10;
                         summary.innerHTML = currentWeather.summary;
                         windSpeed.innerHTML = currentWeather.windSpeed;
-                        humidity.innerHTML = currentWeather.humidity * 100;
-                        precipProbability.innerHTML = currentWeather.precipProbability * 100;
+                        humidity.innerHTML = (Math.round(currentWeather.humidity*1000)/10);
+                        precipProbability.innerHTML = (Math.round(currentWeather.precipProbability*1000)/10);
                         pressure.innerHTML = currentWeather.pressure;
                         weeklySummary.innerHTML = currentWeather.weeklySummary;
                         localStorage.setItem("lon", lon);
@@ -455,5 +455,5 @@ window.onload = ()=> {
                 }
             })
         });
-    } 
+    }
 }
