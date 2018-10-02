@@ -2,12 +2,12 @@ class Weather{
     constructor() {
         this.time = "";
         this.temperature = "";
-        this.sumarry = "";
+        this.summary = "";
         this.humidity = "";
         this.precipProbability = "";
         this.windSpeed = ""
         this.pressure = "";
-        this.dailisummary = "";
+        this.weeklySummary = "";
     }
 
     WeatherFetchData(lon, lat, lang, unit) { 

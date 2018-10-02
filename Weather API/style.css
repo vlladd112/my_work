@@ -4,6 +4,7 @@ html {
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-attachment: fixed;
 /*    background-blend-mode:difference;*/
 }
 body {
@@ -17,6 +18,7 @@ body {
 }
 header {
     background-color: black;
+    margin-bottom: 10px;
 }
 h1 {
     color:white;
@@ -47,6 +49,10 @@ h1 {
     margin: 0 auto;
     margin: 0 auto;
 }
+#lastUpdate {
+    font-size: 0.8em;
+    color:yellow;
+}
 #weeklySummaryParagContainer {
     display:flex;
 }
@@ -58,4 +64,5 @@ footer {
     text-align: center;
     background-color:black;
     color:white;
+    margin-top: 10px;
 }
