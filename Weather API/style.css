@@ -52,6 +52,9 @@ h1 {
 #selectSubmitContainer #citySelectionTitle {
     margin-top:10px;
 }
+#citySelectionTitle {
+    font-size: 1.08em;
+}
 #selectCity {
     margin-top: 5px;
     border-top-right-radius: 8px;
@@ -66,6 +69,7 @@ h1 {
     width:100px;
     margin-top: 15px;
     border-radius: 5px;
+    background-color: azure;
 }
 #resultsContainer {
     width:100%;
