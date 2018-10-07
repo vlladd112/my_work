@@ -3,6 +3,7 @@
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <title>Weather API</title>
+        <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="style.css">
         <script type="text/javascript" src="models/weather.js"></script>
         <script type="text/javascript" src="views/displayWeather.js"></script>
@@ -42,13 +43,13 @@
             <div id="resultsContainer">
                 <h2 id="cityName">City</h2>
                 <p id="lastUpdate"><span id="timeParag">Last update:</span> <span id="timeSpan"></span></p>
-                <p><span id="temperatureParag">Temperature:<bold></bold></span> <span id="temperatureSpan"></span><span id="tempUnit"></span></p>
-                <p><span id="summaryParag">Summary:</span> <span id="summarySpan"></span></p>
-                <p><span id="windSpeedParag">Wind speed:</span> <span id="windSpeedSpan"></span> <span id="windUnit"></span></p>
-                <p><span id="precipitationParag">Precipitation probability:</span> <span id="precipProbabilitySpan"></span> <span>%</span></p>
-                <p><span id="humidityParag">Humidity:</span> <span id="humiditySpan"></span> <span>%</span></p>
-                <p><span id="pressureParag">Pressure:</span> <span id="pressureSpan"></span> <span>mmHg</span></p>
-                <p id="weeklySummaryParagContainer"><span id="weeklySummaryParag">Weekly&nbsp;summary:&nbsp;</span> <span id="weeklySummarySpan"></span></p>
+                <p><span id="temperatureParag" class="yellow">Temperature:</span> <span id="temperatureSpan" class="bold"></span><span id="tempUnit" class="bold"></span></p>
+                <p><span id="summaryParag" class="yellow">Summary:</span> <span id="summarySpan" class="bold"></span></p>
+                <p><span id="windSpeedParag" class="yellow">Wind speed:</span> <span id="windSpeedSpan" class="bold"></span> <span id="windUnit" class="bold"></span></p>
+                <p><span id="precipitationParag" class="yellow">Precipitation probability:</span> <span id="precipProbabilitySpan" class="bold"></span><span class="bold">%</span></p>
+                <p><span id="humidityParag" class="yellow">Humidity:</span> <span id="humiditySpan" class="bold"></span><span class="bold">%</span></p>
+                <p><span id="pressureParag" class="yellow">Pressure:</span> <span id="pressureSpan" class="bold"></span> <span class="bold">mmHg</span></p>
+                <p id="weeklySummaryParagContainer" class="yellow"><span id="weeklySummaryParag">Weekly&nbsp;summary:&nbsp;</span> <span id="weeklySummarySpan" class="bold"></span></p>
             </div>
             <p id="psParag">* the weather information may not be accurate or updated; this is just a demo page.</p>
         </article>

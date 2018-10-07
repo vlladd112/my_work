@@ -5,6 +5,8 @@ html {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+    font-family:  'Hind', sans-serif;
+    letter-spacing: 0.02em;
 /*    background-blend-mode:difference;*/
 }
 body {
@@ -19,16 +21,22 @@ body {
 header {
     background-color: black;
     margin-bottom: 10px;
+/*    border-bottom-left-radius: 10px 10px 10px/50px;*/
+    border-radius: 0px 0px 800px 800px/40px;
+    letter-spacing: 0.1em;
 }
 h1 {
     color:white;
     text-align: center;
+    font-size: 2.3em;
+    margin: 15px
 }
 #mainContent {
     width:50%;
     margin:0 auto;
     padding: 10px;
     background-color:rgba(0, 0, 0, 0.9);
+    border-radius: 8px;
 }
 #selectContainer {
     width:100%;
@@ -41,17 +49,35 @@ h1 {
     flex-direction: column;
     align-items: center;
 }
+#selectSubmitContainer #citySelectionTitle {
+    margin-top:10px;
+}
+#selectCity {
+    margin-top: 5px;
+    border-top-right-radius: 8px;
+}
+#selectContainer p {
+    margin:1px;
+}
+#units, #language {
+    font-size: 0.85em;
+}
 #submit {
     width:100px;
+    margin-top: 15px;
+    border-radius: 5px;
 }
 #resultsContainer {
     width:100%;
     margin: 0 auto;
     margin: 0 auto;
 }
-#lastUpdate {
-    font-size: 0.8em;
-    color:yellow;
+#resultsContainer p {
+    font-size: 1.1em;
+}
+#resultsContainer #lastUpdate {
+    font-size: 0.84em;
+    color:lightslategrey;
 }
 #weeklySummaryParagContainer {
     display:flex;
@@ -60,9 +86,18 @@ h1 {
     display:inline-block;
     width:150px;
 }
+#psParag {
+    font-size: 0.9em;
+}
 footer {
     text-align: center;
     background-color:black;
     color:white;
     margin-top: 10px;
+}
+.bold {
+    color: white;
+}
+.yellow {
+   color: lightsteelblue; 
 }
