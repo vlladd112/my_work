@@ -1,0 +1,36 @@
+html {
+    height:100%;
+}
+body {
+    height:100%;
+    margin: 0;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+header {
+    width:100%;
+    color:white;
+    background-color: orangered;
+    text-align: center;
+}
+#globalContainer {
+    height:66%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#result {
+    height: 2em;
+    color: red;
+    font-size: 2em;
+    font-weight: bold;
+}
+footer {
+    color:white;
+    background-color:black;
+    width:100%;
+    text-align: center;
+}
