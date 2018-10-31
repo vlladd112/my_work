@@ -144,7 +144,7 @@ window.onload = function(){
                 Language: updateLanguage,
                 Country: updateCountry,
                 Poster: updatePoster,
-                imdbRaring: updateImdbRating,
+                imdbRating: updateImdbRating,
                 imdbVotes: updateImdbVotes,
                 imdbID: updateImdbId,
                 Type: updateType,
