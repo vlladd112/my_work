@@ -22,13 +22,35 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+#numbersInputContainer {
+    display: flex;
+    flex-direction: column;
+}
+#numbersInputContainer p {
+    padding:0;
+    margin:0 10px;
+    text-align: center;
+/*    justify-content: center;*/
+}
+.inputContainer {
+    display:flex;
+    justify-content: center;
+    margin-top:20px;
+}
+.numbersInput {
+    width:40px;
+    height:15px;
+    text-align: center;
+}
 #result {
-    height: 2em;
-    color: red;
+    height: 15em;
     font-size: 2em;
     font-weight: bold;
     display:flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center;
+    padding-bottom: 55px;
 }
 .divForShadow {
     margin: 0 20px;
@@ -36,14 +58,8 @@ header {
     width:80px;
     border-radius: 100px;
     padding:0px;
-    box-shadow: 5px 110px 12px rgba(100, 100, 100, 0.5);
+    box-shadow: 5px 103px 12px rgba(100, 100, 100, 0.5);
     border-radius: 6000px 6000px 6000px 6000px/3000px;
-}
-.divForShadow:first-of-type {
-    margin-left: 0;
-}
-.divForShadow:last-of-type {
-    margin-right: 10px;
 }
 .divForNumberSpan {
     margin: 0px;
