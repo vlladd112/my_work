@@ -9,6 +9,7 @@
 <body>
     <div id="globalContainer">
         <h1>Rock, Paper, Scissors</h1>
+        <p id="roundsToBePlayed"></p>
         <div class="playersContainer">
             <div class="playerNameInputContainer">
                 <p class="p1p2">Player 1</p>
@@ -16,19 +17,18 @@
             </div>
             <div class="playerRPSContainer">
                 <p class="playerName"></p>
-                <p class="rps"><img class="rpsImage"></p>
+<!--                <p class="rps"><img class="rpsImage"></p>-->
             </div>
             <div class="playerNameInputContainer">
                 <p class="p1p2">Player 2</p>
                 <input type="text" name="player2" placeholder="Write your name" class="playerNameInput">
             </div>
+           
             <div class="playerRPSContainer">
                 <p class="playerName"></p>
-                <p class="rps"><img class="rpsImage"></p>
+                
             </div>
         </div>
-        <input type="submit" value="Play!" name="play" id="play">
-        <p class="results"></p>
         <div class="scoreGlobalContainer">
             <p id="theScore">SCORE</p>
             <div class="scoreContainer">
@@ -36,6 +36,32 @@
                 <p class="score"></p>
             </div>
         </div>
+        <div id="imageContainer">
+            <p class="rps"><img class="rpsImage"></p>
+            <p class="rps"><img class="rpsImage"></p>
+        </div>
+        <div id="selectGameTypeContainer">
+            <h2>Select game type</h2>
+            <form>
+                <p><input type="radio" name="gameType" value="infinite" id="infinite" checked>Infinite</p>
+                <p><input type="radio" name="gameType" value="rounds" id="rounds">Rounds</p>
+            </form>
+            <select id="selectRounds">
+                <option value="1">1 out of 2</option>
+                <option value="2">2 out of 3</option>
+                <option value="3">3 out of 5</option>
+                <option value="4">4 out of 7</option>
+                <option value="5">5 out of 9</option>
+                <option value="6">6 out of 11</option>
+                <option value="7">7 out of 13</option>
+                <option value="8">8 out of 15</option>
+                <option value="9">9 out of 17</option>
+                <option value="10">10 out of 19</option>
+            </select>
+        </div>
+        <input type="submit" value="Play!" name="play" id="play">
+        <p class="results"></p>
+        
         <input type="button" value="Roll!" name="roll" id="roll">
         <input type="button" value="Reset score" name="reset_score" id="resetScore">
         <input type="button" value="Change players" name="change_players" id="changePlayers">

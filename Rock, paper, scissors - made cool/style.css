@@ -33,6 +33,9 @@ h1 {
     color:navajowhite;
     text-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
 }
+#roundsToBePlayed {
+    text-align: center;
+}
 .playerName {
     color:mediumseagreen;
     text-shadow: 0px 0px 30px limegreen;
@@ -81,7 +84,10 @@ h1 {
 .score {
     display: flex;
     justify-content: center;
+    align-items: center;
     width:50%;
+    height:50px;
+    margin: 0 0 10px;
 }
 .scoreContainer {
     display: flex;
@@ -124,6 +130,7 @@ p {
     text-shadow: 1px 1px 2px black;
     font-variant-caps: small-caps;
     border-radius: 600px/800px;
+    margin-top: 50px;
 }
 #roll:hover {
     box-shadow: 0 0 2px gold;
@@ -136,6 +143,12 @@ p {
 #play, #roll, #resetScore,
 #changePlayers, rpsImage, .playerNameInput:focus {
     outline: none;
+}
+#selectGameTypeContainer {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 #play {
     font-family: 'Wendy One', sans-serif;
@@ -167,10 +180,15 @@ p {
 #theScore {
     display:flex;
     justify-content: center;
-    margin-top: 50px;
+    margin: 0px;
     font-size: 2em;
     letter-spacing: 0.2em;
     text-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
+}
+#imageContainer {
+    height: 110px;
+    display: flex;
+    justify-content: space-around;
 }
 #resetScore {
     font-family: 'Wendy One', sans-serif;
@@ -178,7 +196,7 @@ p {
     display:flex;
     margin:0 auto;
     position:relative;
-    margin-top: 80px;
+    margin-top: 60px;
     height:1.7em;
     width:7.5em;
     justify-content: center;
