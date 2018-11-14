@@ -23,8 +23,6 @@ window.onload = function onload() {
     let player1Score = 0;
     const checkForLS = localStorage.getItem("RPS");
     const getRpsLS = localStorage.getItem('RPS');
-
-    console.log("Check for LS:", checkForLS);
     
     function gameType(){
         if(infinite.checked === true) {
@@ -66,8 +64,6 @@ window.onload = function onload() {
                     roundStr : ""
                 }
 
-                console.log("XXXXX", rpsLS, JSON.stringify(rpsLS));
-
                 localStorage.setItem("RPS", JSON.stringify(rpsLS));
                 const getRpsLS = localStorage.getItem('RPS');
 
@@ -77,8 +73,6 @@ window.onload = function onload() {
                 const player2Name = parsedRpsLS.player2;
                 const rn = parsedRpsLS.roundNr;
                 const rst = parsedRpsLS.roundStr;
-
-                console.log("Local storage complet:", player1Name, player2Name, rn, rst);
 
                 play.style.display = "none";
                 selectGameTypeContainer.style.display = "none";
@@ -113,14 +107,11 @@ window.onload = function onload() {
                     roundNumber = -1;
                 }
                 else if(rounds.checked === true) {
-                    console.log(selectRounds.value);
                     roundsToBePlayed.innerHTML = selectRounds.value;
                     const roundsString = selectRounds.value;
                     rpsLS.roundStr = selectRounds.value;
                     localStorage.setItem("RPS", JSON.stringify(rpsLS));
-                    console.log("roundsString", roundsString);
                     roundNumber = roundsString.slice(0, 2);
-                    console.log("round NR:", roundNumber);
                 }
             }; 
         });
@@ -129,21 +120,15 @@ window.onload = function onload() {
     function roll() {
         rollButton.addEventListener('click', ()=> {
             const getRpsLS = localStorage.getItem('RPS');
-            console.log("CE PULA MEAAAAA SA VEDEM GETRPSLS", getRpsLS);
             const parsedRpsLS = JSON.parse(getRpsLS);
-            console.log("parsedRpsLs:", parsedRpsLS, getRpsLS, checkForLS);
             const player1Name = parsedRpsLS.player1;
             const player2Name = parsedRpsLS.player2;
             const rn = parsedRpsLS.roundNr;
             const rst = parsedRpsLS.roundStr;
             
             const roundsString = selectRounds.value;
-            console.log("roundsString", roundsString);
             let roundNumber = roundsString.slice(0, 1);
-            console.log("round NR:", roundNumber);
-            
-            console.log("sa vedem ce ne da la roll si de ce se schimba:", player1Name, player2Name, rn, rst);
-            
+
             const posibilities = ["img/rock.png", "img/paper.png", "img/scissors.png"];
             let a = Math.floor(Math.random() * 3);
             let b = Math.floor(Math.random() * 3);
@@ -167,12 +152,9 @@ window.onload = function onload() {
                 score[1].innerHTML = player2Score;
                 score[1].style.textShadow = "0px 0px 20px goldenrod";
                 score[1].style.fontSize = "1.5em";
-                console.log("player2Score;", player2Score);
-                console.log("player1Score;", player1Score);
                 if(player2Score == rn){
-                    console.log("RUNDA CAStigata de p2");
                     rollButton.style.visibility = "hidden";
-                    results[0].innerHTML = "Round winner: " + player2Name;
+                    results[0].innerHTML = player2Name + " WINS the Round";
                 }
                 return player2Score;
             } else if ((b===0 && a===1) || (b===1 && a===2) || (b===2 && a===0)) {
@@ -181,17 +163,31 @@ window.onload = function onload() {
                 score[0].innerHTML = player1Score;
                 score[0].style.textShadow = "0px 0px 20px goldenrod";
                 score[0].style.fontSize = "1.5em";
-                console.log("player2Score;", player2Score);
-                console.log("player1Score;", player1Score);
                 if(player1Score == rn){
-                    console.log("RUNDA CAStigata de p1");
                     rollButton.style.visibility = "hidden";
-                    results[0].innerHTML = "Round winner: " + player1Name;
+                    results[0].innerHTML = player1Name + " WINS the Round";
                 }
                 return player1Score;
             } else {
                 results[0].innerHTML = "DRAW!";
             };
+        })
+    }
+    
+    function resetTheScore(){
+        resetScore.addEventListener('click', ()=>{
+            player1Score = 0;
+            player2Score = 0;
+            rpsImage[0].style.display = "none";
+            rpsImage[1].style.display = "none";
+            score[0].innerHTML = "0";
+            score[1].innerHTML = "0";
+            results[0].innerHTML = "Let's see who's better!";
+            rollButton.style.visibility = "visible";
+            score[1].style.textShadow = "0 0 30px limegreen";
+            score[1].style.fontSize = "1em";
+            score[0].style.textShadow = "0 0 30px limegreen";
+            score[0].style.fontSize = "1em";
         })
     }
     
@@ -226,7 +222,6 @@ window.onload = function onload() {
             score[1].style.fontSize = "1em";
             score[0].style.textShadow = "0 0 30px limegreen";
             score[0].style.fontSize = "1em";
-            
             gameType();
             clickRounds();
             clickInfinite();
@@ -239,7 +234,6 @@ window.onload = function onload() {
         rollButton.style.display = "none";
         results[0].style.display = "none";
         theScore.style.display = "none";
-        console.log("been here");
         score[0].style.display = "none";
         score[0].style.display = "none";
         score[1].style.display = "none";
@@ -247,17 +241,12 @@ window.onload = function onload() {
         changePlayers.style.display = "none";
         imageContainer.style.display = "none";
         roundsToBePlayed.style.display = "none";
-        
-        playTheGame();
         gameType();
         clickRounds();
         clickInfinite();
-        roll();
-        changeThePlayers();
     }
     else if(checkForLS !== null) {
         const parsedRpsLS = JSON.parse(getRpsLS);
-        console.log("parsedRpsLs:", parsedRpsLS, getRpsLS, checkForLS);
         const player1Name = parsedRpsLS.player1;
         const player2Name = parsedRpsLS.player2;
         const rn = parsedRpsLS.roundNr;
@@ -271,27 +260,12 @@ window.onload = function onload() {
         playerName[0].innerHTML = player1Name;
         playerName[1].innerHTML = player2Name;
         results[0].innerHTML = "Let's see who's better";
-        score[0].innerHTML = player1Score;
+        score[0].innerHTML = player1Score; 
         score[1].innerHTML = player2Score;
         roundsToBePlayed.innerHTML = rst;
-        
-        playTheGame();
-        roll();
-        changeThePlayers();  
     }
-
-    resetScore.addEventListener('click', ()=> {
-        player1Score = 0;
-        player2Score = 0;
-        rpsImage[0].style.display = "none";
-        rpsImage[1].style.display = "none";
-        score[0].innerHTML = "0";
-        score[1].innerHTML = "0";
-        results[0].innerHTML = "Let's see who's better!";
-        rollButton.style.visibility = "visible";
-        score[1].style.textShadow = "0 0 30px limegreen";
-        score[1].style.fontSize = "1em";
-        score[0].style.textShadow = "0 0 30px limegreen";
-        score[0].style.fontSize = "1em";
-    })
+    playTheGame();
+    changeThePlayers();
+    roll();
+    resetTheScore();
 };
