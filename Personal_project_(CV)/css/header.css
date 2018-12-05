@@ -14,19 +14,21 @@ header {
     font-size: 1.2em;
     font-variant-caps: all-petite-caps;
     background-color: skyblue;
-    background-image:url('http://myhdwallpapers.org/wp-content/uploads/2018/02/Gorgeous-Nature-Road-Rocks-Mountains.jpg');
+    background-image:url('http://www.vmagroup.com/wp-content/uploads/2015/12/long_road_to_nowhere.jpg');
+    background-size: 100%;
 }
 nav a {
-    text-shadow: 0px 8px 8px white;
+    text-shadow: 0px 6px 15px white;
+    color:lightskyblue;
 }
 nav a:hover {
-    color:white;
+    color:aliceblue;
     text-decoration: none;
-    text-shadow: 0px 6px 19px black;
+    text-shadow: 0px 6px 15px black;
 }
 .active {
     color:gold;
-    text-shadow: 0px 1px 7px black;
+    text-shadow: 0px 4px 10px black;
 }
 @media(max-width:576px) {
     #nav {

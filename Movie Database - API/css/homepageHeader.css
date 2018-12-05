@@ -102,6 +102,9 @@ nav a:hover {
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
+#searchbar:focus {
+    outline:none;
+}
 #searchbar::placeholder {
     font-weight: bold;
     background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC_9eZboUBAYG5sSJXZ5FI1XoWHno04gVtGvGvRu0BaHVQFo9Q');

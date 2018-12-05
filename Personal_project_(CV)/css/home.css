@@ -10,7 +10,8 @@ html {
     display:flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url('http://myhdwallpapers.org/wp-content/uploads/2018/02/Gorgeous-Nature-Road-Rocks-Mountains.jpg');
+    background-image: url('http://www.vmagroup.com/wp-content/uploads/2015/12/long_road_to_nowhere.jpg');
+    background-size: cover;
     background-attachment: fixed;
 }
 #article {
