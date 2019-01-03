@@ -9,7 +9,6 @@ class Weather{
         this.pressure = "";
         this.weeklySummary = "";
     }
-
     WeatherFetchData(lon, lat, lang, unit) { 
         return $.ajax('https://api.darksky.net/forecast/eb73a945bfe78f7a9e5a2ef08398b860/' + lon + ',' + lat + '?lang=' + lang + '&units=' + unit, {
             method: 'GET',

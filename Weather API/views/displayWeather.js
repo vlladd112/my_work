@@ -214,27 +214,14 @@ window.onload = ()=> {
             console.log(lon, lat);
             return lon, lat;
         }
-
         return lon, lat;
     }
     
-//    const populateHtmlSetLonLatLS = ()=>{
-//        const transformTime = Unix_timestamp(currentWeather.time);
-//        time.innerHTML = transformTime;
-//        temperature.innerHTML = Math.round(currentWeather.temperature*10)/10;
-//        summary.innerHTML = currentWeather.summary;
-//        windSpeed.innerHTML = currentWeather.windSpeed;
-//        humidity.innerHTML = (Math.round(currentWeather.humidity*1000)/10);
-//        precipProbability.innerHTML = (Math.round(currentWeather.precipProbability*1000)/10);
-//        pressure.innerHTML = currentWeather.pressure;
-//        weeklySummary.innerHTML = currentWeather.weeklySummary;
-//        localStorage.setItem("lon", lon);
-//        localStorage.setItem("lat", lat);
-//        console.log("THIS IS HAPPENING", transformTime, Math.round(currentWeather.temperature*10)/10, currentWeather.summary, currentWeather.windSpeed, (Math.round(currentWeather.humidity*1000)/10), (Math.round(currentWeather.precipProbability*1000)/10), currentWeather.pressure, currentWeather.weeklySummary, lon, lat);
-//        console.log(time, temperature, summary, windSpeed, humidity, precipProbability, pressure, weeklySummary);
-//    }
-    
-    
+    const setLonLatToLS = () => {
+        localStorage.setItem("lon", lon);
+        localStorage.setItem("lat", lat);
+    }
+     
     const weatherAPI = {
                     Lang : langLS,
                     Unit : unitLS,
@@ -245,7 +232,25 @@ window.onload = ()=> {
                 console.log("weatherAPI", weatherAPI)
             
             
-            
+   const fff = ()=>{
+        const transformTime = Unix_timestamp(currentWeather.time);
+        console.log("timpul la Bucuresti:", transformTime);
+        time.innerHTML = transformTime;
+        temperature.innerHTML = Math.round(currentWeather.temperature*10)/10;
+        summary.innerHTML = currentWeather.summary;
+        windSpeed.innerHTML = currentWeather.windSpeed;
+        humidity.innerHTML = (Math.round(currentWeather.humidity*1000)/10);
+        precipProbability.innerHTML = (Math.round(currentWeather.precipProbability*1000)/10);
+        pressure.innerHTML = currentWeather.pressure;
+        weeklySummary.innerHTML = currentWeather.weeklySummary;
+        console.log(currentWeather.summary);
+        //                        localStorage.setItem("weatherLS", weatherLS.Lon);
+        //                        localStorage.setItem("weatherLS", weatherLS.Lat);
+//        localStorage.setItem("lon", lon);
+//        localStorage.setItem("lat", lat);
+        console.log('LON SI LAT:', lon, lat);
+        };
+   
     if((lonLS === null) || (latLS === null) || (langLS === null) || (unitLS === null) || (cityLS === null)) {
         console.log("NOOOO");
         resultsContainer.style.display = "none";
@@ -260,16 +265,12 @@ window.onload = ()=> {
             console.log(lon, lat, lang, unit);
             currentWeather.WeatherFetchData(lon, lat, lang, unit).then(()=>{    
                 const transformTime = Unix_timestamp(currentWeather.time);
-                console.log("CURENT VEATHER time", currentWeather.time);
+                console.log("CURENT VEATHER time ", currentWeather.time);
 
                 resultsContainer.style.display = "block";
                 cityName.innerHTML = selectCity.value;
                 
-//                langCheck();
-
                 lang = langCheck();
-
-//                unitsCheck();
 
                 unit = unitsCheck();
 
@@ -293,78 +294,24 @@ window.onload = ()=> {
                 if(selectCity.value === "București") {
                     const lon = '26.10626';
                     const lat = '44.432251';
-                    currentWeather.WeatherFetchData(lon, lat, lang, unit).then(()=>{
-                        time.innerHTML = transformTime;
-                        temperature.innerHTML = Math.round(currentWeather.temperature*10)/10;
-                        summary.innerHTML = currentWeather.summary;
-                        windSpeed.innerHTML = currentWeather.windSpeed;
-                        humidity.innerHTML = (Math.round(currentWeather.humidity*1000)/10);
-                        precipProbability.innerHTML = (Math.round(currentWeather.precipProbability*1000)/10);
-                        pressure.innerHTML = currentWeather.pressure;
-                        weeklySummary.innerHTML = currentWeather.weeklySummary;
-                        localStorage.setItem("lon", lon);
-                        localStorage.setItem("lat", lat);
-                    })
+                    currentWeather.WeatherFetchData(lon, lat, lang, unit).then(fff)
                 } else if(selectCity.value === "Cluj-Napoca") {
                     const lon = '23.6';
                     const lat = '46.76667';
-                    currentWeather.WeatherFetchData(lon, lat, lang, unit).then(()=>{
-                        time.innerHTML = transformTime;
-                        temperature.innerHTML = Math.round(currentWeather.temperature*10)/10;
-                        summary.innerHTML = currentWeather.summary;
-                        windSpeed.innerHTML = currentWeather.windSpeed;
-                        humidity.innerHTML = (Math.round(currentWeather.humidity*1000)/10);
-                        precipProbability.innerHTML = (Math.round(currentWeather.precipProbability*1000)/10);
-                        pressure.innerHTML = currentWeather.pressure;
-                        weeklySummary.innerHTML = currentWeather.weeklySummary;  
-                        localStorage.setItem("lon", lon);
-                        localStorage.setItem("lat", lat);
-                    })
+//                    console.log('lonlatcheck', lon, lat);
+                    currentWeather.WeatherFetchData(lon, lat, lang, unit).then(fff)
                 } else if(selectCity.value === "Constanța") {
                     const lon = '28.65';
                     const lat = '44.183331';
-                    currentWeather.WeatherFetchData(lon, lat, lang, unit).then(()=>{
-                        time.innerHTML = transformTime;
-                        temperature.innerHTML = Math.round(currentWeather.temperature*10)/10;
-                        summary.innerHTML = currentWeather.summary;
-                        windSpeed.innerHTML = currentWeather.windSpeed;
-                        humidity.innerHTML = (Math.round(currentWeather.humidity*1000)/10);
-                        precipProbability.innerHTML = (Math.round(currentWeather.precipProbability*1000)/10);
-                        pressure.innerHTML = currentWeather.pressure;
-                        weeklySummary.innerHTML = currentWeather.weeklySummary;  
-                        localStorage.setItem("lon", lon);
-                        localStorage.setItem("lat", lat);
-                    })
+                    currentWeather.WeatherFetchData(lon, lat, lang, unit).then(fff)
                 } else if(selectCity.value === "Iași") {
                     const lon = '27.6';
                     const lat = '47.166672';
-                    currentWeather.WeatherFetchData(lon, lat, lang, unit).then(()=>{
-                        time.innerHTML = transformTime;
-                        temperature.innerHTML = Math.round(currentWeather.temperature*10)/10;
-                        summary.innerHTML = currentWeather.summary;
-                        windSpeed.innerHTML = currentWeather.windSpeed;
-                        humidity.innerHTML = (Math.round(currentWeather.humidity*1000)/10);
-                        precipProbability.innerHTML = (Math.round(currentWeather.precipProbability*1000)/10);
-                        pressure.innerHTML = currentWeather.pressure;
-                        weeklySummary.innerHTML = currentWeather.weeklySummary;
-                        localStorage.setItem("lon", lon);
-                        localStorage.setItem("lat", lat);
-                    })
+                    currentWeather.WeatherFetchData(lon, lat, lang, unit).then(fff)
                 } else if(selectCity.value === "Timișoara") {
                     const lon = '21.227221';
                     const lat = '45.749439';
-                    currentWeather.WeatherFetchData(lon, lat, lang, unit).then(()=>{
-                        time.innerHTML = transformTime;
-                        temperature.innerHTML = Math.round(currentWeather.temperature*10)/10;
-                        summary.innerHTML = currentWeather.summary;
-                        windSpeed.innerHTML = currentWeather.windSpeed;
-                        humidity.innerHTML = (Math.round(currentWeather.humidity*1000)/10);
-                        precipProbability.innerHTML = (Math.round(currentWeather.precipProbability*1000)/10);
-                        pressure.innerHTML = currentWeather.pressure;
-                        weeklySummary.innerHTML = currentWeather.weeklySummary;
-                        localStorage.setItem("lon", lon);
-                        localStorage.setItem("lat", lat);
-                    })
+                    currentWeather.WeatherFetchData(lon, lat, lang, unit).then(fff)
                 }
             })
         })
@@ -384,110 +331,53 @@ window.onload = ()=> {
             pressure.innerHTML = currentWeather.pressure;
             weeklySummary.innerHTML = currentWeather.weeklySummary;
 
-//            if(unitLS === null) {
-//                console.log("Nu exista LS pentru unit");
-//            } else if (unitLS !== null) {
-//                console.log("EXISTA LS pentru unit");
-//            }
-
             const submit = document.getElementById('submit');
             submit.addEventListener('click', ()=> {
                 cityName.innerHTML = selectCity.value;
                 lang = langCheck();
                 unit = unitsCheck();
                 const city = selectCity.value;
-//                localStorage.setItem("weatherLS", weatherLS);
-//                console.log("REAL DEAL LS:", weatherLS, weatherLS.Lang);
                 localStorage.setItem("unit", unit);
                 localStorage.setItem("city", city);
                 localStorage.setItem("lang", lang);
                 if(selectCity.value === "București") {
                     const lon = '26.10626';
                     const lat = '44.432251';
-                    currentWeather.WeatherFetchData(lon, lat, lang, unit).then(()=>{
-                        const transformTime = Unix_timestamp(currentWeather.time);
-                        console.log("timpul la Bucuresti:", transformTime);
-                        time.innerHTML = transformTime;
-                        temperature.innerHTML = Math.round(currentWeather.temperature*10)/10;
-                        summary.innerHTML = currentWeather.summary;
-                        windSpeed.innerHTML = currentWeather.windSpeed;
-                        humidity.innerHTML = (Math.round(currentWeather.humidity*1000)/10);
-                        precipProbability.innerHTML = (Math.round(currentWeather.precipProbability*1000)/10);
-                        pressure.innerHTML = currentWeather.pressure;
-                        weeklySummary.innerHTML = currentWeather.weeklySummary;
-                        console.log(currentWeather.summary);
-//                        localStorage.setItem("weatherLS", weatherLS.Lon);
-//                        localStorage.setItem("weatherLS", weatherLS.Lat);
-                        localStorage.setItem("lon", lon);
-                        localStorage.setItem("lat", lat);
-                    })
-
+                    localStorage.setItem("lon", lon);
+                    localStorage.setItem("lat", lat);
+                    currentWeather.WeatherFetchData(lon, lat, lang, unit).then(fff);
+                    console.log('fdsfsffsfdfd', lon, lat)
                 } else if(selectCity.value === "Cluj-Napoca") {
                     const lon = '23.6';
                     const lat = '46.76667';
-                    currentWeather.WeatherFetchData(lon, lat, lang, unit).then(()=>{
-                        const transformTime = Unix_timestamp(currentWeather.time);
-                        time.innerHTML = transformTime;
-                        temperature.innerHTML = Math.round(currentWeather.temperature*10)/10;
-                        summary.innerHTML = currentWeather.summary;
-                        windSpeed.innerHTML = currentWeather.windSpeed;
-                        humidity.innerHTML = (Math.round(currentWeather.humidity*1000)/10);
-                        precipProbability.innerHTML = (Math.round(currentWeather.precipProbability*1000)/10);
-                        pressure.innerHTML = currentWeather.pressure;
-                        weeklySummary.innerHTML = currentWeather.weeklySummary;  
-//                        localStorage.setItem("weatherLS", weatherLS.Lon);
-//                        localStorage.setItem("weatherLS", weatherLS.Lat);
-                        localStorage.setItem("lon", lon);
-                        localStorage.setItem("lat", lat);
-                    })
+                    console.log('lonlatcheck', lon, lat);
+                    localStorage.setItem("lon", lon);
+                    localStorage.setItem("lat", lat);
+                    currentWeather.WeatherFetchData(lon, lat, lang, unit).then(fff)
+                    console.log('fdsfsffsfdfd', lon, lat)
                 } else if(selectCity.value === "Constanța") {
                     const lon = '28.65';
                     const lat = '44.183331';
-                    currentWeather.WeatherFetchData(lon, lat, lang, unit).then(()=>{
-                        const transformTime = Unix_timestamp(currentWeather.time);
-                        time.innerHTML = transformTime;
-                        temperature.innerHTML = Math.round(currentWeather.temperature*10)/10;
-                        summary.innerHTML = currentWeather.summary;
-                        windSpeed.innerHTML = currentWeather.windSpeed;
-                        humidity.innerHTML = (Math.round(currentWeather.humidity*1000)/10);
-                        precipProbability.innerHTML = (Math.round(currentWeather.precipProbability*1000)/10);
-                        pressure.innerHTML = currentWeather.pressure;
-                        weeklySummary.innerHTML = currentWeather.weeklySummary;
-                        localStorage.setItem("lon", lon);
-                        localStorage.setItem("lat", lat);
-                    })
+                    localStorage.setItem("lon", lon);
+                    localStorage.setItem("lat", lat);
+                    currentWeather.WeatherFetchData(lon, lat, lang, unit).then(fff)
+                    console.log('fdsfsffsfdfd', lon, lat)
                 } else if(selectCity.value === "Iași") {
                     const lon = '27.6';
                     const lat = '47.166672';
-                    currentWeather.WeatherFetchData(lon, lat, lang, unit).then(()=>{
-                        const transformTime = Unix_timestamp(currentWeather.time);
-                        time.innerHTML = transformTime;
-                        temperature.innerHTML = Math.round(currentWeather.temperature*10)/10;
-                        summary.innerHTML = currentWeather.summary;
-                        windSpeed.innerHTML = currentWeather.windSpeed;
-                        humidity.innerHTML = (Math.round(currentWeather.humidity*1000)/10);
-                        precipProbability.innerHTML = (Math.round(currentWeather.precipProbability*1000)/10);
-                        pressure.innerHTML = currentWeather.pressure;
-                        weeklySummary.innerHTML = currentWeather.weeklySummary;
-                        localStorage.setItem("lon", lon);
-                        localStorage.setItem("lat", lat);
-                    })
+                    localStorage.setItem("lon", lon);
+                    localStorage.setItem("lat", lat);
+                    currentWeather.WeatherFetchData(lon, lat, lang, unit).then(fff)
+                    console.log('fdsfsffsfdfd', lon, lat)
                 } else if(selectCity.value === "Timișoara") {
                     const lon = '21.227221';
                     const lat = '45.749439';
-                    currentWeather.WeatherFetchData(lon, lat, lang, unit).then(()=>{
-                        const transformTime = Unix_timestamp(currentWeather.time);
-                        time.innerHTML = transformTime;
-                        temperature.innerHTML = Math.round(currentWeather.temperature*10)/10;
-                        summary.innerHTML = currentWeather.summary;
-                        windSpeed.innerHTML = currentWeather.windSpeed;
-                        humidity.innerHTML = (Math.round(currentWeather.humidity*1000)/10);
-                        precipProbability.innerHTML = (Math.round(currentWeather.precipProbability*1000)/10);
-                        pressure.innerHTML = currentWeather.pressure;
-                        weeklySummary.innerHTML = currentWeather.weeklySummary;
-                        localStorage.setItem("lon", lon);
-                        localStorage.setItem("lat", lat);
-                    })
+                    localStorage.setItem("lon", lon);
+                    localStorage.setItem("lat", lat);
+//                    setLonLatToLS();
+                    currentWeather.WeatherFetchData(lon, lat, lang, unit).then(fff)
+                    console.log('fdsfsffsfdfd', lon, lat)
+                    
                 }
             })
         });
