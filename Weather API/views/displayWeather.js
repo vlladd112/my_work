@@ -187,7 +187,7 @@ window.onload = ()=> {
         return unit;
     }
 
-    const noLsLonLatCheck = ()=>{
+    const noLsLonLatCheck = ()=> {
        if(selectCity.value === "București") {
             lon = '26.10626';
             lat = '44.432251';
@@ -217,7 +217,7 @@ window.onload = ()=> {
         return lon, lat;
     }
     
-    const setLonLatToLS = () => {
+    const setLonLatToLS = ()=> {
         localStorage.setItem("lon", lon);
         localStorage.setItem("lat", lat);
     }
@@ -232,7 +232,7 @@ window.onload = ()=> {
                 console.log("weatherAPI", weatherAPI)
             
             
-   const fff = ()=>{
+   const fff = ()=> {
         const transformTime = Unix_timestamp(currentWeather.time);
         console.log("timpul la Bucuresti:", transformTime);
         time.innerHTML = transformTime;

@@ -56,6 +56,8 @@ window.onload = function(){
     const movieEditDate = document.getElementById('editDate');
 
     current_movie.MovieFetchData(current_id).then(()=>{
+        const iMDB_anchor = document.getElementById('imdbAnchor');
+        iMDB_anchor.setAttribute('href', `https://www.imdb.com/title/` + current_movie.imdbID + `/?ref_=nv_sr_1`);
         const poster = document.getElementById('movie-poster-container');
         poster.style.backgroundImage = `url("${current_movie.Poster}")`;
         poster.style.backgroundSize = "100% 100%";
@@ -106,6 +108,11 @@ window.onload = function(){
                 movieType.value = current_movie.Type;
                 movieEditDate.innerHTML = current_movie.lastEdited;
                 console.log("CCCCCCCCCCCC", current_movie);
+                if(current_movie.lastEdited === undefined) {
+                    editDate.innerHTML = "";
+                }else{
+                    editDate.innerHTML = "Last edited: " + current_movie.lastEdited;
+                }
             });
         })
     }).then(()=>{
