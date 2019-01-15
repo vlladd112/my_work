@@ -1,5 +1,5 @@
 window.onload = ()=> {
-    
+
     //======= ARRAYS
 const users = [{id:1, name:'John'}, {id:2, name:'Michael'}, {id:3, name:'Tom'}, {id:4, name:'Julia'}];
     
@@ -151,14 +151,39 @@ showCheclList()
 
     //======= CREATE TASK CHECKBOX
 const createTaskChecklist = ()=> {
-    const tasksLS = localStorage.getItem('unasigned_tasks');
-    console.log("TASKS LSSSSSS", tasksLS);
-    let parsedTasksLS = JSON.parse(tasksLS);
-    console.log("PATSED TASKS LS:", parsedTasksLS);
-    if(parsedTasksLS === null) {
+    const unasignedTasksLS = localStorage.getItem('unasigned_tasks');
+    console.log("TASKS LSSSSSS", unasignedTasksLS);
+    let parsedUnasignedTasksLS = JSON.parse(unasignedTasksLS);
+    console.log("PATSED TASKS LS:", parsedUnasignedTasksLS);
+    if(parsedUnasignedTasksLS === null) {
         parsedTasksLS = [];
     }
-    for(let i=0; i<parsedTasksLS.length; i++) {
+    for(let i=0; i<parsedUnasignedTasksLS.length; i++) {
+        const uncheckedTasksDiv = document.getElementById('uncheckedTasks');
+        console.log(parsedUnasignedTasksLS[i]);
+        const createCheckboxItem = document.createElement('input');
+        createCheckboxItem.setAttribute('type', 'checkbox');
+        const checkBoxName = parsedUnasignedTasksLS[i].name;
+        createCheckboxItem.setAttribute('value', checkBoxName);
+        createCheckboxItem.setAttribute('name', 'task');
+        createCheckboxItem.setAttribute('class', 'task');
+        createCheckboxItem.innerHTML = checkBoxName;
+        console.log(createCheckboxItem);
+        
+        uncheckedTasksDiv.appendChild(createCheckboxItem);
+        
+        const createSpan = document.createElement('span');
+        createSpan.innerHTML = checkBoxName;
+        uncheckedTasksDiv.appendChild(createSpan);
+//        const createCleclistItem = document
+        
+    };
+    const assignedTasksLS = localStorage.getItem('assigned_tasks');
+    
+    const parsedAssignedTasksLS = JSON.parse(assignedTasksLS);
+    console.log(parsedAssignedTasksLS);
+    
+    for(let i=0; i<parsedAssignedTasksLS.length; i++) {
         const issueTypeForm = document.getElementById('uncheckedTasks');
         console.log(parsedTasksLS[i]);
         const createCheckboxItem = document.createElement('input');
@@ -275,10 +300,8 @@ const createIsuse = document.getElementById('createIssue').addEventListener('cli
     
     
     //========= MANAGE TASK CHECKLIST
-    const ppush =  (a, b)=> {
-        return a.push(b);
-    }
-    ppush();
+    
+//    ppush();
     const taskChecker = ()=> {
         const checkboxList = document.getElementsByClassName('task');
         console.log('CHECKBOX LIST', checkboxList);
@@ -290,19 +313,25 @@ const createIsuse = document.getElementById('createIssue').addEventListener('cli
                 for (let j=0; j<parsedUnasignedTasksLS.length; j++) {
                     if(checkboxList[i].value === parsedUnasignedTasksLS[j].name) {
                         console.log('POPOPOPOPOPOPOOPOPOPOP', j, parsedUnasignedTasksLS[j]);
-                        parsedUnasignedTasksLS[j].push(assignedTasks);
-                    }
-                }
-//                checkboxList[i].push(assignedTasks);
-                
-            }
-        }
+                        assignedTasks.push(parsedUnasignedTasksLS[j]);
+                        parsedUnasignedTasksLS.splice(j, 1);
+                        const stringParsedUnasignedTasksLS = JSON.stringify(parsedUnasignedTasksLS);
+                        localStorage.setItem('unasigned_tasks', stringParsedUnasignedTasksLS);
+                        const stringAssignedTasks = JSON.stringify(assignedTasks);
+                        localStorage.setItem('asigned_tasks', stringAssignedTasks);
+                    };
+                    console.log(parsedUnasignedTasksLS);
+                };
+   
+            };
+        };
         console.log(assignedTasks);
-    }
+        console.log(parsedUnasignedTasksLS);
+    };
     taskChecker();
     
 
-})
+});
     
     
 
