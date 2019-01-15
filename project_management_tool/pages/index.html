@@ -33,14 +33,14 @@
             </section>
             <section>
                 <h2>Create issue</h2>
-                <div id="createIssueInputContainer">
+                <form id="createIssueInputContainer">
                     <input id="issueId" type="hidden" placeholder="id">
+                    <input id="issueName" placeholder="Name">
                     <select id="issueType" placeholder="Type">
                         <option id="typeFeature"></option>
                         <option id="typeBug"></option>
                         <option id="typeTask"></option>
                     </select>
-                    <input id="issueName" placeholder="Name">
                     <select id="issueSprint" placeholder="Sprint">
                     
                     </select>
@@ -48,7 +48,6 @@
                     <select id="issueAsignee" placeholder="Asignee">
                     
                     </select>
-                    <input id="issueDescription" placeholder="Description">
                     <select id="issueStatus" placeholder="Status">
                         <option id="statusNew"></option>
                         <option id="statusInProgress"></option>
@@ -57,12 +56,20 @@
                         <option id="statusResolved"></option>
                         <option id="statusReadyForTesting"></option>
                     </select>
-                    <input id="issueTask" placeholder="Task">
                     <input id="issueComments" placeholder="Comments" type="hidden">
                     <input id="issueUpdatedAt" placeholder="Updated at" type="hidden">
                     <input id="issueCreatedAt" placeholder="Created at" type="hidden">
+                    <div id="issueTask" placeholder="Task"><label id="taskLabel">TASKS<br></label>
+                        <div id="checkedTasks">
+                        
+                        </div>
+                        <div id="uncheckedTasks">
+                        
+                        </div>
+                    </div>
+                    <textarea id="issueDescription" placeholder="Description"></textarea>
                     <button id="createIssue">Create issue</button>
-                </div>
+                </form>
                 <div id="divIssues">
                     <ol id="olIssues">
                         
