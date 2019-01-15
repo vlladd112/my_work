@@ -20,6 +20,20 @@ nav a:nth-child(1) {
 nav a:nth-child(2) {
     padding: 2.2em 0.74em 2.2em 0.8em;
 }
+
+/*
+nav a:nth-child(1) {
+    margin: 1.20em 0.15em 1.25em 0.20em;
+    padding: 0.95em 2.87em 1em 2.35em;
+    border-radius:5px;
+    overflow:visible;
+}
+nav a:nth-child(2) {
+    margin: 1.22em 0.2em 1.25em 0.20em;
+    padding: 0.95em 0.44em 1em 0.8em;
+    border-radius:5px;
+}
+*/
 #add-btn:hover {
     color:white;
     background-color: rgba(0, 0, 0, 0.5);

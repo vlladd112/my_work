@@ -1,0 +1,6 @@
+#mainPageArticle {
+    display:flex;
+}
+#mainPageArticle section {
+    width:50%;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Project Management Tool</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="../models/classes.js"></script>
+    <script src="../views/mainPageViews.js"></script>
+</head>
+<body>
+    <header>
+        <h1 id="projectName"></h1>
+    </header>
+    <main>
+        <div>
+            <button>Overview</button>
+            <button>Filter</button>
+        </div>
+        <article id="mainPageArticle">
+            <section>
+                <h2>Create sprint</h2>
+                <div id="createSpritInputContainer">
+                    <input id="sprintId" type="hidden">
+                    <input id="sprintName" placeholder="Name">
+                    <button id="createSprit">Create sprint</button>
+                </div>
+                <div id="sprintsDisplay">
+                    <ol id="olSprints">
+                        
+                    </ol>
+                </div>
+            </section>
+            <section>
+                <h2>Create issue</h2>
+                <div id="createIssueInputContainer">
+                    <input id="issueId" type="hidden" placeholder="id">
+                    <select id="issueType" placeholder="Type">
+                        <option id="typeFeature"></option>
+                        <option id="typeBug"></option>
+                        <option id="typeTask"></option>
+                    </select>
+                    <input id="issueName" placeholder="Name">
+                    <select id="issueSprint" placeholder="Sprint">
+                    
+                    </select>
+                    <input id="issueCreatedBy" placeholder="Created by" type="hidden">
+                    <select id="issueAsignee" placeholder="Asignee">
+                    
+                    </select>
+                    <input id="issueDescription" placeholder="Description">
+                    <select id="issueStatus" placeholder="Status">
+                        <option id="statusNew"></option>
+                        <option id="statusInProgress"></option>
+                        <option id="statusFeedback"></option>
+                        <option id="statusRework"></option>
+                        <option id="statusResolved"></option>
+                        <option id="statusReadyForTesting"></option>
+                    </select>
+                    <input id="issueTask" placeholder="Task">
+                    <input id="issueComments" placeholder="Comments" type="hidden">
+                    <input id="issueUpdatedAt" placeholder="Updated at" type="hidden">
+                    <input id="issueCreatedAt" placeholder="Created at" type="hidden">
+                    <button id="createIssue">Create issue</button>
+                </div>
+                <div id="divIssues">
+                    <ol id="olIssues">
+                        
+                    </ol>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

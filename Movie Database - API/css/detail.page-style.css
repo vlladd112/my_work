@@ -8,9 +8,6 @@ body {
 #body {
     padding: 0;
 }
-
-
-
 #movie-details-container {
     margin: 0 auto;
     padding: 0;
@@ -25,6 +22,12 @@ body {
     padding: 10px 0;
     font-variant-caps:small-caps;
     font-size: 1.7em;
+}
+#movie-title-detPage:hover {
+    color:darkred;
+}
+#imdbAnchor:hover {
+    color:darkred;
 }
 #poster-details-container {
     display:flex;
@@ -113,10 +116,12 @@ body {
     color:red;
 }
 #edit-btn:hover {
-    background-color:white;
+    background-color:ghostwhite;
+    font-weight: bold;
 }
 #delete-btn:hover {
-    background-color:white;
+    background-color:ghostwhite;
+    font-weight: bold;
 }
 @media(max-width: 576px) {
     body#body {
