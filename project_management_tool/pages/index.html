@@ -20,35 +20,36 @@
         <article id="mainPageArticle">
             <section>
                 <h2>Create sprint</h2>
-                <div id="createSpritInputContainer">
+                <div id="createSprintInputContainer">
                     <input id="sprintId" type="hidden">
                     <input id="sprintName" placeholder="Name">
-                    <button id="createSprit">Create sprint</button>
+                    <button id="createSprint">Create sprint</button>
                 </div>
                 <div id="sprintsDisplay">
-                    <ol id="olSprints">
+                    <h4>Sprints List</h4>
+                    <ul id="sprintsContainer">
                         
-                    </ol>
+                    </ul>
                 </div>
             </section>
             <section>
                 <h2>Create issue</h2>
                 <form id="createIssueInputContainer">
                     <input id="issueId" type="hidden" placeholder="id">
-                    <input id="issueName" placeholder="Name">
-                    <select id="issueType" placeholder="Type">
+                    <label>Name </label><input id="issueName" placeholder="Name">
+                    <label>Type </label><select id="issueType" placeholder="Type">
                         <option id="typeFeature"></option>
                         <option id="typeBug"></option>
                         <option id="typeTask"></option>
                     </select>
-                    <select id="issueSprint" placeholder="Sprint">
+                    <label>Sprint </label><select id="issueSprint" placeholder="Sprint">
                     
                     </select>
                     <input id="issueCreatedBy" placeholder="Created by" type="hidden">
-                    <select id="issueAsignee" placeholder="Asignee">
+                    <label>Asignee </label><select id="issueAssignee" placeholder="Assignee">
                     
                     </select>
-                    <select id="issueStatus" placeholder="Status">
+                    <label>Status </label><select id="issueStatus" placeholder="Status" value="Status">
                         <option id="statusNew"></option>
                         <option id="statusInProgress"></option>
                         <option id="statusFeedback"></option>
@@ -71,9 +72,10 @@
                     <button id="createIssue">Create issue</button>
                 </form>
                 <div id="divIssues">
-                    <ol id="olIssues">
+                    <h4>Issues List</h4>
+                    <ul id="issuesContainer">
                         
-                    </ol>
+                    </ul>
                 </div>
             </section>
         </article>

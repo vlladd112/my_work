@@ -4,3 +4,7 @@
 #mainPageArticle section {
     width:50%;
 }
+#issuesContainer, #sprintsContainer {
+    display:flex;
+    flex-direction: column-reverse;
+}
