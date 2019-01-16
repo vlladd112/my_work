@@ -11,6 +11,8 @@ const issueType = ['feature', 'bug', 'task'];
     
 let issues = [];
     
+let issueIds = [];
+    
 let unassignedTasks = [];
     
 let assignedTasks = [];
@@ -31,6 +33,9 @@ localStorage.setItem('issue_status', issueStatusArrStr);
     
 const issueTypeStr = JSON.stringify(issueType);
 localStorage.setItem('issue_type', issueTypeStr);
+    
+const issueIdsStr = JSON.stringify(issueIds);
+localStorage.setItem('issue_ids', issueIdsStr);
 
     //====== Project name display in DOM
 const projectName = document.getElementById('projectName').innerHTML = project.name;
@@ -41,7 +46,8 @@ const typeBug = document.getElementById('typeBug').innerHTML = issueType[1];
 const typeTask = document.getElementById('typeTask').innerHTML = issueType[2];
 const issuesContainer = document.getElementById('issuesContainer');
 const issueAssigneeSelect = document.getElementById('issueAssignee');
- 
+const uncheckedTasksDiv = document.getElementById('uncheckedTasks');
+//const checkedTasks = document.getElementById('checkedTasks');
 
     //===== STATUS
 const statusNew = document.getElementById('statusNew').innerHTML = issueStatusArr[0].name;
@@ -103,7 +109,7 @@ const populateDomOnLoad = ()=> {
     }
     for (let i=0; i<issues.length; i++) {
         let issuesLi = document.createElement('a');
-        issuesLi.setAttribute('href', '?id=' + issuesLi.id);
+        issuesLi.setAttribute('href', '/editItem.html?id=' + issues[i].id);
         issuesLi.innerHTML = issues[i].name;
         issuesContainer.append(issuesLi);
     }
@@ -122,6 +128,11 @@ createSprint.addEventListener('click', ()=> {
     const sprintsStr = JSON.stringify(sprints);
     localStorage.setItem('sprints', sprintsStr);
     
+    const issueSprintInput = document.getElementById('issueSprint');
+    const newSprintOption = document.createElement('option');
+    newSprintOption.innerHTML = newSprint.name;
+    newSprintOption.setAttribute('value', newSprint.id);
+    issueSprintInput.appendChild(newSprintOption);
     
     const liText = document.createTextNode(sprintName.value);
 //    console.log(liText);
@@ -148,10 +159,17 @@ createAssigneeOptions();
     //======= CREATE SPRINT OPTIONS
 const createSprintOptions = ()=> {
     const sprintsLS = localStorage.getItem('sprints');
-    const parsedSprintsLS = JSON.parse(sprintsLS);
-    for(let i=0; i<Object.values(parsedSprintsLS).length; i++) {
+    let parsedSprintsLS = JSON.parse(sprintsLS);
+    if(parsedSprintsLS === null) {
+        parsedSprintsLS = [];
+    }
+    
+    const sprintInput = document.getElementById
+    
+    for(let i=0; i<parsedSprintsLS.length; i++) {
         console.log(parsedSprintsLS[i]);
         const createSprintOption = document.createElement('option');
+        createSprintOption.setAttribute('value', parsedSprintsLS[i].id);
         createSprintOption.innerHTML = parsedSprintsLS[i].name;
         console.log(createSprintOption);
         console.log(issueSprintSelect);
@@ -188,31 +206,29 @@ showCheckList()
 const createTaskChecklist = ()=> {
     const unassignedTasksLS = localStorage.getItem('unassigned_tasks');
 //    console.log("TASKS LSSSSSS", unassignedTasksLS);
-    let parsedUnassignedTasksLS = JSON.parse(unassignedTasksLS);
-//    console.log("PATSED TASKS LS:", parsedUnassignedTasksLS);
-    if(parsedUnassignedTasksLS === null) {
-        parsedUnassignedTasksLS = [];
+    let parsedUnassignedTasksLs = JSON.parse(unassignedTasksLS);
+//    console.log("PATSED TASKS LS:", parsedUnassignedTasksLs);
+    if(parsedUnassignedTasksLs === null) {
+        parsedUnassignedTasksLs = [];
     }
-    for(let i=0; i<parsedUnassignedTasksLS.length; i++) {
-        const uncheckedTasksDiv = document.getElementById('uncheckedTasks');
-//        console.log(parsedUnassignedTasksLS[i]);
+    for(let i=0; i<parsedUnassignedTasksLs.length; i++) {
+//        console.log(parsedUnassignedTasksLs[i]);
         const createCheckboxItem = document.createElement('input');
         createCheckboxItem.setAttribute('type', 'checkbox');
-        const checkBoxName = parsedUnassignedTasksLS[i].name;
-        const checkBoxId = parsedUnassignedTasksLS[i].id;
+        const checkBoxName = parsedUnassignedTasksLs[i].name;
+        const checkBoxId = parsedUnassignedTasksLs[i].id;
         createCheckboxItem.setAttribute('value', checkBoxId);
         createCheckboxItem.setAttribute('name', 'task');
-        createCheckboxItem.setAttribute('class', 'task');
+        createCheckboxItem.setAttribute('class', 'taskCheckbox');
         createCheckboxItem.innerHTML = checkBoxName;
 //        console.log(createCheckboxItem);
         
         uncheckedTasksDiv.appendChild(createCheckboxItem);
         
         const createSpan = document.createElement('span');
+        createSpan.setAttribute('class', 'taskSpan');
         createSpan.innerHTML = checkBoxName;
         uncheckedTasksDiv.appendChild(createSpan);
-//        const createCleclistItem = document
-        
     };
 //    const assignedTasksLS = localStorage.getItem('assigned_tasks');
 //    
@@ -250,13 +266,13 @@ const createIsuse = document.getElementById('createIssue').addEventListener('cli
     e.preventDefault();
     const issueId = issues.length+1;
     const issueType = document.getElementById('issueType').value;
-    const issueName = document.getElementById('issueName').value;
+    let issueName = document.getElementById('issueName').value;
     let issueSprint = document.getElementById('issueSprint').value;
     const issueCreatedBy = users[0].id;
     let issueAssignee = document.getElementById('issueAssignee').value;
     const issueDescription = document.getElementById('issueDescription').value;
     let issueStatus = document.getElementById('issueStatus').value;
-    const issueTask = document.getElementById('issueTask').value;
+//    const isssueTask = document.getElementById('isssueTask').value;
     const issueComments = document.getElementById('issueComments').value;
     const issueUpdatedAt = document.getElementById('issueUpdatedAt').value;
     const issueCreatedAt = dd + "-" + mm + "-" +yyyy;
@@ -310,8 +326,117 @@ const createIsuse = document.getElementById('createIssue').addEventListener('cli
     issueSprintId();
  
     
+//    ====================
+//        const newIssue = new Issue(issueId, issueType, issueName, issueSprint, issueCreatedBy, issueAssignee, issueDescription, issueStatus, isssueTask, issueComments, issueUpdatedAt, issueCreatedAt);
+//        =======================================
+//    console.log(newIssue);
+    
+    
+        
+//        console.log('Unasigned TASKSS', unassignedTasks);
+  
+//    console.log("ISSUES", issues);
+    
+    
+    //========= MANAGE TASK CHECKLIST
+    
+//    ppush();
+    const taskChecker = ()=> {
+        const checkboxList = document.getElementsByClassName('taskCheckbox');
+//        console.log('CHECKBOX LIST', checkboxList);
+        const unassignedTasksLS = localStorage.getItem('unassigned_tasks');
+        const parsedUnassignedTasksLs = JSON.parse(unassignedTasksLS);
+        for (let i=0; i<checkboxList.length; i++) {
+            if(checkboxList[i].checked === true) {
+                console.log("CHECK IS TRUE", checkboxList[i]);
+                for (let j=0; j<parsedUnassignedTasksLs.length; j++) {
+                    console.log('VEZI DE CE NU MERGE:', checkboxList[i].value, parsedUnassignedTasksLs[j].id);
+                    if(checkboxList[i].value == parsedUnassignedTasksLs[j].id) {
+                        console.log('POPOPOPOPOPOPOOPOPOPOP', j, parsedUnassignedTasksLs[j]);
+                        //============ GET TASKS IDs
+//                        issueTask = Number(checkboxList[i].value);
+//                        console.log('issueTASK:::::::', issueTask, '::::::::', checkboxList[i].value, '::::::::::::');
+//                        console.log('ISSUE TASK 1:::::::', issueTask);
+                        
+                        //==========================
+                        assignedTasks.push(parsedUnassignedTasksLs[j]);
+                        parsedUnassignedTasksLs.splice(j, 1);
+                        const stringParsedUnassignedTasksLS = JSON.stringify(parsedUnassignedTasksLs);
+                        localStorage.setItem('unassigned_tasks', stringParsedUnassignedTasksLS);
+                        const stringAssignedTasks = JSON.stringify(assignedTasks);
+                        localStorage.setItem('assigned_tasks', stringAssignedTasks);
+                    };
+//                    console.log(parsedUnassignedTasksLs);
+                };
+            };
+        };
+        console.log(assignedTasks);
+        console.log(parsedUnassignedTasksLs);
+    };
+    const taskCheckerAddTask = ()=> {
+        if(issueName === "") {
+            issueName = 'undefined';
+        }
+        const checkboxList = document.getElementsByClassName('taskCheckbox');
+//        console.log('CHECKBOX LIST', checkboxList);
+        const unassignedTasksLS = localStorage.getItem('unassigned_tasks');
+        const parsedUnassignedTasksLs = JSON.parse(unassignedTasksLS);
+        for (let i=0; i<checkboxList.length; i++) {
+            if(checkboxList[i].checked === true) {
+                console.log("CHECK IS TRUE", checkboxList[i]);
+                for (let j=0; j<parsedUnassignedTasksLs.length; j++) {
+                    console.log('VEZI DE CE NU MERGE:', checkboxList[i].value, parsedUnassignedTasksLs[j].id);
+                    if(checkboxList[i].value == parsedUnassignedTasksLs[j].id) {
+                        console.log('POPOPOPOPOPOPOOPOPOPOP', j, parsedUnassignedTasksLs[j]);
+                        //============ GET TASKS IDs
+                      let issueTask = Number(checkboxList[i].value);
+                        console.log('issueTASK:::::::', issueTask, '::::::::', checkboxList[i].value, '::::::::::::');
+                        console.log('ISSUE TASK 1:::::::', issueTask);
+                        issueIds.push(issueTask);
+                        console.log('ISSUE IDS::::::::', issueIds);
+                        const stringIssueIds = JSON.stringify(issueIds);
+                        localStorage.setItem('issue_ids', stringIssueIds);
+                        
+                        //==========================
+//                        assignedTasks.push(parsedUnassignedTasksLs[j]);
+//                        parsedUnassignedTasksLs.splice(j, 1);
+//                        const stringParsedUnassignedTasksLS = JSON.stringify(parsedUnassignedTasksLs);
+//                        localStorage.setItem('unassigned_tasks', stringParsedUnassignedTasksLS);
+//                        const stringAssignedTasks = JSON.stringify(assignedTasks);
+//                        localStorage.setItem('assigned_tasks', stringAssignedTasks);
+                        
+//                        return issueTask;
+                    };
+                    console.log('ISSUE TASK 2:::::::', issueTask);
+//                    console.log(parsedUnassignedTasksLs);
+//                    return issueTask;
+                };
+//                return issueTask;
+            };
+//            return issueTask;
+        };
+        console.log(assignedTasks);
+        console.log(parsedUnassignedTasksLs);
+//        return issueTask;
+    };
+    taskCheckerAddTask();
+    
+    let issuesLi = document.createElement('a');
+    issuesLi.setAttribute('href', '/editItem.html?id=' + issueId);
+    console.log(issueName);
+    issuesLi.innerHTML = issueName;
+    issuesContainer.append(issuesLi);
+
+    const issueIdsLs = localStorage.getItem('issue_ids');
+    const parsedIssueIds = JSON.parse(issueIdsLs);
+    console.log('PIIIIIIIIIII', parsedIssueIds);
+    
+    issueTask = parsedIssueIds;
     const newIssue = new Issue(issueId, issueType, issueName, issueSprint, issueCreatedBy, issueAssignee, issueDescription, issueStatus, issueTask, issueComments, issueUpdatedAt, issueCreatedAt);
-    console.log(newIssue);
+    
+//    localStorage.setItem('issue_ids', []);
+    
+    console.log('NEW ISSUE::::', newIssue);
     
     issues.push(newIssue);
     
@@ -325,57 +450,81 @@ const createIsuse = document.getElementById('createIssue').addEventListener('cli
     
     
     if(newIssue.type === 'task') {
-        console.log("TASKKKK");
+        unassignedTasks = JSON.parse(localStorage.getItem('unassigned_tasks'));
+        if (unassignedTasks === null) {
+            unassignedTasks = [];
+        }
         unassignedTasks.push(newIssue);
-        
                     //===== ADD TO LOCAL STORAGE
-        const unassignedTasksStr = JSON.stringify(issues);
+        const unassignedTasksStr = JSON.stringify(unassignedTasks);
         localStorage.setItem('unassigned_tasks', unassignedTasksStr);
-        
-//        console.log('Unasigned TASKSS', unassignedTasks);
-    }
-    console.log("ISSUES", issues);
-    
-    
-    //========= MANAGE TASK CHECKLIST
-    
-//    ppush();
-    const taskChecker = ()=> {
-        const checkboxList = document.getElementsByClassName('task');
-        console.log('CHECKBOX LIST', checkboxList);
-        const unassignedTasksLS = localStorage.getItem('unassigned_tasks');
-        const parsedUnassignedTasksLS = JSON.parse(unassignedTasksLS);
-        for (let i=0; i<checkboxList.length; i++) {
-            if(checkboxList[i].checked === true) {
-                console.log("CHECK IS TRUE", checkboxList[i]);
-                for (let j=0; j<parsedUnassignedTasksLS.length; j++) {
-                    if(checkboxList[i].value === parsedUnassignedTasksLS[j].id) {
-                        console.log('POPOPOPOPOPOPOOPOPOPOP', j, parsedUnassignedTasksLS[j]);
-                        //============ GET TASKS IDs
-                        
-                        //==========================
-                        assignedTasks.push(parsedUnassignedTasksLS[j]);
-                        parsedUnassignedTasksLS.splice(j, 1);
-                        const stringParsedUnassignedTasksLS = JSON.stringify(parsedUnassignedTasksLS);
-                        localStorage.setItem('unassigned_tasks', stringParsedUnassignedTasksLS);
-                        const stringAssignedTasks = JSON.stringify(assignedTasks);
-                        localStorage.setItem('assigned_tasks', stringAssignedTasks);
-                    };
-                    console.log(parsedUnassignedTasksLS);
-                };
-   
-            };
-        };
-        console.log(assignedTasks);
-        console.log(parsedUnassignedTasksLS);
     };
     taskChecker();
     
-    let issuesLi = document.createElement('a')
-    console.log(issueName);
-    issuesLi.innerHTML = issueName;
-    issuesContainer.append(issuesLi);
+    //======= REPOPULATE TASK COTAINER ON EVERY CREATED ISSUE FROM LS
+    const repopTaskContainer = ()=> {
+//        const checkedTasks = document.getElementById('uncheckedTasks');
+//        const getCheckoxList = document.getElementsByClassName('taskCheckbox');
+//        const getSpanList = document.getElementsByClassName('taskSpan');
+//        const getCheckboxLength = getCheckoxList.length;
+//        const getSpanLength = getSpanList.length;
+//        
+//        for (let i=0; i<getSpanLength; i++) {
+//            checkedTasks.removeChild(getCheckoxList[getCheckoxList.length - i]);
+//        }
+//        for (let i=0; i<getCheckboxLength; i++) {
+//            checkedTasks.removeChild(getSpanList[i]);
+//        }
+        
+        
+        const issueTask = document.getElementById('issueTask');
+        const checkedTasks = document.getElementById('checkedTasks');
+        const uncheckedTasks = document.getElementById('uncheckedTasks');
+        issueTask.removeChild(uncheckedTasks);
+        
+        const createUncheckedTasks = document.createElement('div');
+        createUncheckedTasks.setAttribute('id', 'uncheckedTasks');
+        issueTask.appendChild(createUncheckedTasks);
+        
+        const newUncheckedTasksDiv = document.getElementById('uncheckedTasks');
+//        const uncheckedTasks = document.getElementById('uncheckedTasks');
+        const taskLabel = document.getElementById('taskLabel');
+        const issueTypeInput = document.getElementById('issueType');
+        if(issueTypeInput.value === 'bug' || issueTypeInput.value === 'feature') {
+            
+            checkedTasks.style.display = 'block';
+            newUncheckedTasksDiv.style.display = 'block';
+            taskLabel.style.color = 'black';
+        } else {
+            checkedTasks.style.display = 'none';
+            newUncheckedTasksDiv.style.display = 'none';
+            taskLabel.style.color = 'gray';
+        }
+        
+        const unassignedTasksLs = localStorage.getItem('unassigned_tasks');
+        const parsedUnassignedTasksLs = JSON.parse(unassignedTasksLs);
+        
+        for (let i=0; i<parsedUnassignedTasksLs.length; i++) {
+            const createCheckboxItem = document.createElement('input');
+            createCheckboxItem.setAttribute('type', 'checkbox');
+            const checkBoxName = parsedUnassignedTasksLs[i].name;
+            const checkBoxId = parsedUnassignedTasksLs[i].id;
+            createCheckboxItem.setAttribute('value', checkBoxId);
+            createCheckboxItem.setAttribute('name', 'task');
+            createCheckboxItem.setAttribute('class', 'taskCheckbox');
+            createCheckboxItem.innerHTML = checkBoxName;
 
+            newUncheckedTasksDiv.appendChild(createCheckboxItem);
+
+            const createSpan = document.createElement('span');
+            createSpan.setAttribute('class', 'taskSpan');
+            createSpan.innerHTML = checkBoxName;
+            
+            newUncheckedTasksDiv.appendChild(createSpan); 
+        }
+        
+    }
+    repopTaskContainer();
 });
     
     
