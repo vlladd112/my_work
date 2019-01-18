@@ -1,14 +1,83 @@
+body {
+    width:50vw;
+    min-width: 450px;
+    margin: 0 auto;
+    display:flex;
+    flex-direction: column;
+    color:white;
+    background-color: black;
+}
+input, select, button, textarea {
+    border-radius: 5px;
+}
+a {
+    color: dodgerblue;
+    margin: 1px;
+    text-decoration: none;
+}
+a:hover {
+    color: lightskyblue;
+}
+h1, h2, h4 {
+    text-align: center;
+}
+h1 {
+    color:red;
+}
+h2 {
+    color:re
+}
+main>div {
+    display:flex;
+    justify-content: center;
+}
 #mainPageArticle {
     display:flex;
+    justify-content: space-around;
+    min-width: 455px;
 }
-#mainPageArticle section {
-    width:50%;
+#sprintSection {
+    width:30%;
 }
-#issuesContainer, #sprintsContainer {
+#sprintInputContainer {
+    display: flex;
+    flex-direction: column;
+}
+#sprintInputContainer label {
+    margin:5px 0 1px;
+}
+#issueSection {
+    width:30%;
+}
+#issuesContainer {
     display:flex;
     flex-direction: column-reverse;
+    align-items: center;
 }
+#createIssueInputContainer label{
+    margin:5px 0 1px;
+}
+button {
+    margin-top:10px;
+}
+main>div>button {
+    width: 20%;
+    margin: 5px;
+}
+
+/*EDIT PAGE*/
 #createIssueInputContainer {
     display:flex;
     flex-direction: column;
+}
+#editContainer {
+    width:40%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+#editContainer label {
+    margin:5px 0 1px;
 }

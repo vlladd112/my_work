@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Project Management Tool</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="../models/classes.js"></script>
+    <script src="../views/editPageViews.js"></script>
+</head>
+
+<body id="body">
+    <h2>Update issue</h2>
+    <div id="editContainer">
+        <form id="createIssueInputContainer">
+            <input id="issueId" type="hidden" placeholder="id">
+            <label>Name </label>
+            <input id="issueName" placeholder="Name">
+            <label>Type </label>
+            <select id="issueType" placeholder="Type">
+
+            </select>
+            <label>Sprint </label>
+            <select id="issueSprint" placeholder="Sprint">
+
+            </select>
+            <input id="issueCreatedBy" placeholder="Created by" type="hidden">
+            <label>Asignee </label>
+            <select id="issueAssignee" placeholder="Assignee">
+
+            </select>
+            <label>Status </label>
+            <select id="issueStatus" placeholder="Status" value="Status">
+
+            </select>
+            <input id="issueUpdatedAt" placeholder="Updated at" type="hidden">
+            <input id="issueCreatedAt" placeholder="Created at" type="hidden">
+            <label id="taskLabel">Tasks<br></label>
+            <div id="issueTask" placeholder="Task">
+
+            </div>
+            <label>Description</label>
+            <textarea id="issueDescription" placeholder="Description"></textarea>
+            <label>Add comment</label>
+            <textarea id="issueComments" placeholder="Comments"></textarea>
+            <button id="updateIssue">Update</button>
+        </form>
+        <div>
+            <h4>Comments</h4>
+        </div>
+    </div>
+</body>
+
+</html>

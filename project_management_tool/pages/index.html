@@ -14,14 +14,15 @@
     </header>
     <main>
         <div>
-            <button>Overview</button>
-            <button>Filter</button>
+            <button id="overviewBtn">Overview</button>
+            <button id="filterBtn">Filter</button>
         </div>
         <article id="mainPageArticle">
-            <section>
+            <section id="sprintSection">
                 <h2>Create sprint</h2>
-                <div id="createSprintInputContainer">
+                <div id="sprintInputContainer">
                     <input id="sprintId" type="hidden">
+                    <label>Name</label>
                     <input id="sprintName" placeholder="Name">
                     <button id="createSprint">Create sprint</button>
                 </div>
@@ -32,7 +33,7 @@
                     </ul>
                 </div>
             </section>
-            <section>
+            <section id="issueSection">
                 <h2>Create issue</h2>
                 <form id="createIssueInputContainer">
                     <input id="issueId" type="hidden" placeholder="id">
@@ -56,16 +57,11 @@
                     <label>Status </label>
                     <select id="issueStatus" placeholder="Status" value="Status">
                         <option id="statusNew"></option>
-                        <option id="statusInProgress"></option>
-                        <option id="statusFeedback"></option>
-                        <option id="statusRework"></option>
-                        <option id="statusResolved"></option>
-                        <option id="statusReadyForTesting"></option>
                     </select>
                     <input id="issueComments" placeholder="Comments" type="hidden">
                     <input id="issueUpdatedAt" placeholder="Updated at" type="hidden">
                     <input id="issueCreatedAt" placeholder="Created at" type="hidden">
-                    <label id="taskLabel">TASKS<br></label>
+                    <label id="taskLabel">Tasks<br></label>
                     <div id="issueTask" placeholder="Task">
                         <div id="checkedTasks">
                         
@@ -74,14 +70,15 @@
                         
                         </div>
                     </div>
+                    <label>Description</label>
                     <textarea id="issueDescription" placeholder="Description"></textarea>
                     <button id="createIssue">Create issue</button>
                 </form>
                 <div id="divIssues">
                     <h4>Issues List</h4>
-                    <ul id="issuesContainer">
+                    <div id="issuesContainer">
                         
-                    </ul>
+                    </div>
                 </div>
             </section>
         </article>
