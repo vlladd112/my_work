@@ -81,3 +81,11 @@ main>div>button {
 #editContainer label {
     margin:5px 0 1px;
 }
+
+/*OVERVIEW PAGE*/
+.wrapper {
+    display:flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: center;
+}

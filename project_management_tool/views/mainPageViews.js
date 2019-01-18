@@ -69,11 +69,6 @@ window.onload = () => {
 
     //===== STATUS
     const statusNew = document.getElementById('statusNew').innerHTML = issueStatusArr[0].name;
-//    const statusInProgress = document.getElementById('statusInProgress').innerHTML = issueStatusArr[1].name;
-//    const statusFeedback = document.getElementById('statusFeedback').innerHTML = issueStatusArr[2].name;
-//    const statusRework = document.getElementById('statusRework').innerHTML = issueStatusArr[3].name;
-//    const statusResolved = document.getElementById('statusResolved').innerHTML = issueStatusArr[4].name;
-//    const statusReadyForTesting = document.getElementById('statusReadyForTesting').innerHTML = issueStatusArr[5].name;
 
     //======== SPRINT
     const sprintName = document.getElementById('sprintName');
@@ -135,7 +130,6 @@ window.onload = () => {
     createSprint.addEventListener('click', () => {
 
         const newSprint = new Sprint(sprints.length + 1, sprintName.value);
-        console.log(newSprint);
         sprints.push(newSprint);
 
         //=== ADD TO LOCAL STORAGE
@@ -157,11 +151,8 @@ window.onload = () => {
     //======= CREATE ASIGNEE OPTIONS
     const createAssigneeOptions = () => {
         for (let i = 0; i < Object.values(users).length; i++) {
-            console.log(users[i]);
             const createAssigOption = document.createElement('option');
             createAssigOption.innerHTML = users[i].name;
-            console.log(createAssigOption);
-            console.log(issueAssigneeSelect);
             issueAssigneeSelect.append(createAssigOption);
         };
     };
@@ -176,12 +167,9 @@ window.onload = () => {
         };
 
         for (let i = 0; i < parsedSprintsLS.length; i++) {
-            console.log(parsedSprintsLS[i]);
             const createSprintOption = document.createElement('option');
             createSprintOption.setAttribute('value', parsedSprintsLS[i].id);
             createSprintOption.innerHTML = parsedSprintsLS[i].name;
-            console.log(createSprintOption);
-            console.log(issueSprintSelect);
             issueSprintSelect.append(createSprintOption);
         };
     };
@@ -263,12 +251,8 @@ window.onload = () => {
         //======= GET issueAssignee.id
         const issueAssigneeId = () => {
             for (let i = 0; i < Object.values(users).length; i++) {
-                //                console.log()
-                console.log(users[i]);
                 if (users[i].name === issueAssignee) {
-                    console.log("YES");
                     issueAssignee = users[i].id;
-                    console.log("ISSUE ASIGNEE:", issueAssignee);
                     return issueAssignee;
                 };
             };

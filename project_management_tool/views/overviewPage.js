@@ -14,9 +14,16 @@ const getSprints = () => {
 }
 
 const getIssues = () => {
+    const newSpan = document.getElementById('newSpan');
+    let newStatusArr = [];
+    //==== GET NEW STATUS
     for (let i = 0; i < issues.length; i++) {
-        let newStatus = issue.status;
-        let newStatusArr = []
+        let newStatus = issues[i].status;
+        if(issues[i].status === undefined) {
+            issues[i].status = 0;
+        };
         newStatusArr.push(newStatus);
-    }
-}
+        newStatusNumber = newStatusArr.length;
+    };
+    newSpan.innerHTML = newStatusNumber;
+};

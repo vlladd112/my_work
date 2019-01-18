@@ -1,12 +1,9 @@
 let issueId;
 let issue;
-//let assignedIssuesLs;
-//let unassignedIssuesLs;
 let assignedIssuesLs = localStorage.getItem('assigned_tasks');
 assignedIssuesLs = JSON.parse(assignedIssuesLs);
 let unassignedIssuesLs = localStorage.getItem('unassigned_tasks');
 unassignedIssuesLs = JSON.parse(unassignedIssuesLs);
-//let newAssignedTasksArr = [];
 const issueTypeArr = ['feature', 'bug'];
 const issueStatusArr = [{
     id: 1,
@@ -285,9 +282,6 @@ const createUpdatedIssueObject = () => {
                     };
                 };
             };
-            //daca au atribut de .checked === true le bag in 'assigned_tasks' LS
-            //else le bag in 'unassigned_tasks' LS
-            //                push in array si mai jos le compari cualea din LS
         };
         window.location = "index.html";
     });
