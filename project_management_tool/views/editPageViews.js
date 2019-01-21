@@ -150,8 +150,9 @@ const createCheckboxList = (list, isChecked) => {
     const issueTaskContainer = document.getElementById('issueTask');
     for (let i = 0; i < list.length; i++) {
         if (assignedIssuesLs === list) {
+            console.log(issue.task.length);
             for (let j = 0; j < issue.task.length; j++) {
-                if (list[i].id === issue.task[j]) {
+                if (list[i].id == issue.task[j]) {
                     const createCheckboxItem = document.createElement('input');
                     createCheckboxItem.setAttribute('type', 'checkbox');
                     const checkBoxName = list[i].name;
@@ -201,16 +202,20 @@ const updateItem = () => {
 
 const getIssueTaskValidation = () => {
     let newAssignedTasksArr = [];
+    let newUnassignedTasksArr = [];
     const taskList = document.getElementsByClassName('taskCheckbox');
     for (let i = 0; i < taskList.length; i++) {
         let taskAttribute = taskList[i].checked === true;
         if (taskAttribute) {
             let idOfTask = taskList[i].value;
             newAssignedTasksArr.push(idOfTask);
-        };
+        } else if (!taskAttribute) {
+            let idOfTask = taskList[i].value;
+            newUnassignedTasksArr.push(idOfTask);
+        }
 
     };
-    return newAssignedTasksArr;
+    return [newAssignedTasksArr, newUnassignedTasksArr];
 };
 
 const createUpdatedIssueObject = () => {
@@ -226,13 +231,12 @@ const createUpdatedIssueObject = () => {
         let updatedIssueStatus = document.getElementById('issueStatus').value;
         const updatedIssueComments = document.getElementById('issueComments').value;
         const updatedIssueUpdatedAt = dd + "-" + mm + "-" + yyyy;
-        let updatedIssueTask = getIssueTaskValidation();
+        let [checkedTasksForUpdateArr, uncheckedTasksForUpdateArr] = getIssueTaskValidation();
         // CREATE UPDATE OBJECT
-        const updatedIssue = new Issue(issue.id, updatedIssueType, updatedIssueName, updatedIssueSprint, issue.createdBy, updatedIssueAssignee, updatedIssueDescription, updatedIssueStatus, updatedIssueTask, updatedIssueComments, updatedIssueUpdatedAt, issue.createdAt);
+        const updatedIssue = new Issue(issue.id, updatedIssueType, updatedIssueName, updatedIssueSprint, issue.createdBy, updatedIssueAssignee, updatedIssueDescription, updatedIssueStatus, checkedTasksForUpdateArr, updatedIssueComments, updatedIssueUpdatedAt, issue.createdAt);
         //====== UPDATE OBJECT IN LS
         let issuesLsArrString = localStorage.getItem('issues');
         let issuesLsArr = JSON.parse(issuesLsArrString);
-        //        console.log(issuesLsArr);
         for (let i = 0; i < issuesLsArr.length; i++) {
             if (issuesLsArr[i].id === issue.id) {
                 issuesLsArr.splice(i, 1);
@@ -244,46 +248,45 @@ const createUpdatedIssueObject = () => {
             };
         };
         //===== UPDATE TASKS IN LS
-        let validatedTasks = document.getElementsByClassName('task');
-        let checkedTasksArr = [];
-        let uncheckedTasksArr = [];
-
         let unassignedTasksLsArr = localStorage.getItem('unassigned_tasks');
         unassignedTasksLsArr = JSON.parse(unassignedTasksLsArr);
         let assignedTasksLsArr = localStorage.getItem('assigned_tasks');
         assignedTasksLsArr = JSON.parse(assignedTasksLsArr);
-        for (let k = 0; k < validatedTasks.length; k++) {
-            if (validatedTasks[k].checked === true) {
-                checkedTasksArr.push(validatedTasks[k]);
-                for (let i = 0; i < uncheckedTasksArr.length; i++) {
-                    for (let j = 0; j < unassignedTasksLsArr.length; j++) {
-                        if (unassignedTasksLsArr[i].id == uncheckedTasksArr[j].id) {
-                            unassignedTasksLsArr.splice(i, 1);
-                            unassignedTasksLsArr.push(assignedTasksLsArr);
-                            unassignedTasksLsArr = JSON.stringify(unassignedTasksLsArr);
-                            localStorage.setItem('unassigned_tasks', unassignedTasksLsArr);
-                        } else {
-                            //                alert('ISSUE NOT FOUND AT UPDATE IN LS');
-                        };
-                    };
-                };
-            } else {
-                uncheckedTasksArr.push(validatedTasks[k]);
-                for (let i = 0; i < checkedTasksArr.length; i++) {
-                    for (let j = 0; j < assignedTasksLsArr.length; j++) {
-                        if (assignedTasksLsArr[i].id == checkedTasksArr[j].id) {
-                            assignedTasksLsArr.splice(i, 1);
-                            assignedTasksLsArr.push(unassignedTasksLsArr);
-                            assignedTasksLsArr = JSON.stringify(assignedTasksLsArr);
-                            localStorage.setItem('unassigned_tasks', assignedTasksLsArr);
-                        } else {
-                            //                alert('ISSUE NOT FOUND AT UPDATE IN LS');
-                        };
-                    };
-                };
-            };
-        };
-        window.location = "index.html";
+        for (let i=0; i<checkedTasksForUpdateArr.length; i++) {
+            for (let j=0; j<unassignedTasksLsArr.length; j++) {
+                if (checkedTasksForUpdateArr[i] == unassignedTasksLsArr[j].id) {
+                    assignedTasksLsArr.push(unassignedTasksLsArr[j]);
+                    unassignedTasksLsArr.splice(j, 1);
+                    j--;
+                }
+            }
+        }
+        unassignedTasksLsArr = JSON.stringify(unassignedTasksLsArr);
+        localStorage.setItem('unassigned_tasks', unassignedTasksLsArr);
+        assignedTasksLsArr = JSON.stringify(assignedTasksLsArr);
+        localStorage.setItem('assigned_tasks', assignedTasksLsArr);
+        
+        unassignedTasksLsArr = localStorage.getItem('unassigned_tasks');
+        unassignedTasksLsArr = JSON.parse(unassignedTasksLsArr);
+        assignedTasksLsArr = localStorage.getItem('assigned_tasks');
+        assignedTasksLsArr = JSON.parse(assignedTasksLsArr);
+        
+        
+        for (let i=0; i<uncheckedTasksForUpdateArr.length; i++) {
+            for (let j=0; j<assignedTasksLsArr.length; j++) {
+                if (uncheckedTasksForUpdateArr[i] == assignedTasksLsArr[j].id) {
+                    unassignedTasksLsArr.push(assignedTasksLsArr[j]);
+                    assignedTasksLsArr.splice(j, 1);
+                    j--;
+                }
+            }
+        }
+        assignedTasksLsArr = JSON.stringify(assignedTasksLsArr);
+        localStorage.setItem('assigned_tasks', assignedTasksLsArr);
+        unassignedTasksLsArr = JSON.stringify(unassignedTasksLsArr);
+        localStorage.setItem('unassigned_tasks', unassignedTasksLsArr);
+        
+//        window.location = "index.html";
     });
     
 };
