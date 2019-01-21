@@ -264,6 +264,7 @@ window.onload = () => {
             for (let i = 0; i < Object.values(sprints).length; i++) {
                 if (sprints[i].name === issueSprint) {
                     issueSprint = sprints[i].id;
+                    issueSprint = parseInt(issueSprint);
                     return issueSprint;
                 };
             };

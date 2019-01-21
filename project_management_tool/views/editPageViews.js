@@ -101,7 +101,7 @@ const createSprintOptions = () => {
         parsedSprintsLS = [];
     }
 
-    const sprintInput = document.getElementById
+    const sprintInput = document.getElementById;
 
     for (let i = 0; i < parsedSprintsLS.length; i++) {
         const createSprintOption = document.createElement('option');
@@ -135,7 +135,7 @@ const createStatusOptions = () => {
     const issueStatus = document.getElementById('issueStatus');
     for (let i = 0; i < issueStatusArr.length; i++) {
         const createStatusOption = document.createElement('option');
-        createStatusOption.setAttribute('value', issueStatusArr[i].name);
+        createStatusOption.setAttribute('value', issueStatusArr[i].id);
         createStatusOption.innerHTML = issueStatusArr[i].name;
         issueStatus.appendChild(createStatusOption);
     };
@@ -213,7 +213,6 @@ const getIssueTaskValidation = () => {
             let idOfTask = taskList[i].value;
             newUnassignedTasksArr.push(idOfTask);
         }
-
     };
     return [newAssignedTasksArr, newUnassignedTasksArr];
 };
@@ -226,9 +225,11 @@ const createUpdatedIssueObject = () => {
         const updatedIssueType = document.getElementById('issueType').value;
         let updatedIssueName = document.getElementById('issueName').value;
         let updatedIssueSprint = document.getElementById('issueSprint').value;
+        updatedIssueSprint = parseInt(updatedIssueSprint);
         let updatedIssueAssignee = document.getElementById('issueAssignee').value;
         const updatedIssueDescription = document.getElementById('issueDescription').value;
         let updatedIssueStatus = document.getElementById('issueStatus').value;
+        updatedIssueStatus = parseInt(updatedIssueStatus);
         const updatedIssueComments = document.getElementById('issueComments').value;
         const updatedIssueUpdatedAt = dd + "-" + mm + "-" + yyyy;
         let [checkedTasksForUpdateArr, uncheckedTasksForUpdateArr] = getIssueTaskValidation();
@@ -286,7 +287,7 @@ const createUpdatedIssueObject = () => {
         unassignedTasksLsArr = JSON.stringify(unassignedTasksLsArr);
         localStorage.setItem('unassigned_tasks', unassignedTasksLsArr);
         
-//        window.location = "index.html";
+        window.location = "index.html";
     });
     
 };
