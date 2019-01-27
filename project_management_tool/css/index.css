@@ -85,7 +85,28 @@ main>div>button {
 /*OVERVIEW PAGE*/
 .wrapper {
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     align-self: center;
+    justify-content: center;
+}
+#statusesContainer {
+    display: flex;
+    flex-direction: row;
+}
+#sprintSelect {
+    display: flex;
+    flex-direction: column-reverse;
+}
+.statusDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#sprintsSpan {
+    display:flex;
+    justify-content: center
+}
+.sprintsWrapper {
+    display: flex;
     justify-content: center;
 }

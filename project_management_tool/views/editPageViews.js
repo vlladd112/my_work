@@ -5,25 +5,8 @@ assignedIssuesLs = JSON.parse(assignedIssuesLs);
 let unassignedIssuesLs = localStorage.getItem('unassigned_tasks');
 unassignedIssuesLs = JSON.parse(unassignedIssuesLs);
 const issueTypeArr = ['feature', 'bug'];
-const issueStatusArr = [{
-    id: 1,
-    name: 'New'
-}, {
-    id: 2,
-    name: 'In progress'
-}, {
-    id: 3,
-    name: 'Feedback'
-}, {
-    id: 4,
-    name: 'Rework'
-}, {
-    id: 5,
-    name: 'Resolved'
-}, {
-    id: 6,
-    name: 'Ready for Testing'
-}];
+let issueStatusArr = localStorage.getItem('issue_status');
+issueStatusArr = JSON.parse(issueStatusArr);
 
 //====== BUILD DATE
 let today = new Date();
@@ -36,7 +19,6 @@ if (dd < 10) {
 if (mm < 10) {
     mm = '0' + mm;
 };
-
 
 window.onload = () => {
     const body = document.getElementById('body');

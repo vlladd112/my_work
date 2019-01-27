@@ -4,23 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Project Management Tool</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/overview.css">
     <script src="../views/overviewPage.js"></script>
 </head>
 
 <body>
     <h1>Project overview</h1>
-    <article>
+    <article id="article">
         <h2>Sprints</h2>
-        <div class="wrapper"><label id="sprintsLable">Sprints:</label><span id="sprintsSpan"></span></div>
-        <h2>Issues</h2>
-        <div class="wrapper"><label id="newLabel">New:&nbsp;</label><span id="newSpan"></span><ul><li>Features:<span id="newFeatureSpan"></span></li><li>Bugs:<span id="newBugSpan"></span></li><li>Tasks:<span id="newTaskSpan"></span></li></ul></div>
-        <div class="wrapper"><label id="inProgressLable">In progress:</label><span id="inProgressSpan"></span><ul><li>Features:<span></span></li><li>Bugs:<span></span></li><li>Tasks:<span></span></li></ul></div>
-        <div class="wrapper"><label id="feedbackLable">Feedback:</label><span id="feedbackSpan"></span><ul><li>Features:<span></span></li><li>Bugs:<span></span></li><li>Tasks:<span></span></li></ul></div>
-        <div class="wrapper"><label id="reworkLabel">Rework:</label><span id="reworkSpan"></span><ul><li>Features:<span></span></li><li>Bugs:<span></span></li><li>Tasks:<span></span></li></ul></div>
-        <div class="wrapper"><label id="resolvedLabel">Resolved:</label><span id="resolvedSpan"></span><ul><li>Features:<span></span></li><li>Bugs:<span></span></li><li>Tasks:<span></span></li></ul></div>
-        <div class="wrapper"><label id="readyLabel">Ready for Testing:</label><span id="readySpan"></span><ul><li>Features:<span></span></li><li>Bugs:<span></span></li><li>Tasks:<span></span></li></ul></div>
+        <span id="sprintsSpan"></span>
+        <div class="sprintsWrapper">
+            <label id="sprintsLable">Choose sprint</label>
+
+            <select id="sprintSelect"></select>
+        </div>
+        <h2 id="issuesH2">Issues</h2>
+        <span id="issuesSpan"></span>
+        <div id="issuesContainer">
+            <div id="statusesContainer"></div>
+        </div>
     </article>
 </body>
-    
+
 </html>

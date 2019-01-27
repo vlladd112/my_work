@@ -1,0 +1,53 @@
+body {
+    width:65vw;
+    min-width: 672px;
+    margin: 0 auto;
+    display:flex;
+    flex-direction: column;
+    color:white;
+    background-color: black;
+    align-self: center;
+    justify-content: center;
+}
+h1, h2 {
+    text-align: center;
+}
+h2 {
+    margin-bottom: 5px;
+}
+h2:last-of-type {
+    display:none;
+}
+.wrapper {
+    display:flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+}
+#sprintsLable, #sprintSelect {
+    margin:5px;
+}
+#statusesContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+#sprintSelect {
+    display: flex;
+    flex-direction: column-reverse;
+}
+.statusDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#sprintsSpan, #issuesSpan {
+    display:flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.sprintsWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

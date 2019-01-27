@@ -23,7 +23,22 @@ window.onload = () => {
     const issueStatusArr = [{
         id: 1,
         name: 'New'
-    }];
+    }, {
+        id: 2,
+        name: 'In progress'
+    }, {
+        id: 3,
+        name: 'Feedback'
+    }, {
+        id: 4,
+        name: 'Rework'
+    }, {
+        id: 5,
+        name: 'Resolved'
+    }, {
+        id: 6,
+        name: 'Ready for Testing'
+}];
 
     const issueType = ['feature', 'bug', 'task'];
 
@@ -42,12 +57,12 @@ window.onload = () => {
     //=========== ADD TO LOCAL STORAGE
     const usersStr = JSON.stringify(users);
     localStorage.setItem('users', usersStr);
-
-    const projectStr = JSON.stringify(project);
-    localStorage.setItem('project', projectStr);
-
+    
     const issueStatusArrStr = JSON.stringify(issueStatusArr);
     localStorage.setItem('issue_status', issueStatusArrStr);
+    
+    const projectStr = JSON.stringify(project);
+    localStorage.setItem('project', projectStr); 
 
     const issueTypeStr = JSON.stringify(issueType);
     localStorage.setItem('issue_type', issueTypeStr);
@@ -128,7 +143,9 @@ window.onload = () => {
 
     //========== CREATE SPRINT
     createSprint.addEventListener('click', () => {
-
+        if (sprintName.value === "") {
+            sprintName.value = 'undefined';
+        };
         const newSprint = new Sprint(sprints.length + 1, sprintName.value);
         sprints.push(newSprint);
 
@@ -402,7 +419,7 @@ window.onload = () => {
         repopTaskContainer();
     });
     const overviewButton = document.getElementById('overviewBtn');
-    overviewButton.addEventListener('click', ()=> {
+    overviewButton.addEventListener('click', () => {
         window.location = "overview.html";
     })
 };
