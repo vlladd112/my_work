@@ -243,7 +243,7 @@ const moveTasksToNewSprint = () => {
                     const issueUpdatedAtUpdateTask = updatedAtDate;
                     const issueCreatedAtUpdateTask = assignedTasksLs[j].createdAt;
                     //===== CREATE UPDATED TASK WITH CORRESPONDING SPRINT
-                    const updatedTask = new Issue(issueIdUpdateTask, issueTypeUpdateTask, issueNameUpdateTask, issueSprintUpdateTask, issueCreatedByUpdateTask, issueAssigneeUpdateTask, issueDescriptionUpdateTask, issueStatusUpdateTask, undefined, issueCommentsUpdateTask, issueUpdatedAtUpdateTask, issueCreatedAtUpdateTask);
+                    const updatedTask = new Issue(issueIdUpdateTask, issueTypeUpdateTask, issueNameUpdateTask, issueSprintUpdateTask, issueCreatedByUpdateTask, issueAssigneeUpdateTask, issueDescriptionUpdateTask, issueStatusUpdateTask, [], issueCommentsUpdateTask, issueUpdatedAtUpdateTask, issueCreatedAtUpdateTask);
                     assignedTasksLs.splice(j, 1);
                     assignedTasksLs.push(updatedTask);
                 };
