@@ -253,7 +253,21 @@ window.onload = () => {
         const issueComments = document.getElementById('issueComments').value;
         const issueUpdatedAt = document.getElementById('issueUpdatedAt').value;
         const issueCreatedAt = dd + "-" + mm + "-" + yyyy;
-
+        
+        // ====== RESET INPUT FIELDS
+        const resetInputFields = ()=> {
+            const issueNameReset = document.getElementById('issueName');
+            issueNameReset.value = "";
+            const issueDescriptionReset = document.getElementById('issueDescription');
+            issueDescriptionReset.value = "";
+            const issueTypeReset = document.getElementById('issueType');
+            issueTypeReset.value = "";
+            const issueSprintReset = document.getElementById('issueSprint');
+            issueSprintReset.value = "";
+            const issueAssigneeReset = document.getElementById('issueAssignee');
+            issueAssigneeReset.value = "";
+        }
+        
         //===== GET issueStatus.id
         const issueStatusId = () => {
             for (let i = 0; i < Object.values(issueStatusArr).length; i++) {
@@ -264,7 +278,7 @@ window.onload = () => {
             };
         };
         issueStatusId();
-
+        
         //======= GET issueAssignee.id
         const issueAssigneeId = () => {
             for (let i = 0; i < Object.values(users).length; i++) {
@@ -417,6 +431,7 @@ window.onload = () => {
             };
         };
         repopTaskContainer();
+        resetInputFields();
     });
     const overviewButton = document.getElementById('overviewBtn');
     overviewButton.addEventListener('click', () => {

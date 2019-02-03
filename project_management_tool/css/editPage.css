@@ -14,7 +14,11 @@ input, select, button, textarea {
     border-radius: 5px;
 }
 button {
-    margin: 5px;
+    margin: 15px;
+    background-color: dodgerblue;
+    border-color: white;
+    color: white;
+    font-weight: bold;
 }
 #createIssueInputContainer {
     display:flex;

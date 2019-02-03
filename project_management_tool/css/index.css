@@ -1,5 +1,5 @@
 body {
-    width:50vw;
+    width:60vw;
     min-width: 450px;
     margin: 0 auto;
     display:flex;
@@ -62,51 +62,9 @@ button {
 }
 main>div>button {
     width: 20%;
-    margin: 5px;
+    margin: 5px 60px;
 }
-
-/*EDIT PAGE*/
 #createIssueInputContainer {
     display:flex;
     flex-direction: column;
-}
-#editContainer {
-    width:40%;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-}
-#editContainer label {
-    margin:5px 0 1px;
-}
-
-/*OVERVIEW PAGE*/
-.wrapper {
-    display:flex;
-    flex-direction: column;
-    align-self: center;
-    justify-content: center;
-}
-#statusesContainer {
-    display: flex;
-    flex-direction: row;
-}
-#sprintSelect {
-    display: flex;
-    flex-direction: column-reverse;
-}
-.statusDiv {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#sprintsSpan {
-    display:flex;
-    justify-content: center
-}
-.sprintsWrapper {
-    display: flex;
-    justify-content: center;
 }

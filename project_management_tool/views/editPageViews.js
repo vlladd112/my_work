@@ -24,9 +24,8 @@ window.onload = () => {
     const body = document.getElementById('body');
     validateId();
     showItem();
-    updateItem();
-
-}
+    createUpdatedIssueObject();
+};
 
 const validateId = () => {
     const searchParameter = window.location.search;
@@ -81,7 +80,7 @@ const createSprintOptions = () => {
     let parsedSprintsLS = JSON.parse(sprintsLS);
     if (parsedSprintsLS === null) {
         parsedSprintsLS = [];
-    }
+    };
 
     const sprintInput = document.getElementById;
 
@@ -90,7 +89,11 @@ const createSprintOptions = () => {
         createSprintOption.setAttribute('value', parsedSprintsLS[i].id);
         createSprintOption.innerHTML = parsedSprintsLS[i].name;
         issueSprint.append(createSprintOption);
+        if (issue.sprint == createSprintOption.value) {
+            createSprintOption.setAttribute('selected', 'true');
+        };
     };
+
 };
 
 const createAssigneeOptions = () => {
@@ -98,18 +101,34 @@ const createAssigneeOptions = () => {
     users = JSON.parse(users);
     for (let i = 0; i < users.length; i++) {
         const createAssigneeOption = document.createElement('option');
+        createAssigneeOption.setAttribute('value', users[i].id);
         createAssigneeOption.innerHTML = users[i].name;
         issueAssignee.append(createAssigneeOption);
+        if (issue.assignee == createAssigneeOption.value) {
+            createAssigneeOption.setAttribute('selected', 'true');
+        };
     };
 };
 
 const createTypeOptions = () => {
     const issueType = document.getElementById('issueType');
-    for (let i = 0; i < issueTypeArr.length; i++) {
+    if (issue.type == 'task') {
         const createTypeOption = document.createElement('option');
-        createTypeOption.setAttribute('value', issueTypeArr[i]);
-        createTypeOption.innerHTML = issueTypeArr[i];
+        createTypeOption.innerHTML = 'task';
         issueType.appendChild(createTypeOption);
+        const issueTask = document.getElementById('issueTask').style.display = 'none';
+        const taskLabel = document.getElementById('taskLabel').style.color = 'gray';
+    };
+    for (let i = 0; i < issueTypeArr.length; i++) {
+        if (issue.type == 'feature' || issue.type == 'bug') {
+            const createTypeOption = document.createElement('option');
+            createTypeOption.setAttribute('value', issueTypeArr[i]);
+            createTypeOption.innerHTML = issueTypeArr[i];
+            issueType.appendChild(createTypeOption);
+            if (issue.type == issueTypeArr[i]) {
+                createTypeOption.setAttribute('selected', 'true');
+            };
+        };
     };
 };
 
@@ -120,6 +139,9 @@ const createStatusOptions = () => {
         createStatusOption.setAttribute('value', issueStatusArr[i].id);
         createStatusOption.innerHTML = issueStatusArr[i].name;
         issueStatus.appendChild(createStatusOption);
+        if (issue.status == issueStatusArr[i].id) {
+            createStatusOption.setAttribute('selected', 'true');
+        };
     };
 };
 
@@ -132,7 +154,6 @@ const createCheckboxList = (list, isChecked) => {
     const issueTaskContainer = document.getElementById('issueTask');
     for (let i = 0; i < list.length; i++) {
         if (assignedIssuesLs === list) {
-            console.log(issue.task.length);
             for (let j = 0; j < issue.task.length; j++) {
                 if (list[i].id == issue.task[j]) {
                     const createCheckboxItem = document.createElement('input');
@@ -178,9 +199,7 @@ const createCheckboxList = (list, isChecked) => {
 };
 
 //======== UPDATE ITEM
-const updateItem = () => {
-    createUpdatedIssueObject();
-};
+    
 
 const getIssueTaskValidation = () => {
     let newAssignedTasksArr = [];
@@ -194,9 +213,46 @@ const getIssueTaskValidation = () => {
         } else if (!taskAttribute) {
             let idOfTask = taskList[i].value;
             newUnassignedTasksArr.push(idOfTask);
-        }
+        };
     };
     return [newAssignedTasksArr, newUnassignedTasksArr];
+};
+
+//====== MOVE CORRESPONDING TASKS TO SELECTED SPRINT
+const moveTasksToNewSprint = () => {
+    const issueSprintValue = parseInt(document.getElementById('issueSprint').value);
+    let updatedAtDate = dd + "-" + mm + "-" + yyyy;
+    let assignedTasksLs = localStorage.getItem('issues');
+    assignedTasksLs = JSON.parse(assignedTasksLs);
+    const fullTaskList = document.getElementsByClassName('taskCheckbox');
+    for (let i = 0; i < fullTaskList.length; i++) {
+        if (fullTaskList[i].checked == true) {
+            for (let j = 0; j < assignedTasksLs.length; j++) {
+                if (fullTaskList[i].value == assignedTasksLs[j].id) {
+
+                    const issueIdUpdateTask = assignedTasksLs[j].id;
+                    const issueTypeUpdateTask = assignedTasksLs[j].type;
+                    const issueNameUpdateTask = assignedTasksLs[j].name;
+                    const issueSprintUpdateTask = issueSprintValue; // <== added to same sprint
+                    const issueCreatedByUpdateTask = assignedTasksLs[j].createdBy;
+                    const issueAssigneeUpdateTask = assignedTasksLs[j].assignee;
+                    const issueDescriptionUpdateTask = assignedTasksLs[j].description;
+                    const issueStatusUpdateTask = assignedTasksLs[j].status;
+                    let [checkedTasksForUpdateArrUpdateTask, uncheckedTasksForUpdateArrUpdateTask] = getIssueTaskValidation();
+                    const issueCommentsUpdateTask = assignedTasksLs[j].comments;
+                    const issueUpdatedAtUpdateTask = updatedAtDate;
+                    const issueCreatedAtUpdateTask = assignedTasksLs[j].createdAt;
+                    //===== CREATE UPDATED TASK WITH CORRESPONDING SPRINT
+                    const updatedTask = new Issue(issueIdUpdateTask, issueTypeUpdateTask, issueNameUpdateTask, issueSprintUpdateTask, issueCreatedByUpdateTask, issueAssigneeUpdateTask, issueDescriptionUpdateTask, issueStatusUpdateTask, undefined, issueCommentsUpdateTask, issueUpdatedAtUpdateTask, issueCreatedAtUpdateTask);
+                    assignedTasksLs.splice(j, 1);
+                    assignedTasksLs.push(updatedTask);
+                };
+            };
+        };
+    };
+    //====== ADD UPDATED TASK WITH SPRINT IN LS
+    assignedTasksLs = JSON.stringify(assignedTasksLs);
+    localStorage.setItem('issues', assignedTasksLs);
 };
 
 const createUpdatedIssueObject = () => {
@@ -235,41 +291,42 @@ const createUpdatedIssueObject = () => {
         unassignedTasksLsArr = JSON.parse(unassignedTasksLsArr);
         let assignedTasksLsArr = localStorage.getItem('assigned_tasks');
         assignedTasksLsArr = JSON.parse(assignedTasksLsArr);
-        for (let i=0; i<checkedTasksForUpdateArr.length; i++) {
-            for (let j=0; j<unassignedTasksLsArr.length; j++) {
+        for (let i = 0; i < checkedTasksForUpdateArr.length; i++) {
+            for (let j = 0; j < unassignedTasksLsArr.length; j++) {
                 if (checkedTasksForUpdateArr[i] == unassignedTasksLsArr[j].id) {
                     assignedTasksLsArr.push(unassignedTasksLsArr[j]);
                     unassignedTasksLsArr.splice(j, 1);
                     j--;
-                }
-            }
-        }
+                };
+            };
+        };
         unassignedTasksLsArr = JSON.stringify(unassignedTasksLsArr);
         localStorage.setItem('unassigned_tasks', unassignedTasksLsArr);
         assignedTasksLsArr = JSON.stringify(assignedTasksLsArr);
         localStorage.setItem('assigned_tasks', assignedTasksLsArr);
-        
+
         unassignedTasksLsArr = localStorage.getItem('unassigned_tasks');
         unassignedTasksLsArr = JSON.parse(unassignedTasksLsArr);
         assignedTasksLsArr = localStorage.getItem('assigned_tasks');
         assignedTasksLsArr = JSON.parse(assignedTasksLsArr);
-        
-        
-        for (let i=0; i<uncheckedTasksForUpdateArr.length; i++) {
-            for (let j=0; j<assignedTasksLsArr.length; j++) {
+
+        for (let i = 0; i < uncheckedTasksForUpdateArr.length; i++) {
+            for (let j = 0; j < assignedTasksLsArr.length; j++) {
                 if (uncheckedTasksForUpdateArr[i] == assignedTasksLsArr[j].id) {
                     unassignedTasksLsArr.push(assignedTasksLsArr[j]);
                     assignedTasksLsArr.splice(j, 1);
                     j--;
-                }
-            }
-        }
+                };
+            };
+        };
         assignedTasksLsArr = JSON.stringify(assignedTasksLsArr);
         localStorage.setItem('assigned_tasks', assignedTasksLsArr);
         unassignedTasksLsArr = JSON.stringify(unassignedTasksLsArr);
         localStorage.setItem('unassigned_tasks', unassignedTasksLsArr);
-        
+
+        moveTasksToNewSprint();
+
         window.location = "index.html";
     });
-    
+
 };
